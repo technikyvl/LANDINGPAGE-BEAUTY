@@ -26,7 +26,7 @@ export function Header({ className }: HeaderProps) {
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out",
         "bg-white/95 backdrop-blur-sm",
         isScrolled
-          ? "mx-4 mt-4 rounded-2xl shadow-lg border border-gray-200/50"
+          ? "mx-auto mt-4 rounded-2xl shadow-lg border border-white/20 w-1/2"
           : "w-full",
         className
       )}
