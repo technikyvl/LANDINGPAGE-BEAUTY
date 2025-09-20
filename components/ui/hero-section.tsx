@@ -5,7 +5,6 @@ import type React from "react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { ArrowRightIcon } from "lucide-react"
-import { Glow } from "@/components/ui/glow"
 import Image from "next/image"
 import { cn } from "@/lib/utils"
 
@@ -135,7 +134,6 @@ export function HeroSection({ badge, title, description, actions }: HeroProps) {
                 </div>
               </div>
             </div>
-            <Glow variant="top" className="animate-appear-zoom opacity-0 delay-1000" />
           </div>
 
         </div>
