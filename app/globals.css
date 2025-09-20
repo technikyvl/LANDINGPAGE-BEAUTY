@@ -303,3 +303,47 @@
   flex-direction: column;
   justify-content: space-between;
 }
+
+/* Hero Bleed Effect - Płynne przejście tła */
+:root {
+  /* Gradient Hero - bazując na istniejącym glow effect */
+  --hero-gradient: radial-gradient(60% 60% at 40% 25%, rgba(255, 165, 120, 0.4) 0%, rgba(255, 165, 120, 0.2) 35%, rgba(255, 165, 120, 0) 70%);
+}
+
+/* Hero Section - bleed setup */
+#hero {
+  position: relative;
+  background: var(--hero-gradient);
+  isolation: isolate;
+  overflow: visible;
+  z-index: 1;
+}
+
+/* Bleed pseudo-element - "spływa" pod następną sekcję */
+#hero::after {
+  content: "";
+  position: absolute;
+  left: -10vw;
+  right: -10vw;
+  bottom: -28vh;
+  height: 40vh;
+  background: inherit;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Następna sekcja - przezroczyste tło */
+#hero + section {
+  position: relative;
+  z-index: 1;
+  background: transparent;
+  border-top: none;
+  box-shadow: none;
+}
+
+/* Karty w następnej sekcji - białe tło lokalnie */
+#hero + section .t-card,
+#hero + section .card,
+#hero + section .box {
+  background: #fff;
+}
