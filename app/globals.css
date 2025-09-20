@@ -178,3 +178,75 @@
     transform: scale(1);
   }
 }
+
+/* Testimonials Marquee Styles */
+.t-card {
+  max-width: 22rem;
+  width: 100%;
+  margin-inline: auto;
+  padding: 1.25rem 1.5rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 1.25rem;
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+.t-stars {
+  color: #f5b301;
+  letter-spacing: 0.15rem;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  font-size: 1.125rem;
+}
+
+.t-text {
+  line-height: 1.6;
+  text-align: center;
+  font-style: italic;
+  color: #374151;
+  margin: 0.5rem 0;
+}
+
+.t-user {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  justify-content: center;
+}
+
+.t-user .avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  object-fit: cover;
+}
+
+.t-user .name {
+  font-weight: 600;
+  color: #111827;
+}
+
+.t-user .role {
+  opacity: 0.75;
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+/* Auto-scroll Animation */
+@keyframes marqueeY {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+.column.marquee {
+  animation: marqueeY var(--marquee-duration, 16s) linear infinite;
+}
+
+.paused:hover .marquee {
+  animation-play-state: paused;
+}

@@ -10,6 +10,7 @@ import { CaseSection } from "@/components/sections/case-section"
 import { TrustSection } from "@/components/sections/trust-section"
 import { TestimonialsSection } from "@/components/sections/testimonials-section"
 import { TestimonialsCarouselSection } from "@/components/sections/testimonials-carousel-section"
+import { TestimonialsMarqueeSection } from "@/components/sections/testimonials-marquee-section"
 import { CTASection } from "@/components/sections/cta-section"
 import { FAQSection } from "@/components/sections/faq-section"
 import { ContactSection } from "@/components/sections/contact-section"
@@ -64,11 +65,36 @@ export default function HomePage() {
         {/* Dlaczego my / Zaufanie */}
         <TrustSection data={aeroBeautyData.sections.trust} />
 
-        {/* Testimonials - Zadowolone właścicielki */}
-        <TestimonialsSection data={aeroBeautyData.sections.testimonials} />
+        {/* Opinie klientów - Marquee */}
+        <section id="opinie" className="opinie section py-16 md:py-24 bg-white">
+          <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="section-head text-center mb-16">
+              <div className="badge inline-block px-3 py-1 text-sm border border-gray-300 rounded-full mb-4">
+                Opinie klientów
+              </div>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight bg-gradient-to-br from-gray-800 via-gray-700 to-gray-500 bg-clip-text text-transparent drop-shadow-2xl mb-4">
+                Co mówią właścicielki salonów beauty
+              </h2>
+              <p className="text-sm font-medium text-gray-600 max-w-3xl mx-auto sm:text-lg opacity-75">
+                Zobacz, jakie efekty osiągają po wdrożeniu naszego systemu.
+              </p>
+            </div>
 
-        {/* Opinie klientów - Carousel */}
-        <TestimonialsCarouselSection data={aeroBeautyData.sections.testimonials} />
+            <div className="testimonials-mask paused overflow-hidden" style={{
+              maskImage: 'linear-gradient(to bottom, transparent, #000 20%, #000 80%, transparent)',
+              WebkitMaskImage: 'linear-gradient(to bottom, transparent, #000 20%, #000 80%, transparent)'
+            }}>
+              <div className="columns grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+                <div className="column js-marquee flex flex-col gap-5" data-speed="15"></div>
+                <div className="column js-marquee flex flex-col gap-5" data-speed="19"></div>
+                <div className="column js-marquee flex flex-col gap-5" data-speed="17"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        {/* Testimonials Marquee JS */}
+        <TestimonialsMarqueeSection />
 
         {/* Mocne wezwanie */}
         <CTASection data={aeroBeautyData.sections.cta} />
