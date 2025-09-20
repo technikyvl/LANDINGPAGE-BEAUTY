@@ -80,7 +80,7 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div className="testimonials-mask paused" style={{
+            <div className="testimonials-mask" style={{
               maskImage: 'linear-gradient(to bottom, transparent, #000 20%, #000 80%, transparent)',
               WebkitMaskImage: 'linear-gradient(to bottom, transparent, #000 20%, #000 80%, transparent)'
             }}>
