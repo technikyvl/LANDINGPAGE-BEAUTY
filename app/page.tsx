@@ -113,6 +113,83 @@ export default function HomePage() {
           </div>
         </section>
 
+        {/* Pricing Section */}
+        <section id="pricing" className="py-16 md:py-24 bg-orange-500">
+          <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="flex flex-col lg:flex-row items-center justify-between">
+              {/* Left Side - Header */}
+              <div className="lg:w-1/2 mb-12 lg:mb-0">
+                <div className="relative">
+                  <div className="text-8xl md:text-9xl font-bold text-orange-200 absolute -top-4 -left-4 select-none">
+                    02
+                  </div>
+                  <h2 className="relative z-10 text-4xl md:text-5xl lg:text-6xl font-bold text-white uppercase tracking-wide mb-6">
+                    DOMINA'S PRICING
+                  </h2>
+                </div>
+                
+                <h3 className="text-2xl md:text-3xl font-bold text-orange-800 mb-4">
+                  Our Handsome Pricing Table for your Choices No Hidden Charges!
+                </h3>
+                
+                <p className="text-orange-200 text-lg mb-8">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+                </p>
+                
+                <button className="bg-white text-black px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200">
+                  View All Domain Price
+                </button>
+              </div>
+
+              {/* Right Side - Domain Card */}
+              <div className="lg:w-1/2 flex justify-center lg:justify-end">
+                <div className="relative">
+                  {/* Diamond Shape */}
+                  <div className="w-80 h-80 bg-gradient-to-br from-purple-600 to-orange-500 rounded-3xl transform rotate-45 flex items-center justify-center shadow-2xl">
+                    <div className="transform -rotate-45 text-center text-white">
+                      {/* Globe Icon */}
+                      <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg className="w-8 h-8 text-orange-500" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        </svg>
+                      </div>
+                      
+                      {/* Domain */}
+                      <div className="text-2xl font-bold mb-2">.net</div>
+                      
+                      {/* Price */}
+                      <div className="text-lg font-semibold">$ 11.57 Yearly</div>
+                    </div>
+                  </div>
+                  
+                  {/* Action Buttons */}
+                  <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                    <button className="bg-purple-800 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-purple-900 transition-colors duration-200">
+                      <div>Register</div>
+                      <div className="text-xs">$ 9.11</div>
+                    </button>
+                    <button className="bg-purple-800 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-purple-900 transition-colors duration-200">
+                      <div>Transfer</div>
+                      <div className="text-xs">$ 11.32</div>
+                    </button>
+                    <button className="bg-purple-800 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-purple-900 transition-colors duration-200">
+                      <div>Renew</div>
+                      <div className="text-xs">$ 9.43</div>
+                    </button>
+                  </div>
+                  
+                  {/* Purchase Button */}
+                  <div className="absolute -bottom-16 left-1/2 transform -translate-x-1/2">
+                    <button className="bg-white text-black px-6 py-2 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200">
+                      Purchase Now
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Opinie klientów - Marquee */}
         <section id="opinie" className="opinie section py-16 md:py-24 bg-white">
           <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
