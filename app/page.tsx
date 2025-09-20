@@ -2,7 +2,6 @@
 
 import { HeroSection } from "@/components/ui/hero-section"
 import { Header } from "@/components/ui/header"
-import { Logos3Demo } from "@/components/ui/logos3-demo"
 import { ProblemSection } from "@/components/sections/problem-section"
 import { SolutionSection } from "@/components/sections/solution-section"
 import { ProcessSection } from "@/components/sections/process-section"
@@ -51,9 +50,6 @@ export default function HomePage() {
             alt: "System marketingowy dla salonów beauty",
           }}
         />
-
-        {/* Logos Section */}
-        <Logos3Demo />
 
         {/* Problem & Obietnica */}
         <ProblemSection data={aeroBeautyData.sections.problem} />
