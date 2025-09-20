@@ -42,7 +42,7 @@ export function HeroSection({ badge, title, description, actions, image }: HeroP
 
   return (
     <section
-      className={cn("bg-gradient-to-b from-white via-orange-50/30 to-orange-100/50 text-foreground", "py-12 sm:py-24 md:py-32 px-4", "overflow-hidden pb-0")}
+      className={cn("bg-white text-foreground", "py-12 sm:py-24 md:py-32 px-4", "overflow-hidden pb-0")}
     >
       <div className="mx-auto flex max-w-7xl flex-col gap-12 pt-16 sm:gap-24">
         <div className="flex flex-col items-center gap-4 text-center sm:gap-8">
