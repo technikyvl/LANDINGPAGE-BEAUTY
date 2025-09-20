@@ -199,6 +199,13 @@
           "salon": "Premium Spa",
           "image": "/placeholder-user.jpg",
           "quote": "Strona internetowa przyciąga nowe klientki, a system automatycznie je konwertuje. To działa jak magia!"
+        },
+        {
+          "name": "Aleksandra",
+          "role": "Właścicielka salonu kosmetycznego",
+          "salon": "Aleksandra Beauty",
+          "image": "https://randomuser.me/api/portraits/women/65.jpg",
+          "quote": "Dzięki Aero Digital w końcu zaczęłam wypełniać kalendarz wizyt bez wydawania fortuny na reklamy. Email i SMS marketing sprawił, że dawne klientki wróciły, a nowe same zaczęły się pojawiać. Polecam każdemu salonowi beauty!"
         }
       ]
     },

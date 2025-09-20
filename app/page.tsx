@@ -9,6 +9,7 @@ import { PricingSection } from "@/components/sections/pricing-section"
 import { CaseSection } from "@/components/sections/case-section"
 import { TrustSection } from "@/components/sections/trust-section"
 import { TestimonialsSection } from "@/components/sections/testimonials-section"
+import { TestimonialsCarouselSection } from "@/components/sections/testimonials-carousel-section"
 import { CTASection } from "@/components/sections/cta-section"
 import { FAQSection } from "@/components/sections/faq-section"
 import { ContactSection } from "@/components/sections/contact-section"
@@ -65,6 +66,9 @@ export default function HomePage() {
 
         {/* Testimonials - Zadowolone właścicielki */}
         <TestimonialsSection data={aeroBeautyData.sections.testimonials} />
+
+        {/* Opinie klientów - Carousel */}
+        <TestimonialsCarouselSection data={aeroBeautyData.sections.testimonials} />
 
         {/* Mocne wezwanie */}
         <CTASection data={aeroBeautyData.sections.cta} />
