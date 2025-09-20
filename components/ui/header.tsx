@@ -32,7 +32,10 @@ export function Header({ className }: HeaderProps) {
       )}
     >
       <div className="container mx-auto px-6 py-4">
-        <div className="flex items-center justify-between">
+        <div className={cn(
+          "flex items-center justify-between",
+          isScrolled ? "scale-x-200" : ""
+        )}>
           {/* Logo */}
           <div className="flex items-center space-x-2">
             <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
