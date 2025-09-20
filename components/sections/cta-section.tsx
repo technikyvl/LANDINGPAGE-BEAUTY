@@ -38,7 +38,7 @@ export function CTASection({ data }: CTASectionProps) {
     <section
       id="cta"
       ref={ref}
-      className="py-16 md:py-24 bg-gradient-to-br from-blue-50 to-purple-50"
+      className="py-16 md:py-24 bg-gradient-to-br from-blue-50 to-indigo-50"
     >
       <div className="container mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <div
@@ -61,7 +61,7 @@ export function CTASection({ data }: CTASectionProps) {
                 className={cn(
                   "inline-flex items-center justify-center px-8 py-4 rounded-full font-semibold transition-all duration-200",
                   index === 0
-                    ? "bg-gradient-to-r from-blue-500 to-purple-600 text-white hover:from-blue-600 hover:to-purple-700 shadow-lg hover:shadow-xl"
+                    ? "bg-gradient-to-r from-blue-500 to-blue-600 text-white hover:from-blue-600 hover:to-blue-700 shadow-lg hover:shadow-xl"
                     : "bg-gray-900 text-white hover:bg-gray-800"
                 )}
               >

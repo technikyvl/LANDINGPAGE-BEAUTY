@@ -50,10 +50,10 @@ export function ProcessSection({ data }: ProcessSectionProps) {
         {/* Linia czasu - mobile: pionowa, desktop: pozioma */}
         <div className="relative">
           {/* Linia łącząca - ukryta na mobile, widoczna na desktop */}
-          <div className="hidden md:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 transform -translate-y-1/2" />
+          <div className="hidden md:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 transform -translate-y-1/2" />
           
           {/* Linia łącząca - mobile: pionowa */}
-          <div className="md:hidden absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 via-purple-500 to-pink-500" />
+          <div className="md:hidden absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 via-blue-600 to-blue-700" />
 
           <div className="space-y-12 md:space-y-0 md:grid md:grid-cols-3 md:gap-8">
             {data.steps.map((step, index) => (
@@ -69,7 +69,7 @@ export function ProcessSection({ data }: ProcessSectionProps) {
               >
                 <div className="flex flex-col items-center text-center space-y-4">
                   {/* Badge z numerem */}
-                  <div className="relative z-10 w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center shadow-lg">
+                  <div className="relative z-10 w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center shadow-lg">
                     <span className="text-white text-xl font-bold">
                       {step.number}
                     </span>

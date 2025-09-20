@@ -61,7 +61,7 @@ export function TrustSection({ data }: TrustSectionProps) {
                   : "opacity-0 translate-y-8"
               )}
             >
-              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl mx-auto flex items-center justify-center">
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl mx-auto flex items-center justify-center">
                 <span className="text-white text-2xl">
                   {index === 0 && "💄"}
                   {index === 1 && "⚙️"}

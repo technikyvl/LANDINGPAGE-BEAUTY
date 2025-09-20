@@ -8,6 +8,7 @@ import { ProcessSection } from "@/components/sections/process-section"
 import { PricingSection } from "@/components/sections/pricing-section"
 import { CaseSection } from "@/components/sections/case-section"
 import { TrustSection } from "@/components/sections/trust-section"
+import { TestimonialsSection } from "@/components/sections/testimonials-section"
 import { CTASection } from "@/components/sections/cta-section"
 import { FAQSection } from "@/components/sections/faq-section"
 import { ContactSection } from "@/components/sections/contact-section"
@@ -68,6 +69,9 @@ export default function HomePage() {
 
         {/* Dlaczego my / Zaufanie */}
         <TrustSection data={aeroBeautyData.sections.trust} />
+
+        {/* Testimonials - Zadowolone właścicielki */}
+        <TestimonialsSection data={aeroBeautyData.sections.testimonials} />
 
         {/* Mocne wezwanie */}
         <CTASection data={aeroBeautyData.sections.cta} />

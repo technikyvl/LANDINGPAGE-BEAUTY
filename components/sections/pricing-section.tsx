@@ -58,7 +58,7 @@ export function PricingSection({ data }: PricingSectionProps) {
                 "relative bg-white rounded-2xl border-2 p-8 transition-all duration-700 ease-out",
                 `delay-${index * 200}`,
                 pkg.popular
-                  ? "border-purple-500 shadow-xl scale-105"
+                  ? "border-blue-500 shadow-xl scale-105"
                   : "border-gray-200 shadow-lg hover:shadow-xl",
                 isVisible
                   ? "opacity-100 translate-y-0"
@@ -68,7 +68,7 @@ export function PricingSection({ data }: PricingSectionProps) {
               {/* Badge "Najczęściej wybierany" */}
               {pkg.popular && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <div className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-2 rounded-full text-sm font-semibold">
+                  <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-6 py-2 rounded-full text-sm font-semibold">
                     Najczęściej wybierany
                   </div>
                 </div>
@@ -107,7 +107,7 @@ export function PricingSection({ data }: PricingSectionProps) {
                     className={cn(
                       "w-full inline-flex items-center justify-center px-6 py-3 rounded-full font-semibold transition-all duration-200",
                       pkg.popular
-                        ? "bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:from-purple-600 hover:to-pink-600 shadow-lg hover:shadow-xl"
+                        ? "bg-gradient-to-r from-blue-500 to-blue-600 text-white hover:from-blue-600 hover:to-blue-700 shadow-lg hover:shadow-xl"
                         : "bg-gray-900 text-white hover:bg-gray-800"
                     )}
                   >

@@ -154,6 +154,54 @@
         }
       ]
     },
+    "testimonials": {
+      "title": "Zadowolone właścicielki salonów",
+      "subtitle": "Poznaj historie sukcesu właścicielek salonów beauty, które już korzystają z naszych rozwiązań",
+      "testimonials": [
+        {
+          "name": "Anna Kowalska",
+          "role": "Właścicielka",
+          "salon": "Beauty Dreams",
+          "image": "/placeholder-user.jpg",
+          "quote": "Dzięki Aero Digital mamy stały strumień nowych klientek. System działa 24/7, a my możemy skupić się na tym, co robimy najlepiej."
+        },
+        {
+          "name": "Magdalena Nowak",
+          "role": "Dyrektor",
+          "salon": "Luxury Spa",
+          "image": "/placeholder-user.jpg",
+          "quote": "Zwiększyliśmy liczbę rezerwacji o 200% w ciągu 3 miesięcy. To najlepsza inwestycja w naszym salonie."
+        },
+        {
+          "name": "Katarzyna Wiśniewska",
+          "role": "Właścicielka",
+          "salon": "Glamour Studio",
+          "image": "/placeholder-user.jpg",
+          "quote": "Email marketing i SMS-y działają fantastycznie. Klientki wracają częściej i polecają nas znajomym."
+        },
+        {
+          "name": "Joanna Zielińska",
+          "role": "Manager",
+          "salon": "Elite Beauty",
+          "image": "/placeholder-user.jpg",
+          "quote": "Automatyzacje oszczędzają nam mnóstwo czasu. Mamy więcej czasu na klientki, a system zajmuje się marketingiem."
+        },
+        {
+          "name": "Agnieszka Krawczyk",
+          "role": "Właścicielka",
+          "salon": "Modern Beauty",
+          "image": "/placeholder-user.jpg",
+          "quote": "ROI z kampanii Meta Ads to 400%. Nigdy nie myślałam, że marketing może być tak skuteczny."
+        },
+        {
+          "name": "Monika Dąbrowska",
+          "role": "Dyrektor",
+          "salon": "Premium Spa",
+          "image": "/placeholder-user.jpg",
+          "quote": "Strona internetowa przyciąga nowe klientki, a system automatycznie je konwertuje. To działa jak magia!"
+        }
+      ]
+    },
     "contact": {
       "title": "Umów konsultację",
       "form": {

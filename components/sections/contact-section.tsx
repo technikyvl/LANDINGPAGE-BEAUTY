@@ -158,7 +158,7 @@ export function ContactSection({ data }: ContactSectionProps) {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white py-3 px-6 rounded-lg font-semibold hover:from-blue-600 hover:to-purple-700 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:from-blue-600 hover:to-blue-700 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? "Wysyłanie..." : data.form.submit}
               </button>
@@ -174,7 +174,7 @@ export function ContactSection({ data }: ContactSectionProps) {
                 : "opacity-0 translate-y-8"
             )}
           >
-            <div className="bg-gradient-to-br from-blue-50 to-purple-50 p-8 rounded-2xl border border-blue-100">
+            <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-2xl border border-blue-100">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">
                 {data.consultation.title}
               </h3>

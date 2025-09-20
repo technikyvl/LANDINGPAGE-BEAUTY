@@ -41,7 +41,7 @@ export function CaseSection({ data }: CaseSectionProps) {
     <section
       id="case"
       ref={ref}
-      className="py-16 md:py-24 bg-gradient-to-br from-purple-50 to-pink-50"
+      className="py-16 md:py-24 bg-gradient-to-br from-blue-50 to-indigo-50"
     >
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
@@ -55,14 +55,14 @@ export function CaseSection({ data }: CaseSectionProps) {
               <div
                 key={index}
                 className={cn(
-                  "bg-white px-6 py-3 rounded-full shadow-lg border border-purple-200 transition-all duration-700 ease-out",
+                  "bg-white px-6 py-3 rounded-full shadow-lg border border-blue-200 transition-all duration-700 ease-out",
                   `delay-${index * 200}`,
                   isVisible
                     ? "opacity-100 translate-y-0"
                     : "opacity-0 translate-y-8"
                 )}
               >
-                <span className="text-lg font-semibold text-purple-700">
+                <span className="text-lg font-semibold text-blue-700">
                   {kpi}
                 </span>
               </div>
@@ -99,22 +99,22 @@ export function CaseSection({ data }: CaseSectionProps) {
                   : "opacity-0 translate-y-8"
               )}
             >
-              <blockquote className="bg-white p-8 rounded-2xl shadow-lg border border-purple-100">
-                <div className="mb-6">
-                  <svg className="w-8 h-8 text-purple-500 mb-4" fill="currentColor" viewBox="0 0 32 32">
-                    <path d="M10 8c-3.3 0-6 2.7-6 6v10h10V14h-4c0-2.2 1.8-4 4-4V8zm18 0c-3.3 0-6 2.7-6 6v10h10V14h-4c0-2.2 1.8-4 4-4V8z" />
-                  </svg>
-                  <p className="text-lg text-gray-700 italic leading-relaxed">
-                    "{data.testimonial.text}"
-                  </p>
+            <blockquote className="bg-white p-8 rounded-2xl shadow-lg border border-blue-100">
+              <div className="mb-6">
+                <svg className="w-8 h-8 text-blue-500 mb-4" fill="currentColor" viewBox="0 0 32 32">
+                  <path d="M10 8c-3.3 0-6 2.7-6 6v10h10V14h-4c0-2.2 1.8-4 4-4V8zm18 0c-3.3 0-6 2.7-6 6v10h10V14h-4c0-2.2 1.8-4 4-4V8z" />
+                </svg>
+                <p className="text-lg text-gray-700 italic leading-relaxed">
+                  "{data.testimonial.text}"
+                </p>
+              </div>
+              
+              <div className="flex items-center space-x-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-blue-400 to-blue-500 rounded-full flex items-center justify-center">
+                  <span className="text-white font-bold text-lg">
+                    {data.testimonial.author.charAt(0)}
+                  </span>
                 </div>
-                
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-purple-400 to-pink-400 rounded-full flex items-center justify-center">
-                    <span className="text-white font-bold text-lg">
-                      {data.testimonial.author.charAt(0)}
-                    </span>
-                  </div>
                   <div>
                     <div className="font-semibold text-gray-900">
                       {data.testimonial.author}
