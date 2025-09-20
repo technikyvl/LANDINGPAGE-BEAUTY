@@ -23,11 +23,11 @@ export function Header({ className }: HeaderProps) {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out",
-        "bg-white/95 backdrop-blur-sm origin-center",
+        "fixed top-0 z-50 transition-all duration-300 ease-in-out",
+        "bg-white/95 backdrop-blur-sm",
         isScrolled
-          ? "mt-4 rounded-2xl shadow-lg scale-x-50"
-          : "scale-100",
+          ? "left-1/2 transform -translate-x-1/2 mt-4 rounded-2xl shadow-lg w-1/2"
+          : "left-0 right-0 w-full",
         className
       )}
     >
@@ -40,6 +40,34 @@ export function Header({ className }: HeaderProps) {
             </div>
             <span className="text-xl font-semibold text-gray-900">Beauty</span>
           </div>
+
+          {/* Navigation */}
+          <nav className="hidden md:flex items-center space-x-8">
+            <a
+              href="#home"
+              className="text-gray-700 hover:text-gray-900 transition-colors duration-200"
+            >
+              Home
+            </a>
+            <a
+              href="#about"
+              className="text-gray-700 hover:text-gray-900 transition-colors duration-200"
+            >
+              About
+            </a>
+            <a
+              href="#services"
+              className="text-gray-700 hover:text-gray-900 transition-colors duration-200"
+            >
+              Services
+            </a>
+            <a
+              href="#contact"
+              className="text-gray-700 hover:text-gray-900 transition-colors duration-200"
+            >
+              Contact
+            </a>
+          </nav>
 
           {/* CTA Button */}
           <button className="inline-flex items-center px-6 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white text-sm font-medium rounded-full hover:from-blue-600 hover:to-purple-700 transition-all duration-200 shadow-md hover:shadow-lg">
