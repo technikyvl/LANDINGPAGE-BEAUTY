@@ -34,7 +34,7 @@ export default function HomePage() {
           <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             {/* Header */}
             <div className="relative mb-20">
-              <div className="text-8xl md:text-9xl font-bold text-gray-200 absolute -top-8 -left-4 select-none">
+              <div className="text-8xl md:text-9xl font-bold text-gray-200 absolute -top-20 -left-4 select-none">
                 01
               </div>
               <h2 className="relative z-10 text-4xl font-semibold leading-tight bg-gradient-to-br from-gray-800 via-gray-700 to-gray-500 bg-clip-text text-transparent drop-shadow-2xl sm:text-6xl sm:leading-tight md:text-7xl md:leading-tight">
@@ -120,7 +120,7 @@ export default function HomePage() {
               {/* Left Side - Header */}
               <div className="lg:w-1/2 mb-16 lg:mb-0">
                 <div className="relative">
-                  <div className="text-8xl md:text-9xl font-bold text-orange-200 absolute -top-8 -left-4 select-none">
+                  <div className="text-8xl md:text-9xl font-bold text-orange-200 absolute -top-20 -left-4 select-none">
                     02
                   </div>
                   <h2 className="relative z-10 text-4xl font-semibold leading-tight bg-gradient-to-br from-gray-800 via-gray-700 to-gray-500 bg-clip-text text-transparent drop-shadow-2xl sm:text-6xl sm:leading-tight md:text-7xl md:leading-tight mb-6">
@@ -197,7 +197,7 @@ export default function HomePage() {
               {/* Left Side - Header */}
               <div className="lg:w-1/2">
                 <div className="relative mb-12">
-                  <div className="text-8xl md:text-9xl font-bold text-gray-200 absolute -top-8 -left-4 select-none">
+                  <div className="text-8xl md:text-9xl font-bold text-gray-200 absolute -top-20 -left-4 select-none">
                     03
                   </div>
                   <h2 className="relative z-10 text-4xl font-semibold leading-tight bg-gradient-to-br from-gray-800 via-gray-700 to-gray-500 bg-clip-text text-transparent drop-shadow-2xl sm:text-6xl sm:leading-tight md:text-7xl md:leading-tight">
