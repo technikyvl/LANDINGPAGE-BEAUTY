@@ -45,7 +45,7 @@ export function HeroSection({ badge, title, description, actions, image }: HeroP
       className={cn("bg-white text-foreground", "py-12 sm:py-24 md:py-32 px-4", "fade-bottom overflow-hidden pb-0")}
     >
       <div className="mx-auto flex max-w-7xl flex-col gap-12 pt-16 sm:gap-24">
-        <div className="flex flex-col items-center gap-6 text-center sm:gap-12">
+        <div className="flex flex-col items-center gap-4 text-center sm:gap-8">
           {/* Badge */}
           {badge && (
             <Badge variant="outline" className="animate-appear gap-2">
@@ -58,12 +58,12 @@ export function HeroSection({ badge, title, description, actions, image }: HeroP
           )}
 
           {/* Title */}
-          <h1 className="relative z-10 inline-block animate-appear text-4xl font-semibold leading-tight bg-gradient-to-br from-gray-800 via-gray-700 to-gray-500 bg-clip-text text-transparent drop-shadow-2xl sm:text-6xl sm:leading-tight md:text-8xl md:leading-tight">
+          <h1 className="relative z-10 inline-block animate-appear text-3xl font-semibold leading-tight bg-gradient-to-br from-gray-800 via-gray-700 to-gray-500 bg-clip-text text-transparent drop-shadow-2xl sm:text-5xl sm:leading-tight md:text-6xl md:leading-tight">
             {title}
           </h1>
 
           {/* Description */}
-          <p className="text-md relative z-10 max-w-[550px] animate-appear font-medium text-gray-600 opacity-0 delay-100 sm:text-xl">
+          <p className="text-sm relative z-10 max-w-[500px] animate-appear font-medium text-gray-600 opacity-0 delay-100 sm:text-lg">
             {description}
           </p>
 
@@ -80,7 +80,7 @@ export function HeroSection({ badge, title, description, actions, image }: HeroP
           </div>
 
           {/* Asymetryczny grid ze zdjęciami */}
-          <div className="relative pt-12 w-full max-w-6xl">
+          <div className="relative pt-8 w-full max-w-6xl">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 animate-appear opacity-0 delay-700">
               {/* Duże zdjęcie - zajmuje 2 kolumny */}
               <div className="col-span-2 row-span-2">
