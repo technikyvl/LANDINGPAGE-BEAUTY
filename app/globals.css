@@ -312,6 +312,11 @@
     hsla(31, 97%, 72%, 0.3) 35%, 
     hsla(27, 96%, 61%, 0.2) 55%, 
     hsla(27, 96%, 61%, 0) 85%);
+  
+  /* Biały kolor jak ściana - ciepły, naturalny biały */
+  --wall-white: #fefefe;
+  --wall-white-warm: #fdfcfb;
+  --wall-white-soft: #faf9f8;
 }
 
 /* Hero Section - bleed setup */
@@ -374,4 +379,25 @@ header.sticky {
   margin-top: -24vh;
   background: var(--hero-gradient);
   pointer-events: none;
+}
+
+/* Globalne tła sekcji - biały jak ściana */
+section {
+  background: var(--wall-white) !important;
+}
+
+/* Różne odcienie białego dla różnych sekcji */
+#hero {
+  background: var(--wall-white-warm);
+}
+
+#hero + section {
+  background: var(--wall-white-soft) !important;
+}
+
+/* Karty w sekcjach - czystszy biały */
+.card, .box, .t-card {
+  background: #ffffff !important;
+  border: 1px solid #f0f0f0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
