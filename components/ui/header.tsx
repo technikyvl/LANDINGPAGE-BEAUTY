@@ -23,18 +23,15 @@ export function Header({ className }: HeaderProps) {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out",
+        "fixed top-0 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-500 ease-in-out",
         "bg-white/95 backdrop-blur-sm",
         isScrolled
-          ? "shadow-lg"
-          : "",
+          ? "mt-4 rounded-3xl shadow-lg w-1/2"
+          : "w-full",
         className
       )}
     >
-      <div className={cn(
-        "container mx-auto px-6 transition-all duration-500 ease-in-out",
-        isScrolled ? "py-2" : "py-4"
-      )}>
+      <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center space-x-3">
