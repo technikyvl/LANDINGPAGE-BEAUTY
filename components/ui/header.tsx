@@ -32,10 +32,7 @@ export function Header({ className }: HeaderProps) {
       )}
     >
       <div className="container mx-auto px-6 py-4">
-        <div className={cn(
-          "flex items-center justify-between",
-          isScrolled ? "scale-x-200" : ""
-        )}>
+        <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center space-x-2">
             <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
@@ -44,43 +41,10 @@ export function Header({ className }: HeaderProps) {
             <span className="text-xl font-semibold text-gray-900">Beauty</span>
           </div>
 
-          {/* Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
-            <a
-              href="#home"
-              className="text-gray-700 hover:text-gray-900 transition-colors duration-200"
-            >
-              Home
-            </a>
-            <a
-              href="#about"
-              className="text-gray-700 hover:text-gray-900 transition-colors duration-200"
-            >
-              About
-            </a>
-            <a
-              href="#services"
-              className="text-gray-700 hover:text-gray-900 transition-colors duration-200"
-            >
-              Services
-            </a>
-            <a
-              href="#contact"
-              className="text-gray-700 hover:text-gray-900 transition-colors duration-200"
-            >
-              Contact
-            </a>
-          </nav>
-
           {/* CTA Button */}
-          <div className="flex items-center space-x-4">
-            <button className="hidden sm:inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors duration-200">
-              Sign In
-            </button>
-            <button className="inline-flex items-center px-6 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white text-sm font-medium rounded-full hover:from-blue-600 hover:to-purple-700 transition-all duration-200 shadow-md hover:shadow-lg">
-              Get Started
-            </button>
-          </div>
+          <button className="inline-flex items-center px-6 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white text-sm font-medium rounded-full hover:from-blue-600 hover:to-purple-700 transition-all duration-200 shadow-md hover:shadow-lg">
+            Get Started
+          </button>
         </div>
       </div>
     </header>
