@@ -44,28 +44,28 @@ export function Header({ className }: HeaderProps) {
           {/* Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             <a
-              href="#problem"
+              href="#home"
               className="text-gray-700 hover:text-gray-900 transition-colors duration-200"
             >
-              Problem
+              Home
             </a>
             <a
-              href="#solution"
+              href="#about"
               className="text-gray-700 hover:text-gray-900 transition-colors duration-200"
             >
-              Rozwiązanie
+              About
             </a>
             <a
-              href="#pricing"
+              href="#services"
               className="text-gray-700 hover:text-gray-900 transition-colors duration-200"
             >
-              Cennik
+              Services
             </a>
             <a
               href="#contact"
               className="text-gray-700 hover:text-gray-900 transition-colors duration-200"
             >
-              Kontakt
+              Contact
             </a>
           </nav>
 

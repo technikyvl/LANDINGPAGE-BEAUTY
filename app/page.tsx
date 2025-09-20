@@ -17,7 +17,7 @@ export default function HomePage() {
             href: "/docs",
           },
         }}
-        title="Nowi klienci dla Twojego salonu beauty."
+        title="Build faster with beautiful components"
         description="Premium UI components built with React and Tailwind CSS. Save time and ship your next project faster with our ready-to-use components."
         actions={[
           {
