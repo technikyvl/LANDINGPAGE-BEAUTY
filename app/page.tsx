@@ -9,24 +9,24 @@ export default function HomePage() {
   return (
     <>
       <Header />
-      <main className="min-h-screen">
+    <main className="min-h-screen">
         {/* Hero Section */}
-        <HeroSection
+      <HeroSection
           title="Nowi klienci dla Twojego salonu beauty."
           description="Budujemy systemy marketingowe, które zwiększają liczbę rezerwacji i budują lojalność klientek. Specjalizujemy się wyłącznie w branży beauty."
-          actions={[
-            {
+        actions={[
+          {
               text: "Umów konsultację",
               href: "#contact",
-              variant: "default",
-            },
-            {
+            variant: "default",
+          },
+          {
               text: "Zobacz cennik",
               href: "#pricing",
-              variant: "glow",
-              icon: <Icons.gitHub className="h-5 w-5" />,
-            },
-          ]}
+            variant: "glow",
+            icon: <Icons.gitHub className="h-5 w-5" />,
+          },
+        ]}
         />
 
         {/* Features Section */}
@@ -37,7 +37,7 @@ export default function HomePage() {
               <div className="text-8xl md:text-9xl font-bold text-gray-200 absolute -top-4 -left-4 select-none">
                 01
               </div>
-              <h2 className="relative z-10 text-4xl md:text-5xl lg:text-6xl font-bold text-black uppercase tracking-wide">
+              <h2 className="relative z-10 text-4xl font-semibold leading-tight bg-gradient-to-br from-gray-800 via-gray-700 to-gray-500 bg-clip-text text-transparent drop-shadow-2xl sm:text-6xl sm:leading-tight md:text-7xl md:leading-tight">
                 MARKETING BEAUTY
               </h2>
             </div>
@@ -123,16 +123,16 @@ export default function HomePage() {
                   <div className="text-8xl md:text-9xl font-bold text-orange-200 absolute -top-4 -left-4 select-none">
                     02
                   </div>
-                  <h2 className="relative z-10 text-4xl md:text-5xl lg:text-6xl font-bold text-white uppercase tracking-wide mb-6">
+                  <h2 className="relative z-10 text-4xl font-semibold leading-tight bg-gradient-to-br from-gray-800 via-gray-700 to-gray-500 bg-clip-text text-transparent drop-shadow-2xl sm:text-6xl sm:leading-tight md:text-7xl md:leading-tight mb-6">
                     PAKIETY MARKETINGOWE
                   </h2>
                 </div>
                 
-                <h3 className="text-2xl md:text-3xl font-bold text-orange-800 mb-4">
+                <h3 className="text-sm relative z-10 max-w-[500px] font-medium text-gray-600 opacity-0 delay-100 sm:text-lg mb-4">
                   Kompleksowe rozwiązania marketingowe dla salonów beauty - bez ukrytych kosztów!
                 </h3>
                 
-                <p className="text-orange-200 text-lg mb-8">
+                <p className="text-sm relative z-10 max-w-[500px] font-medium text-gray-600 opacity-0 delay-100 sm:text-lg mb-8">
                   Zwiększ liczbę klientek i przychody swojego salonu beauty dzięki profesjonalnym kampaniom reklamowym, pozycjonowaniu SEO i nowoczesnej stronie internetowej.
                 </p>
                 
@@ -200,16 +200,16 @@ export default function HomePage() {
                   <div className="text-8xl md:text-9xl font-bold text-gray-200 absolute -top-4 -left-4 select-none">
                     03
                   </div>
-                  <h2 className="relative z-10 text-4xl md:text-5xl lg:text-6xl font-bold text-black uppercase tracking-wide">
+                  <h2 className="relative z-10 text-4xl font-semibold leading-tight bg-gradient-to-br from-gray-800 via-gray-700 to-gray-500 bg-clip-text text-transparent drop-shadow-2xl sm:text-6xl sm:leading-tight md:text-7xl md:leading-tight">
                     USŁUGI MARKETINGOWE
                   </h2>
                 </div>
                 
-                <h3 className="text-2xl md:text-3xl font-bold text-black mb-6">
+                <h3 className="text-sm relative z-10 max-w-[500px] font-medium text-gray-600 opacity-0 delay-100 sm:text-lg mb-6">
                   Kompleksowe usługi marketingowe, które pomogą Ci zwiększyć liczbę klientek
                 </h3>
                 
-                <p className="text-gray-600 text-lg leading-relaxed">
+                <p className="text-sm relative z-10 max-w-[500px] font-medium text-gray-600 opacity-0 delay-100 sm:text-lg">
                   Specjalizujemy się w marketingu dla branży beauty. Nasze rozwiązania pomagają salonom kosmetycznym, fryzjerskim i SPA zwiększyć liczbę rezerwacji i budować lojalność klientek.
                 </p>
               </div>
@@ -301,7 +301,7 @@ export default function HomePage() {
         
         {/* Testimonials Marquee JS */}
         <TestimonialsMarqueeSection />
-      </main>
+    </main>
     </>
   )
 }
