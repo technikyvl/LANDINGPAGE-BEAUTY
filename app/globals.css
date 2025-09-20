@@ -322,7 +322,7 @@
 /* Hero Section - bleed setup */
 #hero {
   position: relative;
-  background: var(--hero-gradient);
+  background: var(--wall-white) !important;
   overflow: visible;     /* kluczowe: nic nie ucina ::after */
   isolation: isolate;
   z-index: 1;
@@ -336,7 +336,7 @@
   right: -10vw;   /* delikatny nadlew */
   bottom: -28vh;  /* jak daleko wchodzi pod kolejną sekcję */
   height: 40vh;   /* wysokość „ogona" */
-  background: inherit;  /* DZIEDZICZY background z #hero */
+  background: var(--wall-white);  /* Ten sam biały co Hero */
   pointer-events: none;
   z-index: 0;
 }
@@ -381,23 +381,58 @@ header.sticky {
   pointer-events: none;
 }
 
-/* Globalne tła sekcji - biały jak ściana */
+/* Jednolite tło dla całej strony - usunięcie podziałów sekcji */
 section {
   background: var(--wall-white) !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+  box-shadow: none !important;
 }
 
-/* Różne odcienie białego dla różnych sekcji */
+/* Hero sekcja - bez podziałów */
 #hero {
-  background: var(--wall-white-warm);
+  background: var(--wall-white) !important;
+  padding-top: 2rem !important;
+  padding-bottom: 2rem !important;
+  margin: 0 !important;
 }
 
-#hero + section {
-  background: var(--wall-white-soft) !important;
+/* Wszystkie sekcje po Hero - bez podziałów */
+#hero + section,
+section:not(#hero) {
+  background: var(--wall-white) !important;
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+  margin: 0 !important;
+  border: none !important;
+  box-shadow: none !important;
 }
 
-/* Karty w sekcjach - czystszy biały */
+/* Usunięcie wizualnych podziałów między sekcjami */
+section + section {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  border-top: none !important;
+}
+
+/* Karty w sekcjach - czystszy biały z subtelnym cieniem */
 .card, .box, .t-card {
   background: #ffffff !important;
   border: 1px solid #f0f0f0;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  margin: 1rem 0 !important;
+}
+
+/* Usunięcie dodatkowych odstępów w kontenerach */
+.container, .mx-auto {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* Spójne odstępy między elementami */
+section > div {
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
 }
