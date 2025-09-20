@@ -36,7 +36,7 @@ export function ProblemSection({ data }: ProblemSectionProps) {
     <section
       id="problem"
       ref={ref}
-      className="py-16 md:py-24 bg-white"
+      className="py-16 md:py-24 bg-gradient-to-b from-orange-50/20 to-white"
     >
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center">
