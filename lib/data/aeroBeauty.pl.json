@@ -1,0 +1,200 @@
+{
+  "sections": {
+    "problem": {
+      "title": "Masz wolne terminy, a Booksy nie wystarcza?",
+      "problems": [
+        "Klientki wracają rzadziej niż powinny",
+        "Promocje giną wśród konkurencji", 
+        "Baza kontaktów nie pracuje"
+      ],
+      "promise": "Budujemy system, który zbiera bazę klientek i zamienia ją w stałe rezerwacje."
+    },
+    "solution": {
+      "title": "Dwa filary naszego systemu",
+      "pillar1": {
+        "title": "Filar 1: System przyciągania klientek",
+        "items": [
+          "Strony www dopasowane do beauty",
+          "SEO/pozycjonowanie",
+          "Kampanie Meta i Google"
+        ]
+      },
+      "pillar2": {
+        "title": "Filar 2: Spieniężanie bazy",
+        "items": [
+          "Email marketing (cykle i promocje)",
+          "SMS marketing (last minute, urodzinowe)"
+        ]
+      }
+    },
+    "process": {
+      "title": "Jak to działa — 3 kroki",
+      "steps": [
+        {
+          "number": 1,
+          "title": "Strona + kampanie → ruch i leady"
+        },
+        {
+          "number": 2,
+          "title": "Zbieranie bazy (Booksy, strona, social)"
+        },
+        {
+          "number": 3,
+          "title": "Automatyzacje email/SMS → rezerwacje"
+        }
+      ]
+    },
+    "pricing": {
+      "title": "Pakiety / Cennik",
+      "packages": [
+        {
+          "name": "Starter Beauty",
+          "description": "Strona + podstawowy marketing",
+          "price": "od 1 990 zł",
+          "features": [
+            "Strona internetowa dopasowana do beauty",
+            "Podstawowe SEO",
+            "Integracja z Booksy",
+            "Kampanie Google Ads (setup)"
+          ],
+          "popular": false
+        },
+        {
+          "name": "Growth Beauty",
+          "description": "Strona + kampanie + proste maile",
+          "price": "od 2 990 zł",
+          "features": [
+            "Wszystko z pakietu Starter",
+            "Kampanie Meta Ads",
+            "Email marketing (2 cykle/miesiąc)",
+            "Raportowanie miesięczne",
+            "Wsparcie techniczne"
+          ],
+          "popular": true
+        },
+        {
+          "name": "All-in-One Beauty System",
+          "description": "Strona + kampanie + email + SMS + automatyzacje + raporty",
+          "price": "od 4 990 zł",
+          "features": [
+            "Wszystko z pakietu Growth",
+            "SMS marketing",
+            "Automatyzacje urodzinowe",
+            "Zaawansowane segmentacje",
+            "Dedykowany manager",
+            "Raportowanie tygodniowe"
+          ],
+          "popular": false
+        }
+      ]
+    },
+    "case": {
+      "title": "700 zgód marketingowych na Booksy → 60% powrotów w 2 miesiące",
+      "kpis": [
+        "+200 rezerwacji / 8 tyg.",
+        "CTR email 28%",
+        "ROI SMS 9×"
+      ],
+      "story": "Salon 'Beauty Dreams' w Warszawie miał problem z powracającymi klientkami. Po 2 miesiącach wdrożenia naszego systemu, udało się zwiększyć liczbę rezerwacji o 200 w ciągu 8 tygodni. Kluczem był spersonalizowany email marketing i SMS-y wysyłane w odpowiednim momencie.",
+      "testimonial": {
+        "text": "Dzięki Aero Digital mamy stały strumień nowych klientek i nasze stałe klientki wracają częściej. System działa 24/7, a my możemy skupić się na tym, co robimy najlepiej.",
+        "author": "Anna Kowalska",
+        "role": "Właścicielka, Beauty Dreams"
+      }
+    },
+    "trust": {
+      "title": "Dlaczego my",
+      "features": [
+        {
+          "title": "Specjalizacja: tylko beauty",
+          "description": "Znamy branżę od podszewki"
+        },
+        {
+          "title": "Budujemy systemy, nie tylko strony",
+          "description": "Kompleksowe rozwiązania marketingowe"
+        },
+        {
+          "title": "Automatyzacje pracujące za Ciebie",
+          "description": "System działa 24/7"
+        }
+      ],
+      "integrations": ["Meta Ads", "Google", "Booksy", "Instantly"]
+    },
+    "cta": {
+      "title": "Każdy dzień bez systemu to utracone rezerwacje.",
+      "buttons": [
+        {
+          "text": "Umów darmową konsultację",
+          "href": "#contact"
+        },
+        {
+          "text": "Zobacz pakiety",
+          "href": "#pricing"
+        }
+      ]
+    },
+    "faq": {
+      "title": "Najczęściej zadawane pytania",
+      "items": [
+        {
+          "question": "Czy to działa, jeśli mam już stronę na Booksy?",
+          "answer": "Tak. Integrujemy Booksy i uruchamiamy kampanie, które realnie sprzedają."
+        },
+        {
+          "question": "Czy email marketing nie zirytuje klientek?",
+          "answer": "Wysyłamy rzadziej, za to trafniej — segmentacja i wartościowe treści."
+        },
+        {
+          "question": "Kiedy zobaczę efekty?",
+          "answer": "Pierwsze rezerwacje zwykle po 2–4 tygodniach, pełny efekt po 6–12 tygodniach."
+        },
+        {
+          "question": "Czy mogę zacząć od jednego elementu?",
+          "answer": "Tak — działamy modułowo: od samej strony po kompletny system."
+        }
+      ]
+    },
+    "contact": {
+      "title": "Umów konsultację",
+      "form": {
+        "fields": {
+          "name": {
+            "label": "Imię i nazwisko",
+            "placeholder": "Wprowadź imię i nazwisko",
+            "required": true
+          },
+          "email": {
+            "label": "Adres e-mail",
+            "placeholder": "Wprowadź adres e-mail",
+            "required": true
+          },
+          "phone": {
+            "label": "Telefon",
+            "placeholder": "Wprowadź numer telefonu",
+            "required": true
+          },
+          "salon": {
+            "label": "Nazwa salonu",
+            "placeholder": "Wprowadź nazwę salonu"
+          },
+          "message": {
+            "label": "Wiadomość",
+            "placeholder": "Opisz swoje potrzeby...",
+            "required": true
+          }
+        },
+        "submit": "Wyślij wiadomość",
+        "success": "Dziękujemy! Odezwiemy się w ciągu 24 godzin."
+      },
+      "consultation": {
+        "title": "Umów konsultację",
+        "benefits": [
+          "Bezpłatna analiza Twojego salonu",
+          "Indywidualne rekomendacje",
+          "Szacunkowy ROI systemu"
+        ],
+        "button": "Umów spotkanie"
+      }
+    }
+  }
+}
