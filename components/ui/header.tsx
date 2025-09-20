@@ -44,6 +44,12 @@ export function Header({ className }: HeaderProps) {
           {/* Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             <a
+              href="#logos"
+              className="text-gray-700 hover:text-gray-900 transition-colors duration-200"
+            >
+              Partnerzy
+            </a>
+            <a
               href="#problem"
               className="text-gray-700 hover:text-gray-900 transition-colors duration-200"
             >
