@@ -38,7 +38,7 @@ export function CTASection({ data }: CTASectionProps) {
     <section
       id="cta"
       ref={ref}
-      className="py-16 md:py-24 bg-gradient-to-br from-blue-50 to-indigo-50"
+      className="py-16 md:py-24 bg-white"
     >
       <div className="container mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <div
@@ -49,7 +49,7 @@ export function CTASection({ data }: CTASectionProps) {
               : "opacity-0 translate-y-8"
           )}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+          <h2 className="text-3xl md:text-4xl font-semibold leading-tight bg-gradient-to-br from-gray-800 via-gray-700 to-gray-500 bg-clip-text text-transparent drop-shadow-2xl mb-8 animate-appear">
             {data.title}
           </h2>
           

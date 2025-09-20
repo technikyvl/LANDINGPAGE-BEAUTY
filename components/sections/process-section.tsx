@@ -38,11 +38,11 @@ export function ProcessSection({ data }: ProcessSectionProps) {
     <section
       id="process"
       ref={ref}
-      className="py-16 md:py-24 bg-gradient-to-br from-gray-50 to-white"
+      className="py-16 md:py-24 bg-white"
     >
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight bg-gradient-to-br from-gray-800 via-gray-700 to-gray-500 bg-clip-text text-transparent drop-shadow-2xl mb-6 animate-appear">
             {data.title}
           </h2>
         </div>
