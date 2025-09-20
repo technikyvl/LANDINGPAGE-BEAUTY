@@ -1,12 +1,15 @@
 "use client"
 
 import { HeroSection } from "@/components/ui/hero-section"
+import { Header } from "@/components/ui/header"
 import { Icons } from "@/components/ui/icons"
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen">
-      <HeroSection
+    <>
+      <Header />
+      <main className="min-h-screen">
+        <HeroSection
         badge={{
           text: "Introducing our new components",
           action: {
@@ -35,6 +38,7 @@ export default function HomePage() {
           alt: "Modern Dashboard Interface",
         }}
       />
-    </main>
+      </main>
+    </>
   )
 }
