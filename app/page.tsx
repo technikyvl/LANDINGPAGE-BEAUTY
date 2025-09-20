@@ -80,14 +80,14 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div className="testimonials-mask paused overflow-hidden" style={{
+            <div className="testimonials-mask paused" style={{
               maskImage: 'linear-gradient(to bottom, transparent, #000 20%, #000 80%, transparent)',
               WebkitMaskImage: 'linear-gradient(to bottom, transparent, #000 20%, #000 80%, transparent)'
             }}>
-              <div className="columns grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-                <div className="column js-marquee flex flex-col gap-5" data-speed="15"></div>
-                <div className="column js-marquee flex flex-col gap-5" data-speed="19"></div>
-                <div className="column js-marquee flex flex-col gap-5" data-speed="17"></div>
+              <div className="columns">
+                <div className="column js-marquee" data-speed="15"></div>
+                <div className="column js-marquee" data-speed="19"></div>
+                <div className="column js-marquee" data-speed="17"></div>
               </div>
             </div>
           </div>

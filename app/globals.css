@@ -245,8 +245,57 @@
 
 .column.marquee {
   animation: marqueeY var(--marquee-duration, 16s) linear infinite;
+  min-height: 100vh; /* Zapewnia jednakową wysokość kolumn */
 }
 
 .paused:hover .marquee {
   animation-play-state: paused;
+}
+
+/* Synchronizacja kolumn - wszystkie kończą się w tym samym miejscu */
+.testimonials-mask {
+  height: 80vh; /* Ustala stałą wysokość kontenera */
+  position: relative;
+  display: flex;
+  align-items: stretch;
+}
+
+.columns {
+  height: 100%;
+  position: relative;
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: 1fr;
+  align-items: stretch;
+}
+
+@media (min-width: 768px) {
+  .columns {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .columns {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.column {
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  min-height: 0; /* Pozwala na prawidłowe skalowanie */
+}
+
+/* Zapewnia, że wszystkie karty mają jednakową wysokość */
+.t-card {
+  flex-shrink: 0; /* Zapobiega kurczeniu się kart */
+  min-height: 200px; /* Minimalna wysokość karty */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }

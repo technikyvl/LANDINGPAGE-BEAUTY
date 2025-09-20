@@ -80,10 +80,19 @@ export function TestimonialsMarqueeSection() {
 
     const cols = document.querySelectorAll('#opinie .column')
     if (!cols.length) return
-    const chunk = Math.ceil(DATA.length / cols.length)
+    
+    // Upewniamy się, że wszystkie kolumny mają jednakową liczbę kart
+    const cardsPerColumn = Math.ceil(DATA.length / cols.length)
+    const totalCards = cardsPerColumn * cols.length
+    const extendedData = [...DATA]
+    
+    // Jeśli nie mamy wystarczająco danych, powtarzamy je
+    while (extendedData.length < totalCards) {
+      extendedData.push(...DATA)
+    }
 
     cols.forEach((col, i) => {
-      const slice = DATA.slice(i * chunk, (i + 1) * chunk)
+      const slice = extendedData.slice(i * cardsPerColumn, (i + 1) * cardsPerColumn)
       const html = slice.map(card).join('')
       // duplikujemy content x2, aby animacja 50% była płynna
       col.innerHTML = html + html
