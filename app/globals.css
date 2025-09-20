@@ -183,7 +183,7 @@
 .t-card {
   max-width: 22rem;
   width: 100%;
-  margin-inline: auto;
+  margin: 0 auto; /* Wyśrodkowuje kartę w kolumnie */
   padding: 1.25rem 1.5rem;
   border: 1px solid #e5e7eb;
   border-radius: 1.25rem;
@@ -258,6 +258,7 @@
   position: relative;
   display: flex;
   align-items: stretch;
+  justify-content: center; /* Wyśrodkowuje całą siatkę */
 }
 
 .columns {
@@ -267,6 +268,9 @@
   gap: 1.25rem;
   grid-template-columns: 1fr;
   align-items: stretch;
+  justify-items: center; /* Wyśrodkowuje kolumny */
+  width: 100%;
+  max-width: 1200px; /* Maksymalna szerokość dla lepszego wyśrodkowania */
 }
 
 @media (min-width: 768px) {
@@ -289,6 +293,9 @@
   flex-direction: column;
   gap: 1.25rem;
   min-height: 0; /* Pozwala na prawidłowe skalowanie */
+  width: 100%;
+  max-width: 350px; /* Maksymalna szerokość kolumny */
+  margin: 0 auto; /* Wyśrodkowuje kolumnę */
 }
 
 /* Zapewnia, że wszystkie karty mają jednakową wysokość */
