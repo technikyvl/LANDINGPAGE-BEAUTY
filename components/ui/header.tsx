@@ -23,11 +23,11 @@ export function Header({ className }: HeaderProps) {
   return (
     <header
       className={cn(
-        "fixed top-0 z-50 transition-all duration-300 ease-in-out",
+        "fixed top-0 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-300 ease-in-out",
         "bg-white/95 backdrop-blur-sm",
         isScrolled
-          ? "left-1/2 transform -translate-x-1/2 mt-4 rounded-2xl shadow-lg w-1/2"
-          : "left-0 right-0 w-full",
+          ? "mt-4 rounded-2xl shadow-lg w-1/2"
+          : "w-full",
         className
       )}
     >
