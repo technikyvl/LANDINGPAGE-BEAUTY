@@ -31,47 +31,71 @@ export function Header({ className }: HeaderProps) {
         className
       )}
     >
-      <div className="container mx-auto px-6 py-4">
+      <div className={cn(
+        "container mx-auto px-6 transition-all duration-500 ease-in-out",
+        isScrolled ? "py-2" : "py-4"
+      )}>
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center space-x-3">
             <img
               src="/AERO DIGITAL (7).png"
               alt="Aero Digital Logo"
-              className="h-20 w-auto"
+              className={cn(
+                "w-auto transition-all duration-500 ease-in-out",
+                isScrolled ? "h-12" : "h-20"
+              )}
             />
           </div>
 
           {/* Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className={cn(
+            "hidden md:flex items-center transition-all duration-500 ease-in-out",
+            isScrolled ? "space-x-6" : "space-x-8"
+          )}>
             <a
               href="#problem"
-              className="text-gray-700 hover:text-gray-900 transition-colors duration-200"
+              className={cn(
+                "text-gray-700 hover:text-gray-900 transition-all duration-200",
+                isScrolled ? "text-sm" : "text-base"
+              )}
             >
               Problem
             </a>
             <a
               href="#solution"
-              className="text-gray-700 hover:text-gray-900 transition-colors duration-200"
+              className={cn(
+                "text-gray-700 hover:text-gray-900 transition-all duration-200",
+                isScrolled ? "text-sm" : "text-base"
+              )}
             >
               Rozwiązanie
             </a>
             <a
               href="#pricing"
-              className="text-gray-700 hover:text-gray-900 transition-colors duration-200"
+              className={cn(
+                "text-gray-700 hover:text-gray-900 transition-all duration-200",
+                isScrolled ? "text-sm" : "text-base"
+              )}
             >
               Cennik
             </a>
             <a
               href="#contact"
-              className="text-gray-700 hover:text-gray-900 transition-colors duration-200"
+              className={cn(
+                "text-gray-700 hover:text-gray-900 transition-all duration-200",
+                isScrolled ? "text-sm" : "text-base"
+              )}
             >
               Kontakt
             </a>
           </nav>
 
           {/* CTA Button */}
-          <button className="inline-flex items-center px-6 py-2 bg-gradient-to-r from-blue-500 to-blue-600 text-white text-sm font-medium rounded-full hover:from-blue-600 hover:to-blue-700 transition-all duration-200 shadow-md hover:shadow-lg">
+          <button className={cn(
+            "inline-flex items-center bg-gradient-to-r from-blue-500 to-blue-600 text-white font-medium rounded-full hover:from-blue-600 hover:to-blue-700 transition-all duration-500 ease-in-out shadow-md hover:shadow-lg",
+            isScrolled ? "px-4 py-1.5 text-xs" : "px-6 py-2 text-sm"
+          )}>
             Get Started
           </button>
         </div>
