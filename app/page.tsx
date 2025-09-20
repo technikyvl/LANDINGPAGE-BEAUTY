@@ -27,11 +27,6 @@ export default function HomePage() {
               icon: <Icons.gitHub className="h-5 w-5" />,
             },
           ]}
-          image={{
-            light: "/modern-dashboard-interface-light-theme.jpg",
-            dark: "/modern-dashboard-interface-dark-theme.jpg",
-            alt: "System marketingowy dla salonów beauty",
-          }}
         />
 
         {/* Opinie klientów - Marquee */}

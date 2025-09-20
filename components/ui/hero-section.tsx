@@ -5,10 +5,6 @@ import type React from "react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { ArrowRightIcon } from "lucide-react"
-import { Mockup, MockupFrame } from "@/components/ui/mockup"
-import { Glow } from "@/components/ui/glow"
-import Image from "next/image"
-import { useTheme } from "next-themes"
 import { cn } from "@/lib/utils"
 
 interface HeroAction {
@@ -29,16 +25,9 @@ interface HeroProps {
   title: string
   description: string
   actions: HeroAction[]
-  image: {
-    light: string
-    dark: string
-    alt: string
-  }
 }
 
-export function HeroSection({ badge, title, description, actions, image }: HeroProps) {
-  const { resolvedTheme } = useTheme()
-  const imageSrc = resolvedTheme === "light" ? image.light : image.dark
+export function HeroSection({ badge, title, description, actions }: HeroProps) {
 
   return (
     <section
@@ -80,72 +69,6 @@ export function HeroSection({ badge, title, description, actions, image }: HeroP
             ))}
           </div>
 
-          {/* Asymetryczny grid ze zdjęciami */}
-          <div className="relative pt-8 w-full max-w-6xl">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 animate-appear opacity-0 delay-700">
-              {/* Duże zdjęcie - zajmuje 2 kolumny */}
-              <div className="col-span-2 row-span-2">
-                <div className="relative h-64 md:h-80 rounded-2xl overflow-hidden shadow-lg">
-                  <Image
-                    src="/placeholder.jpg"
-                    alt="Główne zdjęcie salonu beauty"
-                    fill
-                    className="object-cover"
-                    priority
-                  />
-                </div>
-              </div>
-              
-              {/* Małe zdjęcie 1 */}
-              <div className="col-span-1">
-                <div className="relative h-32 rounded-2xl overflow-hidden shadow-lg">
-                  <Image
-                    src="/placeholder.jpg"
-                    alt="Zdjęcie 1 - salon beauty"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-              </div>
-              
-              {/* Małe zdjęcie 2 */}
-              <div className="col-span-1">
-                <div className="relative h-32 rounded-2xl overflow-hidden shadow-lg">
-                  <Image
-                    src="/placeholder.jpg"
-                    alt="Zdjęcie 2 - salon beauty"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-              </div>
-              
-              {/* Małe zdjęcie 3 */}
-              <div className="col-span-1">
-                <div className="relative h-32 rounded-2xl overflow-hidden shadow-lg">
-                  <Image
-                    src="/placeholder.jpg"
-                    alt="Zdjęcie 3 - salon beauty"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-              </div>
-              
-              {/* Małe zdjęcie 4 */}
-              <div className="col-span-1">
-                <div className="relative h-32 rounded-2xl overflow-hidden shadow-lg">
-                  <Image
-                    src="/placeholder.jpg"
-                    alt="Zdjęcie 4 - salon beauty"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-              </div>
-            </div>
-            <Glow variant="top" className="animate-appear-zoom opacity-0 delay-1000" />
-          </div>
         </div>
       </div>
     </section>
