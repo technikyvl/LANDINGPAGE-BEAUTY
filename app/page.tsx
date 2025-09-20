@@ -30,11 +30,11 @@ export default function HomePage() {
         />
 
         {/* Features Section */}
-        <section id="features" className="py-16 md:py-24 bg-white">
+        <section id="features" className="py-24 md:py-32 lg:py-40 bg-white">
           <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             {/* Header */}
-            <div className="relative mb-16">
-              <div className="text-8xl md:text-9xl font-bold text-gray-200 absolute -top-4 -left-4 select-none">
+            <div className="relative mb-20">
+              <div className="text-8xl md:text-9xl font-bold text-gray-200 absolute -top-8 -left-4 select-none">
                 01
               </div>
               <h2 className="relative z-10 text-4xl font-semibold leading-tight bg-gradient-to-br from-gray-800 via-gray-700 to-gray-500 bg-clip-text text-transparent drop-shadow-2xl sm:text-6xl sm:leading-tight md:text-7xl md:leading-tight">
@@ -114,13 +114,13 @@ export default function HomePage() {
         </section>
 
         {/* Pricing Section */}
-        <section id="pricing" className="py-16 md:py-24 bg-orange-500">
+        <section id="pricing" className="py-24 md:py-32 lg:py-40 bg-orange-500">
           <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col lg:flex-row items-center justify-between">
               {/* Left Side - Header */}
-              <div className="lg:w-1/2 mb-12 lg:mb-0">
+              <div className="lg:w-1/2 mb-16 lg:mb-0">
                 <div className="relative">
-                  <div className="text-8xl md:text-9xl font-bold text-orange-200 absolute -top-4 -left-4 select-none">
+                  <div className="text-8xl md:text-9xl font-bold text-orange-200 absolute -top-8 -left-4 select-none">
                     02
                   </div>
                   <h2 className="relative z-10 text-4xl font-semibold leading-tight bg-gradient-to-br from-gray-800 via-gray-700 to-gray-500 bg-clip-text text-transparent drop-shadow-2xl sm:text-6xl sm:leading-tight md:text-7xl md:leading-tight mb-6">
@@ -191,13 +191,13 @@ export default function HomePage() {
         </section>
 
         {/* Services Section */}
-        <section id="services" className="py-16 md:py-24 bg-white">
+        <section id="services" className="py-24 md:py-32 lg:py-40 bg-white">
           <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col lg:flex-row items-start justify-between gap-12">
+            <div className="flex flex-col lg:flex-row items-start justify-between gap-16">
               {/* Left Side - Header */}
               <div className="lg:w-1/2">
-                <div className="relative mb-8">
-                  <div className="text-8xl md:text-9xl font-bold text-gray-200 absolute -top-4 -left-4 select-none">
+                <div className="relative mb-12">
+                  <div className="text-8xl md:text-9xl font-bold text-gray-200 absolute -top-8 -left-4 select-none">
                     03
                   </div>
                   <h2 className="relative z-10 text-4xl font-semibold leading-tight bg-gradient-to-br from-gray-800 via-gray-700 to-gray-500 bg-clip-text text-transparent drop-shadow-2xl sm:text-6xl sm:leading-tight md:text-7xl md:leading-tight">
