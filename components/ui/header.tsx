@@ -38,7 +38,7 @@ export function Header({ className }: HeaderProps) {
             <img
               src="/AERO DIGITAL (7).png"
               alt="Aero Digital Logo"
-              className="h-16 w-auto"
+              className="h-20 w-auto"
             />
           </div>
 

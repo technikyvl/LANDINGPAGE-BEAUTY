@@ -23,13 +23,6 @@ export default function HomePage() {
       <main className="min-h-screen">
         {/* Hero Section - nie modyfikujemy */}
         <HeroSection
-          badge={{
-            text: "Specjalizacja: tylko beauty",
-            action: {
-              text: "Dowiedz się więcej",
-              href: "#problem",
-            },
-          }}
           title="Nowi klienci dla Twojego salonu beauty."
           description="Budujemy systemy marketingowe, które zwiększają liczbę rezerwacji i budują lojalność klientek. Specjalizujemy się wyłącznie w branży beauty."
           actions={[

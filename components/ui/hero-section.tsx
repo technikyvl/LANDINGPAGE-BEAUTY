@@ -42,7 +42,7 @@ export function HeroSection({ badge, title, description, actions, image }: HeroP
 
   return (
     <section
-      className={cn("bg-white text-foreground", "py-12 sm:py-24 md:py-32 px-4", "fade-bottom overflow-hidden pb-0")}
+      className={cn("bg-white text-foreground", "py-12 sm:py-24 md:py-32 px-4", "overflow-hidden pb-0")}
     >
       <div className="mx-auto flex max-w-7xl flex-col gap-12 pt-16 sm:gap-24">
         <div className="flex flex-col items-center gap-4 text-center sm:gap-8">
@@ -58,7 +58,7 @@ export function HeroSection({ badge, title, description, actions, image }: HeroP
           )}
 
           {/* Title */}
-          <h1 className="relative z-10 inline-block animate-appear text-3xl font-semibold leading-tight bg-gradient-to-br from-gray-800 via-gray-700 to-gray-500 bg-clip-text text-transparent drop-shadow-2xl sm:text-5xl sm:leading-tight md:text-6xl md:leading-tight">
+          <h1 className="relative z-10 inline-block animate-appear text-4xl font-semibold leading-tight bg-gradient-to-br from-gray-800 via-gray-700 to-gray-500 bg-clip-text text-transparent drop-shadow-2xl sm:text-6xl sm:leading-tight md:text-7xl md:leading-tight">
             {title}
           </h1>
 
