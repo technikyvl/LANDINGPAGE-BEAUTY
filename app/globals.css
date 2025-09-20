@@ -319,20 +319,41 @@
   justify-content: center;
   box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
   margin: 0 auto;
+  
+  /* Animowany neon border */
+  background: linear-gradient(45deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3, #ff0000);
+  background-size: 400% 400%;
+  animation: neon-border 3s ease-in-out infinite;
+  padding: 3px;
+}
+
+.pricing-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 14px;
+  background: linear-gradient(45deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3, #ff0000);
+  background-size: 400% 400%;
+  animation: neon-border 3s ease-in-out infinite;
+  z-index: -1;
+  filter: blur(2px);
+  opacity: 0.8;
 }
 
 .pricing-card .bg {
   position: absolute;
-  top: 5px;
-  left: 5px;
-  width: calc(100% - 10px);
-  height: calc(100% - 10px);
+  top: 3px;
+  left: 3px;
+  width: calc(100% - 6px);
+  height: calc(100% - 6px);
   z-index: 2;
   background: rgba(255, 255, 255, .95);
   backdrop-filter: blur(24px);
-  border-radius: 10px;
+  border-radius: 11px;
   overflow: hidden;
-  outline: 2px solid white;
   display: flex;
   flex-direction: column;
   padding: 2rem;
@@ -374,6 +395,19 @@
   }
 }
 
+/* Animacja neon border - przemieszczający się gradient */
+@keyframes neon-border {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 /* Różne kolory blobów dla różnych pakietów */
 .pricing-card.starter .blob {
   background-color: #3b82f6; /* Blue */
@@ -385,5 +419,30 @@
 
 .pricing-card.all-in-one .blob {
   background-color: #8b5cf6; /* Purple */
+}
+
+/* Różne opóźnienia animacji neon border dla każdej karty */
+.pricing-card:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.pricing-card:nth-child(2) {
+  animation-delay: 1s;
+}
+
+.pricing-card:nth-child(3) {
+  animation-delay: 2s;
+}
+
+.pricing-card:nth-child(1)::before {
+  animation-delay: 0s;
+}
+
+.pricing-card:nth-child(2)::before {
+  animation-delay: 1s;
+}
+
+.pricing-card:nth-child(3)::before {
+  animation-delay: 2s;
 }
 
