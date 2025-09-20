@@ -2,28 +2,15 @@
 
 import { HeroSection } from "@/components/ui/hero-section"
 import { Header } from "@/components/ui/header"
-import { ProblemSection } from "@/components/sections/problem-section"
-import { SolutionSection } from "@/components/sections/solution-section"
-import { ProcessSection } from "@/components/sections/process-section"
-import { PricingSection } from "@/components/sections/pricing-section"
-import { CaseSection } from "@/components/sections/case-section"
-import { TrustSection } from "@/components/sections/trust-section"
-import { TestimonialsSection } from "@/components/sections/testimonials-section"
-import { TestimonialsCarouselSection } from "@/components/sections/testimonials-carousel-section"
 import { TestimonialsMarqueeSection } from "@/components/sections/testimonials-marquee-section"
-import { CTASection } from "@/components/sections/cta-section"
-import { FAQSection } from "@/components/sections/faq-section"
-import { ContactSection } from "@/components/sections/contact-section"
-import { Footer } from "@/components/sections/footer"
 import { Icons } from "@/components/ui/icons"
-import aeroBeautyData from "@/lib/data/aeroBeauty.pl.json"
 
 export default function HomePage() {
   return (
     <>
       <Header />
       <main className="min-h-screen">
-        {/* Hero Section - nie modyfikujemy */}
+        {/* Hero Section */}
         <HeroSection
           title="Nowi klienci dla Twojego salonu beauty."
           description="Budujemy systemy marketingowe, które zwiększają liczbę rezerwacji i budują lojalność klientek. Specjalizujemy się wyłącznie w branży beauty."
@@ -46,24 +33,6 @@ export default function HomePage() {
             alt: "System marketingowy dla salonów beauty",
           }}
         />
-
-        {/* Problem & Obietnica */}
-        <ProblemSection data={aeroBeautyData.sections.problem} />
-
-        {/* Dwa filary */}
-        <SolutionSection data={aeroBeautyData.sections.solution} />
-
-        {/* Jak to działa - 3 kroki */}
-        <ProcessSection data={aeroBeautyData.sections.process} />
-
-        {/* Pakiety / Cennik */}
-        <PricingSection data={aeroBeautyData.sections.pricing} />
-
-        {/* Case study */}
-        <CaseSection data={aeroBeautyData.sections.case} />
-
-        {/* Dlaczego my / Zaufanie */}
-        <TrustSection data={aeroBeautyData.sections.trust} />
 
         {/* Opinie klientów - Marquee */}
         <section id="opinie" className="opinie section py-16 md:py-24 bg-white">
@@ -95,18 +64,7 @@ export default function HomePage() {
         
         {/* Testimonials Marquee JS */}
         <TestimonialsMarqueeSection />
-
-        {/* Mocne wezwanie */}
-        <CTASection data={aeroBeautyData.sections.cta} />
-
-        {/* FAQ */}
-        <FAQSection data={aeroBeautyData.sections.faq} />
-
-        {/* Kontakt / Rezerwacja konsultacji */}
-        <ContactSection data={aeroBeautyData.sections.contact} />
       </main>
-      
-      <Footer />
     </>
   )
 }
