@@ -313,8 +313,8 @@ background-size:20px 20px;mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,
 
 .orbit-wrapper {
   position: relative;
-  width: 400px;
-  height: 400px;
+  width: 500px;
+  height: 500px;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -352,32 +352,32 @@ background-size:20px 20px;mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,
 }
 
 .orbit-path-1 {
-  width: 350px;
-  height: 350px;
+  width: 450px;
+  height: 450px;
   animation: rotate 20s linear infinite;
 }
 
 .orbit-path-2 {
-  width: 320px;
-  height: 320px;
+  width: 380px;
+  height: 380px;
   animation: rotate 18s linear infinite reverse;
 }
 
 .orbit-path-3 {
-  width: 290px;
-  height: 290px;
+  width: 310px;
+  height: 310px;
   animation: rotate 16s linear infinite;
 }
 
 .orbit-path-4 {
-  width: 260px;
-  height: 260px;
+  width: 240px;
+  height: 240px;
   animation: rotate 14s linear infinite reverse;
 }
 
 .orbit-path-5 {
-  width: 230px;
-  height: 230px;
+  width: 170px;
+  height: 170px;
   animation: rotate 12s linear infinite;
 }
 
@@ -393,6 +393,7 @@ background-size:20px 20px;mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
+  z-index: 10;
 }
 
 .orbit-item:hover {
@@ -438,50 +439,50 @@ background-size:20px 20px;mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,
 }
 
 @keyframes orbit1 {
-  from { transform: translate(-50%, -50%) rotate(0deg) translateX(175px) rotate(0deg); }
-  to { transform: translate(-50%, -50%) rotate(360deg) translateX(175px) rotate(-360deg); }
+  from { transform: translate(-50%, -50%) rotate(0deg) translateX(225px) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg) translateX(225px) rotate(-360deg); }
 }
 
 @keyframes orbit2 {
-  from { transform: translate(-50%, -50%) rotate(0deg) translateX(160px) rotate(0deg); }
-  to { transform: translate(-50%, -50%) rotate(360deg) translateX(160px) rotate(-360deg); }
+  from { transform: translate(-50%, -50%) rotate(0deg) translateX(190px) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg) translateX(190px) rotate(-360deg); }
 }
 
 @keyframes orbit3 {
-  from { transform: translate(-50%, -50%) rotate(0deg) translateX(145px) rotate(0deg); }
-  to { transform: translate(-50%, -50%) rotate(360deg) translateX(145px) rotate(-360deg); }
+  from { transform: translate(-50%, -50%) rotate(0deg) translateX(155px) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg) translateX(155px) rotate(-360deg); }
 }
 
 @keyframes orbit4 {
-  from { transform: translate(-50%, -50%) rotate(0deg) translateX(130px) rotate(0deg); }
-  to { transform: translate(-50%, -50%) rotate(360deg) translateX(130px) rotate(-360deg); }
+  from { transform: translate(-50%, -50%) rotate(0deg) translateX(120px) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg) translateX(120px) rotate(-360deg); }
 }
 
 @keyframes orbit5 {
-  from { transform: translate(-50%, -50%) rotate(0deg) translateX(115px) rotate(0deg); }
-  to { transform: translate(-50%, -50%) rotate(360deg) translateX(115px) rotate(-360deg); }
+  from { transform: translate(-50%, -50%) rotate(0deg) translateX(85px) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg) translateX(85px) rotate(-360deg); }
 }
 
 /* Responsive */
 @media (max-width: 768px) {
   .orbit-wrapper {
-    width: 300px;
-    height: 300px;
+    width: 350px;
+    height: 350px;
   }
   
   .orbit-path-1 {
-    width: 260px;
-    height: 260px;
+    width: 320px;
+    height: 320px;
   }
   
   .orbit-path-2 {
-    width: 240px;
-    height: 240px;
+    width: 280px;
+    height: 280px;
   }
   
   .orbit-path-3 {
-    width: 220px;
-    height: 220px;
+    width: 240px;
+    height: 240px;
   }
   
   .orbit-path-4 {
@@ -490,8 +491,8 @@ background-size:20px 20px;mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,
   }
   
   .orbit-path-5 {
-    width: 180px;
-    height: 180px;
+    width: 160px;
+    height: 160px;
   }
   
   .orbit-item {
@@ -514,18 +515,18 @@ background-size:20px 20px;mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,
   
   /* Responsive animacje */
   @keyframes orbit1 {
-    from { transform: translate(-50%, -50%) rotate(0deg) translateX(130px) rotate(0deg); }
-    to { transform: translate(-50%, -50%) rotate(360deg) translateX(130px) rotate(-360deg); }
+    from { transform: translate(-50%, -50%) rotate(0deg) translateX(160px) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg) translateX(160px) rotate(-360deg); }
   }
 
   @keyframes orbit2 {
-    from { transform: translate(-50%, -50%) rotate(0deg) translateX(120px) rotate(0deg); }
-    to { transform: translate(-50%, -50%) rotate(360deg) translateX(120px) rotate(-360deg); }
+    from { transform: translate(-50%, -50%) rotate(0deg) translateX(140px) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg) translateX(140px) rotate(-360deg); }
   }
 
   @keyframes orbit3 {
-    from { transform: translate(-50%, -50%) rotate(0deg) translateX(110px) rotate(0deg); }
-    to { transform: translate(-50%, -50%) rotate(360deg) translateX(110px) rotate(-360deg); }
+    from { transform: translate(-50%, -50%) rotate(0deg) translateX(120px) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg) translateX(120px) rotate(-360deg); }
   }
 
   @keyframes orbit4 {
@@ -534,7 +535,7 @@ background-size:20px 20px;mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,
   }
 
   @keyframes orbit5 {
-    from { transform: translate(-50%, -50%) rotate(0deg) translateX(90px) rotate(0deg); }
-    to { transform: translate(-50%, -50%) rotate(360deg) translateX(90px) rotate(-360deg); }
+    from { transform: translate(-50%, -50%) rotate(0deg) translateX(80px) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg) translateX(80px) rotate(-360deg); }
   }
 }
