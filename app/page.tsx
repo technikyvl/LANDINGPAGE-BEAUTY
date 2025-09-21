@@ -28,6 +28,111 @@ export default function HomePage() {
         ]}
         />
 
+        {/* Services Cards Section */}
+        <section id="services" className="py-24 md:py-32 lg:py-40 bg-white">
+          <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            {/* Header */}
+            <div className="relative mb-20">
+              <div className="text-8xl md:text-9xl font-bold text-gray-200 absolute -top-20 -left-4 select-none">
+                02
+              </div>
+              <h2 className="relative z-10 text-4xl font-semibold leading-tight bg-gradient-to-br from-gray-800 via-gray-700 to-gray-500 bg-clip-text text-transparent drop-shadow-2xl sm:text-6xl sm:leading-tight md:text-7xl md:leading-tight">
+                NASZE USŁUGI
+              </h2>
+            </div>
+            
+            <div className="text-center mb-16">
+              <p className="text-sm relative z-10 max-w-[500px] font-medium text-gray-600 opacity-0 delay-100 sm:text-lg mb-4 mx-auto">
+                Rozwiązania, które pracują za Ciebie
+              </p>
+              <p className="text-sm relative z-10 max-w-[500px] font-medium text-gray-600 opacity-0 delay-100 sm:text-lg mb-8 mx-auto">
+                Interaktywne komponenty, które wyjaśniają skomplikowane rzeczy w prosty sposób.
+              </p>
+            </div>
+
+            <div className="services-grid">
+              {/* Card 1 */}
+              <div className="card">
+                <div className="card_title__container">
+                  <span className="card_title">Pozycjonowanie SEO</span>
+                  <p className="card_paragraph">
+                    Stabilny wzrost widoczności na lokalne frazy związane z branżą beauty.
+                  </p>
+                </div>
+                <hr className="line" />
+                <ul className="card__list">
+                  <li className="card__list_item">
+                    <span className="check">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="check_svg"><path fillRule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clipRule="evenodd"></path></svg>
+                    </span>
+                    <span className="list_text">On-page i content plan</span>
+                  </li>
+                  <li className="card__list_item">
+                    <span className="check"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="check_svg"><path fillRule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clipRule="evenodd"></path></svg></span>
+                    <span className="list_text">Link building lokalny</span>
+                  </li>
+                  <li className="card__list_item">
+                    <span className="check"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="check_svg"><path fillRule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clipRule="evenodd"></path></svg></span>
+                    <span className="list_text">Raporty z wynikami</span>
+                  </li>
+                </ul>
+                <button className="button">Zamów Usługę</button>
+              </div>
+
+              {/* Card 2 */}
+              <div className="card">
+                <div className="card_title__container">
+                  <span className="card_title">Kampanie Google Ads</span>
+                  <p className="card_paragraph">
+                    Skuteczne reklamy w wyszukiwarce, które dowożą zapytania i rezerwacje.
+                  </p>
+                </div>
+                <hr className="line" />
+                <ul className="card__list">
+                  <li className="card__list_item"><span className="check"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="check_svg"><path fillRule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clipRule="evenodd"></path></svg></span><span className="list_text">Struktura SKAG / tematyczna</span></li>
+                  <li className="card__list_item"><span className="check"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="check_svg"><path fillRule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clipRule="evenodd"></path></svg></span><span className="list_text">Zarządzanie budżetem</span></li>
+                  <li className="card__list_item"><span className="check"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="check_svg"><path fillRule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clipRule="evenodd"></path></svg></span><span className="list_text">Optymalizacja konwersji</span></li>
+                </ul>
+                <button className="button">Zamów Usługę</button>
+              </div>
+
+              {/* Card 3 */}
+              <div className="card">
+                <div className="card_title__container">
+                  <span className="card_title">Strona WWW</span>
+                  <p className="card_paragraph">
+                    Szybka, lekka i dopasowana do beauty – z modułem rezerwacji.
+                  </p>
+                </div>
+                <hr className="line" />
+                <ul className="card__list">
+                  <li className="card__list_item"><span className="check"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="check_svg"><path fillRule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clipRule="evenodd"></path></svg></span><span className="list_text">UX zoptymalizowany pod rezerwacje</span></li>
+                  <li className="card__list_item"><span className="check"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="check_svg"><path fillRule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clipRule="evenodd"></path></svg></span><span className="list_text">Szybkość i SEO-ready</span></li>
+                  <li className="card__list_item"><span className="check"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="check_svg"><path fillRule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clipRule="evenodd"></path></svg></span><span className="list_text">Integracja z kalendarzem</span></li>
+                </ul>
+                <button className="button">Zamów Usługę</button>
+              </div>
+
+              {/* Card 4 */}
+              <div className="card">
+                <div className="card_title__container">
+                  <span className="card_title">Social & Influencer</span>
+                  <p className="card_paragraph">
+                    Tworzymy i promujemy treści, które realnie dowożą Klientki.
+                  </p>
+                </div>
+                <hr className="line" />
+                <ul className="card__list">
+                  <li className="card__list_item"><span className="check"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="check_svg"><path fillRule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clipRule="evenodd"></path></svg></span><span className="list_text">Plan publikacji i kreacje</span></li>
+                  <li className="card__list_item"><span className="check"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="check_svg"><path fillRule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clipRule="evenodd"></path></svg></span><span className="list_text">Współprace z lokalnymi twórcami</span></li>
+                  <li className="card__list_item"><span className="check"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="check_svg"><path fillRule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clipRule="evenodd"></path></svg></span><span className="list_text">Raporty i rekomendacje</span></li>
+                </ul>
+                <button className="button">Zamów Usługę</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Sekcja: Problemy i rozwiązania (tabs) */}
         <section id="uslugi-problemy" className="section-wrap">
           <div className="container">
