@@ -70,7 +70,9 @@ export default function HomePage() {
                 {/* warstwa 3: gradient „mgła" wznoszący się na hover */}
                 <div className="svc-fog"></div>
                 {/* warstwa 4: słupki (animowane na hover) */}
-                <svg className="svc-bars" viewBox="0 0 356 180" aria-hidden="true"></svg>
+                <svg className="svc-bars" viewBox="0 0 356 180" aria-hidden="true">
+                  {/* Słupki będą dodane przez JavaScript */}
+                </svg>
                 {/* overlay info (wjeżdża z góry na hover) */}
                 <div className="svc-float top-left">
                   <span className="dot dot-main"></span><span className="mini">Tommy</span>
@@ -134,7 +136,9 @@ export default function HomePage() {
                 <svg className="svc-ellipse" viewBox="0 0 356 180" aria-hidden="true">
                   <rect width="356" height="180" fill="url(#svc-paint-1)"/>
                 </svg>
-                <svg className="svc-bars-variant" viewBox="0 0 356 180" aria-hidden="true"></svg>
+                <svg className="svc-bars-variant" viewBox="0 0 356 180" aria-hidden="true">
+                  {/* Słupki będą dodane przez JavaScript */}
+                </svg>
 
                 <div className="svc-pill left"><span className="dot dot-main"></span><span className="mini">+15,2%</span></div>
                 <div className="svc-pill left second"><span className="dot dot-sec"></span><span className="mini">+18,7%</span></div>
