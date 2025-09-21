@@ -48,113 +48,85 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div className="svc-grid">
-            {/* CARD 1: Animated Card (bars + overlay) */}
-            <article className="svc-card reveal" aria-labelledby="card1-title" aria-describedby="card1-desc">
-              <div className="svc-visual">
-                {/* warstwa gridu */}
-                <div className="svc-gridlayer" aria-hidden="true"></div>
-                {/* warstwa elipsy (radial gradient) */}
-                <svg className="svc-ellipse" viewBox="0 0 356 180" aria-hidden="true">
-                  <defs>
-                    <radialGradient id="svc-paint-1" cx="0" cy="0" r="1"
-                      gradientUnits="userSpaceOnUse"
-                      gradientTransform="translate(178 98) rotate(90) scale(98 178)">
-                      <stop stopColor="#ff6900" stopOpacity=".25"/>
-                      <stop offset=".34" stopColor="#ff6900" stopOpacity=".15"/>
-                      <stop offset="1" stopOpacity="0"/>
-                    </radialGradient>
-                  </defs>
-                  <rect width="356" height="180" fill="url(#svc-paint-1)"/>
-                </svg>
-                {/* warstwa 3: gradient „mgła" wznoszący się na hover */}
-                <div className="svc-fog"></div>
-                {/* warstwa 4: słupki (animowane na hover) */}
-                <svg className="svc-bars" viewBox="0 0 356 180" aria-hidden="true">
-                  {/* Słupki będą dodane przez JavaScript */}
-                </svg>
-                {/* overlay info (wjeżdża z góry na hover) */}
-                <div className="svc-float top-left">
-                  <span className="dot dot-main"></span><span className="mini">Tommy</span>
+            <div className="services-grid">
+              {/* Card 1 */}
+              <div className="card">
+                <div className="card_title__container">
+                  <span className="card_title">Pozycjonowanie SEO</span>
+                  <p className="card_paragraph">
+                    Stabilny wzrost widoczności na lokalne frazy związane z branżą beauty.
+                  </p>
                 </div>
-                <div className="svc-float top-left second">
-                  <span className="dot dot-sec"></span><span className="mini">Megan</span>
+                <hr className="line" />
+                <ul className="card__list">
+                  <li className="card__list_item">
+                    <span className="check">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="check_svg"><path fillRule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clipRule="evenodd"></path></svg>
+                    </span>
+                    <span className="list_text">On-page i content plan</span>
+                  </li>
+                  <li className="card__list_item">
+                    <span className="check"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="check_svg"><path fillRule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clipRule="evenodd"></path></svg></span>
+                    <span className="list_text">Link building lokalny</span>
+                  </li>
+                  <li className="card__list_item">
+                    <span className="check"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="check_svg"><path fillRule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clipRule="evenodd"></path></svg></span>
+                    <span className="list_text">Raporty z wynikami</span>
+                  </li>
+                </ul>
+                <button className="button">Bezpłatna konsultacja</button>
+              </div>
+
+              {/* Card 2 */}
+              <div className="card">
+                <div className="card_title__container">
+                  <span className="card_title">Kampanie Google Ads</span>
+                  <p className="card_paragraph">
+                    Skuteczne reklamy w wyszukiwarce, które dowożą zapytania i rezerwacje.
+                  </p>
                 </div>
-                <div className="svc-note from-top">
-                  <p className="note-title">Random Data Visualization</p>
-                  <p className="note-desc">Displaying some interesting stats.</p>
+                <hr className="line" />
+                <ul className="card__list">
+                  <li className="card__list_item"><span className="check"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="check_svg"><path fillRule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clipRule="evenodd"></path></svg></span><span className="list_text">Struktura SKAG / tematyczna</span></li>
+                  <li className="card__list_item"><span className="check"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="check_svg"><path fillRule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clipRule="evenodd"></path></svg></span><span className="list_text">Zarządzanie budżetem</span></li>
+                  <li className="card__list_item"><span className="check"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="check_svg"><path fillRule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clipRule="evenodd"></path></svg></span><span className="list_text">Optymalizacja konwersji</span></li>
+                </ul>
+                <button className="button">Porozmawiajmy</button>
+              </div>
+
+              {/* Card 3 */}
+              <div className="card">
+                <div className="card_title__container">
+                  <span className="card_title">Strona WWW</span>
+                  <p className="card_paragraph">
+                    Szybka, lekka i dopasowana do beauty – z modułem rezerwacji.
+                  </p>
                 </div>
+                <hr className="line" />
+                <ul className="card__list">
+                  <li className="card__list_item"><span className="check"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="check_svg"><path fillRule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clipRule="evenodd"></path></svg></span><span className="list_text">UX zoptymalizowany pod rezerwacje</span></li>
+                  <li className="card__list_item"><span className="check"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="check_svg"><path fillRule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clipRule="evenodd"></path></svg></span><span className="list_text">Szybkość i SEO-ready</span></li>
+                  <li className="card__list_item"><span className="check"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="check_svg"><path fillRule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clipRule="evenodd"></path></svg></span><span className="list_text">Integracja z kalendarzem</span></li>
+                </ul>
+                <button className="button">Zobacz demo</button>
               </div>
-              <div className="svc-body">
-                <h3 id="card1-title" className="svc-title">Pozycjonowanie SEO</h3>
-                <p id="card1-desc" className="svc-desc">Wysokie pozycje w Google dla fraz związanych z usługami beauty w Twojej okolicy</p>
-              </div>
-            </article>
 
-            {/* CARD 2: Animated Card Diagram (donut + chips rozjeżdżające się promieniście) */}
-            <article className="svc-card svc-card--donut reveal" aria-labelledby="card2-title" aria-describedby="card2-desc">
-              <div className="svc-visual">
-                <div className="svc-gridlayer" aria-hidden="true"></div>
-                <svg className="svc-ellipse" viewBox="0 0 356 180" aria-hidden="true">
-                  <rect width="356" height="180" fill="url(#svc-paint-1)"/>
-                </svg>
-
-                {/* donut */}
-                <div className="svc-donut">
-                  <svg viewBox="0 0 100 100" className="donut-svg" aria-hidden="true">
-                    <circle className="donut-track" cx="50" cy="50" r="40"/>
-                    <circle className="donut-sec"   cx="50" cy="50" r="40"/>
-                    <circle className="donut-main"  cx="50" cy="50" r="40"/>
-                  </svg>
-                  <div className="donut-center"><span className="donut-value">12.5%</span></div>
+              {/* Card 4 */}
+              <div className="card">
+                <div className="card_title__container">
+                  <span className="card_title">Social & Influencer</span>
+                  <p className="card_paragraph">
+                    Tworzymy i promujemy treści, które realnie dowożą Klientki.
+                  </p>
                 </div>
-
-                {/* chips (wysuwają się na hover) */}
-                <div className="svc-chip" style={{"--tx":"100", "--ty":"50"}}><span className="dot dot-main"></span><span className="mini">ReactJS</span></div>
-                <div className="svc-chip" style={{"--tx":"100", "--ty":"-50"}}><span className="dot dot-sec"></span><span className="mini">MongoDB</span></div>
-                <div className="svc-chip" style={{"--tx":"125", "--ty":"0"}}><span className="dot dot-main"></span><span className="mini">Prisma</span></div>
-                <div className="svc-chip" style={{"--tx":"-125", "--ty":"0"}}><span className="dot dot-sec"></span><span className="mini">NextJs</span></div>
-                <div className="svc-chip" style={{"--tx":"-100", "--ty":"50"}}><span className="dot dot-main"></span><span className="mini">Auth.js</span></div>
-                <div className="svc-chip" style={{"--tx":"-100", "--ty":"-50"}}><span className="dot dot-sec"></span><span className="mini">Stripe</span></div>
-
-                {/* opis pod wykresem znika na hover */}
-                <div className="svc-note under-donut">
-                  <p className="note-title">Random Data Visualization</p>
-                  <p className="note-desc">Displaying some interesting stats.</p>
-                </div>
+                <hr className="line" />
+                <ul className="card__list">
+                  <li className="card__list_item"><span className="check"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="check_svg"><path fillRule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clipRule="evenodd"></path></svg></span><span className="list_text">Plan publikacji i kreacje</span></li>
+                  <li className="card__list_item"><span className="check"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="check_svg"><path fillRule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clipRule="evenodd"></path></svg></span><span className="list_text">Współprace z lokalnymi twórcami</span></li>
+                  <li className="card__list_item"><span className="check"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="check_svg"><path fillRule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clipRule="evenodd"></path></svg></span><span className="list_text">Raporty i rekomendacje</span></li>
+                </ul>
+                <button className="button">Book a Call</button>
               </div>
-              <div className="svc-body">
-                <h3 id="card2-title" className="svc-title">Kampanie Google Ads</h3>
-                <p id="card2-desc" className="svc-desc">Reklamy w wyszukiwarce Google, które przyciągają klientki szukające usług beauty</p>
-              </div>
-            </article>
-
-            {/* CARD 3: Animated Card Chart (wysokie słupki + „legendy" w lewym górnym) */}
-            <article className="svc-card reveal" aria-labelledby="card3-title" aria-describedby="card3-desc">
-              <div className="svc-visual">
-                <div className="svc-gridlayer" aria-hidden="true"></div>
-                <svg className="svc-ellipse" viewBox="0 0 356 180" aria-hidden="true">
-                  <rect width="356" height="180" fill="url(#svc-paint-1)"/>
-                </svg>
-                <svg className="svc-bars-variant" viewBox="0 0 356 180" aria-hidden="true">
-                  {/* Słupki będą dodane przez JavaScript */}
-                </svg>
-
-                <div className="svc-pill left"><span className="dot dot-main"></span><span className="mini">+15,2%</span></div>
-                <div className="svc-pill left second"><span className="dot dot-sec"></span><span className="mini">+18,7%</span></div>
-
-                <div className="svc-note from-bottom">
-                  <div className="note-row">
-                    <span className="dot dot-main"></span><span className="note-mini">Random Data Visualization</span>
-                  </div>
-                  <p className="note-desc">Displaying some interesting stats.</p>
-                </div>
-              </div>
-              <div className="svc-body">
-                <h3 id="card3-title" className="svc-title">Strona Internetowa</h3>
-                <p id="card3-desc" className="svc-desc">Nowoczesna strona WWW dostosowana do branży beauty z systemem rezerwacji</p>
-              </div>
-            </article>
             </div>
           </div>
         </section>
