@@ -409,6 +409,7 @@ background-size:20px 20px;mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,
 
 /* Pozycjonowanie ikon na orbicie - każda ma swoją orbitę */
 .orbit-item {
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -418,40 +419,30 @@ background-size:20px 20px;mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,
   animation: orbit1 20s linear infinite;
   animation-delay: 0s;
   background: red !important;
-  /* Start z góry orbity 1 */
-  transform: translate(-50%, -50%) translateX(225px) translateY(0px);
 }
 
 .orbit-item:nth-child(2) {
-  animation: orbit2 18s linear infinite reverse;
+  animation: orbit2 18s linear infinite;
   animation-delay: -4.5s;
   background: blue !important;
-  /* Start z prawej strony orbity 2 */
-  transform: translate(-50%, -50%) translateX(190px) translateY(0px);
 }
 
 .orbit-item:nth-child(3) {
   animation: orbit3 16s linear infinite;
   animation-delay: -8s;
   background: green !important;
-  /* Start z dołu orbity 3 */
-  transform: translate(-50%, -50%) translateX(155px) translateY(0px);
 }
 
 .orbit-item:nth-child(4) {
-  animation: orbit4 14s linear infinite reverse;
+  animation: orbit4 14s linear infinite;
   animation-delay: -10.5s;
   background: yellow !important;
-  /* Start z lewej strony orbity 4 */
-  transform: translate(-50%, -50%) translateX(120px) translateY(0px);
 }
 
 .orbit-item:nth-child(5) {
   animation: orbit5 12s linear infinite;
   animation-delay: -9s;
   background: purple !important;
-  /* Start z góry orbity 5 */
-  transform: translate(-50%, -50%) translateX(85px) translateY(0px);
 }
 
 @keyframes rotate {
@@ -538,55 +529,50 @@ background-size:20px 20px;mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,
   .orbit-item:nth-child(1) {
     animation: orbit1-mobile 20s linear infinite;
     animation-delay: 0s;
-    transform: translate(-50%, -50%) translateX(160px) translateY(0px);
   }
 
   .orbit-item:nth-child(2) {
-    animation: orbit2-mobile 18s linear infinite reverse;
+    animation: orbit2-mobile 18s linear infinite;
     animation-delay: -4.5s;
-    transform: translate(-50%, -50%) translateX(140px) translateY(0px);
   }
 
   .orbit-item:nth-child(3) {
     animation: orbit3-mobile 16s linear infinite;
     animation-delay: -8s;
-    transform: translate(-50%, -50%) translateX(120px) translateY(0px);
   }
 
   .orbit-item:nth-child(4) {
-    animation: orbit4-mobile 14s linear infinite reverse;
+    animation: orbit4-mobile 14s linear infinite;
     animation-delay: -10.5s;
-    transform: translate(-50%, -50%) translateX(100px) translateY(0px);
   }
 
   .orbit-item:nth-child(5) {
     animation: orbit5-mobile 12s linear infinite;
     animation-delay: -9s;
-    transform: translate(-50%, -50%) translateX(80px) translateY(0px);
   }
 
   @keyframes orbit1-mobile {
-    from { transform: translate(-50%, -50%) rotate(0deg) translateX(160px) rotate(0deg); }
-    to { transform: translate(-50%, -50%) rotate(360deg) translateX(160px) rotate(-360deg); }
+    0% { transform: translate(-50%, -50%) rotate(0deg) translateX(160px) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg) translateX(160px) rotate(-360deg); }
   }
 
   @keyframes orbit2-mobile {
-    from { transform: translate(-50%, -50%) rotate(0deg) translateX(140px) rotate(0deg); }
-    to { transform: translate(-50%, -50%) rotate(360deg) translateX(140px) rotate(-360deg); }
+    0% { transform: translate(-50%, -50%) rotate(0deg) translateX(140px) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg) translateX(140px) rotate(-360deg); }
   }
 
   @keyframes orbit3-mobile {
-    from { transform: translate(-50%, -50%) rotate(0deg) translateX(120px) rotate(0deg); }
-    to { transform: translate(-50%, -50%) rotate(360deg) translateX(120px) rotate(-360deg); }
+    0% { transform: translate(-50%, -50%) rotate(0deg) translateX(120px) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg) translateX(120px) rotate(-360deg); }
   }
 
   @keyframes orbit4-mobile {
-    from { transform: translate(-50%, -50%) rotate(0deg) translateX(100px) rotate(0deg); }
-    to { transform: translate(-50%, -50%) rotate(360deg) translateX(100px) rotate(-360deg); }
+    0% { transform: translate(-50%, -50%) rotate(0deg) translateX(100px) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg) translateX(100px) rotate(-360deg); }
   }
 
   @keyframes orbit5-mobile {
-    from { transform: translate(-50%, -50%) rotate(0deg) translateX(80px) rotate(0deg); }
-    to { transform: translate(-50%, -50%) rotate(360deg) translateX(80px) rotate(-360deg); }
+    0% { transform: translate(-50%, -50%) rotate(0deg) translateX(80px) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg) translateX(80px) rotate(-360deg); }
   }
 }
