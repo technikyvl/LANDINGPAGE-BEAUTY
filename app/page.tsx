@@ -28,106 +28,103 @@ export default function HomePage() {
         ]}
         />
 
-        {/* Services Cards Section */}
-        <section id="services" className="py-24 md:py-32 lg:py-40 bg-white">
-          <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            {/* Header */}
-            <div className="relative mb-20">
-              <div className="text-8xl md:text-9xl font-bold text-gray-200 absolute -top-20 -left-4 select-none">
-                02
-              </div>
-              <h2 className="relative z-10 text-4xl font-semibold leading-tight bg-gradient-to-br from-gray-800 via-gray-700 to-gray-500 bg-clip-text text-transparent drop-shadow-2xl sm:text-6xl sm:leading-tight md:text-7xl md:leading-tight">
-                NASZE USŁUGI
-              </h2>
-            </div>
-            
-            <div className="text-center mb-16">
-              <p className="text-sm relative z-10 max-w-[500px] font-medium text-gray-600 opacity-0 delay-100 sm:text-lg mb-4 mx-auto">
-                Rozwiązania, które pracują za Ciebie
-              </p>
-              <p className="text-sm relative z-10 max-w-[500px] font-medium text-gray-600 opacity-0 delay-100 sm:text-lg mb-8 mx-auto">
-                Interaktywne komponenty, które wyjaśniają skomplikowane rzeczy w prosty sposób.
-              </p>
+        {/* Sekcja: Problemy i rozwiązania (tabs) */}
+        <section id="uslugi-problemy" className="section-wrap">
+          <div className="container">
+            <div className="head">
+              <span className="badge-outline">dla salonów beauty</span>
+              <h2 className="heading-xl">Rozwiązujemy realne problemy</h2>
+              <p className="sub">Zobacz, co naprawiamy krok po kroku.</p>
             </div>
 
-            <div className="services-grid">
-              {/* Card 1 */}
-              <div className="card">
-                <div className="card_title__container">
-                  <span className="card_title">Pozycjonowanie SEO</span>
-                  <p className="card_paragraph">
-                    Stabilny wzrost widoczności na lokalne frazy związane z branżą beauty.
-                  </p>
-                </div>
-                <hr className="line" />
-                <ul className="card__list">
-                  <li className="card__list_item">
-                    <span className="check">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="check_svg"><path fillRule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clipRule="evenodd"></path></svg>
-                    </span>
-                    <span className="list_text">On-page i content plan</span>
-                  </li>
-                  <li className="card__list_item">
-                    <span className="check"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="check_svg"><path fillRule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clipRule="evenodd"></path></svg></span>
-                    <span className="list_text">Link building lokalny</span>
-                  </li>
-                  <li className="card__list_item">
-                    <span className="check"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="check_svg"><path fillRule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clipRule="evenodd"></path></svg></span>
-                    <span className="list_text">Raporty z wynikami</span>
-                  </li>
-                </ul>
-                <button className="button">Zamów Usługę</button>
+            {/* Tabs */}
+            <div className="tabs">
+              <div className="tabs-list" role="tablist" aria-label="Wybierz problem">
+                <button className="tab is-active" role="tab" aria-selected="true" aria-controls="panel-1" id="tab-1">
+                  Brak klientów
+                </button>
+                <button className="tab" role="tab" aria-selected="false" aria-controls="panel-2" id="tab-2">
+                  Słaba widoczność online
+                </button>
+                <button className="tab" role="tab" aria-selected="false" aria-controls="panel-3" id="tab-3">
+                  Brak powrotów klientek
+                </button>
+                <button className="tab" role="tab" aria-selected="false" aria-controls="panel-4" id="tab-4">
+                  Brak stałego ruchu w salonie
+                </button>
               </div>
 
-              {/* Card 2 */}
-              <div className="card">
-                <div className="card_title__container">
-                  <span className="card_title">Kampanie Google Ads</span>
-                  <p className="card_paragraph">
-                    Skuteczne reklamy w wyszukiwarce, które dowożą zapytania i rezerwacje.
-                  </p>
+              {/* Panels */}
+              <div className="panels">
+                {/* Panel 1 */}
+                <div className="panel is-active" role="tabpanel" id="panel-1" aria-labelledby="tab-1">
+                  <div className="panel-grid">
+                    <div className="panel-copy">
+                      <span className="badge-outline bg-white">Problem: Brak klientów</span>
+                      <h3 className="title">Salon świeci pustkami — sporadyczne nowe wizyty.</h3>
+                      <p className="desc">
+                        <strong>Rozwiązanie:</strong> Budujemy system pozyskiwania klientek od podstaw:
+                        nowoczesna strona z rezerwacją, kampanie reklamowe w social mediach i Google
+                        kierujące prosto na Twoją ofertę. Dzięki temu kalendarz zaczyna się realnie
+                        wypełniać, a nie czekać na przypadkowe wizyty z Booksy.
+                      </p>
+                      <a href="#kontakt" className="btn">Chcę system pozyskiwania klientek</a>
+                    </div>
+                    <div className="panel-visual"><div className="placeholder"></div></div>
+                  </div>
                 </div>
-                <hr className="line" />
-                <ul className="card__list">
-                  <li className="card__list_item"><span className="check"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="check_svg"><path fillRule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clipRule="evenodd"></path></svg></span><span className="list_text">Struktura SKAG / tematyczna</span></li>
-                  <li className="card__list_item"><span className="check"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="check_svg"><path fillRule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clipRule="evenodd"></path></svg></span><span className="list_text">Zarządzanie budżetem</span></li>
-                  <li className="card__list_item"><span className="check"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="check_svg"><path fillRule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clipRule="evenodd"></path></svg></span><span className="list_text">Optymalizacja konwersji</span></li>
-                </ul>
-                <button className="button">Zamów Usługę</button>
-              </div>
 
-              {/* Card 3 */}
-              <div className="card">
-                <div className="card_title__container">
-                  <span className="card_title">Strona WWW</span>
-                  <p className="card_paragraph">
-                    Szybka, lekka i dopasowana do beauty – z modułem rezerwacji.
-                  </p>
+                {/* Panel 2 */}
+                <div className="panel" role="tabpanel" id="panel-2" aria-labelledby="tab-2" hidden>
+                  <div className="panel-grid">
+                    <div className="panel-copy">
+                      <span className="badge-outline bg-white">Problem: Słaba widoczność online</span>
+                      <h3 className="title">Nikt nie znajduje salonu w Google ani w social mediach.</h3>
+                      <p className="desc">
+                        <strong>Rozwiązanie:</strong> Tworzymy profesjonalną stronę z lokalnym SEO i
+                        pozycjonujemy ją tak, aby Twój salon pojawiał się w Google Maps i wynikach
+                        wyszukiwania. Dodatkowo dbamy o spójny wizerunek w social mediach i reklamach —
+                        jesteś widoczna tam, gdzie Twoje klientki Cię szukają.
+                      </p>
+                      <a href="#kontakt" className="btn">Chcę widoczność w Google i social</a>
+                    </div>
+                    <div className="panel-visual"><div className="placeholder"></div></div>
+                  </div>
                 </div>
-                <hr className="line" />
-                <ul className="card__list">
-                  <li className="card__list_item"><span className="check"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="check_svg"><path fillRule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clipRule="evenodd"></path></svg></span><span className="list_text">UX zoptymalizowany pod rezerwacje</span></li>
-                  <li className="card__list_item"><span className="check"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="check_svg"><path fillRule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clipRule="evenodd"></path></svg></span><span className="list_text">Szybkość i SEO-ready</span></li>
-                  <li className="card__list_item"><span className="check"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="check_svg"><path fillRule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clipRule="evenodd"></path></svg></span><span className="list_text">Integracja z kalendarzem</span></li>
-                </ul>
-                <button className="button">Zamów Usługę</button>
-              </div>
 
-              {/* Card 4 */}
-              <div className="card">
-                <div className="card_title__container">
-                  <span className="card_title">Social & Influencer</span>
-                  <p className="card_paragraph">
-                    Tworzymy i promujemy treści, które realnie dowożą Klientki.
-                  </p>
+                {/* Panel 3 */}
+                <div className="panel" role="tabpanel" id="panel-3" aria-labelledby="tab-3" hidden>
+                  <div className="panel-grid">
+                    <div className="panel-copy">
+                      <span className="badge-outline bg-white">Problem: Brak powrotów klientek</span>
+                      <h3 className="title">Klientki przychodzą raz i znikają — brak lojalności.</h3>
+                      <p className="desc">
+                        <strong>Rozwiązanie:</strong> Wdrażamy e-mail i SMS marketing: przypomnienia o
+                        kolejnych wizytach, nowości i oferty VIP. Budujemy poczucie wyjątkowości, dzięki
+                        czemu Twoje klientki wracają regularnie, a nie tylko „od święta".
+                      </p>
+                      <a href="#kontakt" className="btn">Chcę powracające klientki</a>
+                    </div>
+                    <div className="panel-visual"><div className="placeholder"></div></div>
+                  </div>
                 </div>
-                <hr className="line" />
-                <ul className="card__list">
-                  <li className="card__list_item"><span className="check"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="check_svg"><path fillRule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clipRule="evenodd"></path></svg></span><span className="list_text">Plan publikacji i kreacje</span></li>
-                  <li className="card__list_item"><span className="check"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="check_svg"><path fillRule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clipRule="evenodd"></path></svg></span><span className="list_text">Współprace z lokalnymi twórcami</span></li>
-                  <li className="card__list_item"><span className="check"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="check_svg"><path fillRule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clipRule="evenodd"></path></svg></span><span className="list_text">Raporty i rekomendacje</span></li>
-                </ul>
-                <button className="button">Zamów Usługę</button>
+
+                {/* Panel 4 */}
+                <div className="panel" role="tabpanel" id="panel-4" aria-labelledby="tab-4" hidden>
+                  <div className="panel-grid">
+                    <div className="panel-copy">
+                      <span className="badge-outline bg-white">Problem: Brak stałego ruchu</span>
+                      <h3 className="title">Raz kalendarz pełny, innym razem pusty — zero stabilności.</h3>
+                      <p className="desc">
+                        <strong>Rozwiązanie:</strong> Budujemy przewidywalny system rezerwacji: kampanie
+                        generujące stały dopływ nowych klientek + automatyczne przypomnienia i follow-upy.
+                        Grafiki przestają mieć „dziury", a salon pracuje równym tempem cały miesiąc.
+                      </p>
+                      <a href="#kontakt" className="btn">Chcę stabilny ruch</a>
+                    </div>
+                    <div className="panel-visual"><div className="placeholder"></div></div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
