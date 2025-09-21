@@ -39,30 +39,18 @@ export default function HomePage() {
             {/* Problems list */}
             <div id="problems-list" className="problems__list">
               <div className="problem-box" id="problem-1">
-                <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-white font-bold text-xl">1</span>
-                </div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">Problem 1</h3>
               </div>
 
               <div className="problem-box" id="problem-2">
-                <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-white font-bold text-xl">2</span>
-                </div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">Problem 2</h3>
               </div>
 
               <div className="problem-box" id="problem-3">
-                <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-white font-bold text-xl">3</span>
-                </div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">Problem 3</h3>
               </div>
 
               <div className="problem-box" id="problem-4">
-                <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-white font-bold text-xl">4</span>
-                </div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">Problem 4</h3>
               </div>
             </div>
