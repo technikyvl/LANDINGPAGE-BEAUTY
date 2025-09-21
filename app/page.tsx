@@ -98,21 +98,45 @@ export default function HomePage() {
               <span className="badge-outline">dla salonów beauty</span>
               <h2 className="heading-xl">Rozwiązujemy realne problemy</h2>
               <p className="sub">Zobacz, co naprawiamy krok po kroku.</p>
-                </div>
+            </div>
                 
             {/* Tabs */}
             <div className="tabs">
               <div className="tabs-list" role="tablist" aria-label="Wybierz problem">
-                <button className="tab is-active" role="tab" aria-selected="true" aria-controls="panel-1" id="tab-1">
+                <button className="tab is-active" role="tab" aria-selected="true" aria-controls="panel-1" id="tab-1" onClick={(e) => {
+                  e.preventDefault();
+                  document.querySelectorAll('.panel').forEach(p => p.hidden = true);
+                  document.querySelectorAll('.tab').forEach(t => t.classList.remove('is-active'));
+                  document.getElementById('panel-1').hidden = false;
+                  document.getElementById('tab-1').classList.add('is-active');
+                }}>
                   Brak klientów
                 </button>
-                <button className="tab" role="tab" aria-selected="false" aria-controls="panel-2" id="tab-2">
+                <button className="tab" role="tab" aria-selected="false" aria-controls="panel-2" id="tab-2" onClick={(e) => {
+                  e.preventDefault();
+                  document.querySelectorAll('.panel').forEach(p => p.hidden = true);
+                  document.querySelectorAll('.tab').forEach(t => t.classList.remove('is-active'));
+                  document.getElementById('panel-2').hidden = false;
+                  document.getElementById('tab-2').classList.add('is-active');
+                }}>
                   Słaba widoczność online
                 </button>
-                <button className="tab" role="tab" aria-selected="false" aria-controls="panel-3" id="tab-3">
+                <button className="tab" role="tab" aria-selected="false" aria-controls="panel-3" id="tab-3" onClick={(e) => {
+                  e.preventDefault();
+                  document.querySelectorAll('.panel').forEach(p => p.hidden = true);
+                  document.querySelectorAll('.tab').forEach(t => t.classList.remove('is-active'));
+                  document.getElementById('panel-3').hidden = false;
+                  document.getElementById('tab-3').classList.add('is-active');
+                }}>
                   Brak powrotów klientek
                 </button>
-                <button className="tab" role="tab" aria-selected="false" aria-controls="panel-4" id="tab-4">
+                <button className="tab" role="tab" aria-selected="false" aria-controls="panel-4" id="tab-4" onClick={(e) => {
+                  e.preventDefault();
+                  document.querySelectorAll('.panel').forEach(p => p.hidden = true);
+                  document.querySelectorAll('.tab').forEach(t => t.classList.remove('is-active'));
+                  document.getElementById('panel-4').hidden = false;
+                  document.getElementById('tab-4').classList.add('is-active');
+                }}>
                   Brak stałego ruchu w salonie
                 </button>
               </div>
