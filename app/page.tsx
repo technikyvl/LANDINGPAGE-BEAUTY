@@ -26,6 +26,17 @@ export default function HomePage() {
         ]}
         />
 
+        {/* Problem Question Section */}
+        <section className="py-24 md:py-32 lg:py-40 bg-white">
+          <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="text-center">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
+                Czy Twojego salonu też dotyczą te problemy?
+              </h2>
+            </div>
+          </div>
+        </section>
+
         {/* Services Cards Section */}
         <section id="services" className="py-24 md:py-32 lg:py-40 bg-white">
           <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
