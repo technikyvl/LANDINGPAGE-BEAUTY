@@ -3,8 +3,6 @@
 import { HeroSection } from "@/components/ui/hero-section"
 import { TestimonialsMarqueeSection } from "@/components/sections/testimonials-marquee-section"
 import { Icons } from "@/components/ui/icons"
-import { OrbitingCircles } from "@/components/ui/orbiting-circles"
-import { PlatformIcons } from "@/components/ui/platform-icons"
 
 export default function HomePage() {
   return (
@@ -235,74 +233,6 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Orbital Animation Section */}
-        <section className="py-24 md:py-32 lg:py-40 bg-gradient-to-br from-gray-50 to-gray-100">
-          <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            {/* Header */}
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-                Integracje
-              </h2>
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                Współpracujemy z najpopularniejszymi platformami, aby Twój salon beauty działał sprawnie
-              </p>
-            </div>
-            
-            {/* Orbital Animation */}
-            <div className="relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden">
-
-              {/* Orbit 1 - Inner (100px radius) - 3 ikony */}
-              <OrbitingCircles
-                className="size-[50px] bg-white shadow-lg"
-                duration={20}
-                delay={0}
-                radius={100}
-                path={true}
-              >
-                <PlatformIcons.google />
-              </OrbitingCircles>
-              <OrbitingCircles
-                className="size-[50px] bg-white shadow-lg"
-                duration={20}
-                delay={6.7}
-                radius={100}
-                path={false}
-              >
-                <PlatformIcons.booksy />
-              </OrbitingCircles>
-              <OrbitingCircles
-                className="size-[50px] bg-white shadow-lg"
-                duration={20}
-                delay={13.3}
-                radius={100}
-                path={false}
-              >
-                <PlatformIcons.instagram />
-              </OrbitingCircles>
-
-              {/* Orbit 2 - Outer (200px radius) - 2 ikony */}
-              <OrbitingCircles
-                className="size-[50px] bg-white shadow-lg"
-                radius={200}
-                duration={18}
-                reverse
-                path={true}
-              >
-                <PlatformIcons.facebook />
-              </OrbitingCircles>
-              <OrbitingCircles
-                className="size-[50px] bg-white shadow-lg"
-                radius={200}
-                duration={18}
-                delay={9}
-                reverse
-                path={false}
-              >
-                <PlatformIcons.wordpress />
-              </OrbitingCircles>
-            </div>
-          </div>
-        </section>
 
         {/* Features Section */}
         <section id="features" className="py-24 md:py-32 lg:py-40 bg-white">
