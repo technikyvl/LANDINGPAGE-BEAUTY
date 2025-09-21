@@ -38,7 +38,7 @@ export default function HomePage() {
             {/* Problems with connecting lines */}
             <div className="relative">
               {/* Problems grid - positioned first to calculate exact positions */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10 mt-48 md:mt-56 lg:mt-64">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10 mt-60 md:mt-72 lg:mt-80">
                 {/* Problem 1 */}
                 <div className="text-center problem-item" data-problem="1">
                   <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4 problem-circle">
