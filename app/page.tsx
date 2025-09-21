@@ -40,75 +40,41 @@ export default function HomePage() {
               {/* Problems grid - positioned first to calculate exact positions */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10 mt-16">
                 {/* Problem 1 */}
-                <div className="text-center" id="problem-1">
-                  <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="text-center problem-item" data-problem="1">
+                  <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4 problem-circle">
                     <span className="text-white font-bold text-xl">1</span>
                   </div>
                   <h3 className="text-lg font-semibold text-gray-900 mb-2">Problem 1</h3>
                 </div>
 
                 {/* Problem 2 */}
-                <div className="text-center" id="problem-2">
-                  <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="text-center problem-item" data-problem="2">
+                  <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4 problem-circle">
                     <span className="text-white font-bold text-xl">2</span>
                   </div>
                   <h3 className="text-lg font-semibold text-gray-900 mb-2">Problem 2</h3>
                 </div>
 
                 {/* Problem 3 */}
-                <div className="text-center" id="problem-3">
-                  <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="text-center problem-item" data-problem="3">
+                  <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4 problem-circle">
                     <span className="text-white font-bold text-xl">3</span>
                   </div>
                   <h3 className="text-lg font-semibold text-gray-900 mb-2">Problem 3</h3>
                 </div>
 
                 {/* Problem 4 */}
-                <div className="text-center" id="problem-4">
-                  <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="text-center problem-item" data-problem="4">
+                  <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4 problem-circle">
                     <span className="text-white font-bold text-xl">4</span>
                   </div>
                   <h3 className="text-lg font-semibold text-gray-900 mb-2">Problem 4</h3>
                 </div>
               </div>
 
-              {/* SVG for connecting lines - positioned to connect header to exact problem positions */}
-              <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 1200 400">
-                {/* Problem 1 line - from header center to problem 1 circle */}
-                <path
-                  d="M 600 80 Q 200 200 150 320"
-                  stroke="#ff6900"
-                  strokeWidth="3"
-                  fill="none"
-                  strokeLinecap="round"
-                />
-                
-                {/* Problem 2 line - from header center to problem 2 circle */}
-                <path
-                  d="M 600 80 Q 400 220 300 320"
-                  stroke="#ff6900"
-                  strokeWidth="3"
-                  fill="none"
-                  strokeLinecap="round"
-                />
-                
-                {/* Problem 3 line - from header center to problem 3 circle */}
-                <path
-                  d="M 600 80 Q 800 220 900 320"
-                  stroke="#ff6900"
-                  strokeWidth="3"
-                  fill="none"
-                  strokeLinecap="round"
-                />
-                
-                {/* Problem 4 line - from header center to problem 4 circle */}
-                <path
-                  d="M 600 80 Q 1000 200 1050 320"
-                  stroke="#ff6900"
-                  strokeWidth="3"
-                  fill="none"
-                  strokeLinecap="round"
-                />
+              {/* SVG for connecting lines - will be populated by JavaScript */}
+              <svg id="problem-lines" className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 1200 400">
+                {/* Lines will be dynamically added here */}
               </svg>
             </div>
           </div>
