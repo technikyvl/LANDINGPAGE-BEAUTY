@@ -55,7 +55,7 @@
       currentSlide = Math.max(0, Math.min(slideIndex, slides.length - 1));
       
       const slideWidth = slides[0].offsetWidth;
-      const gap = 16; // 1rem = 16px
+      const gap = 8; // 0.5rem = 8px
       const scrollPosition = currentSlide * (slideWidth + gap);
       
       console.log('Scrolling to slide:', currentSlide, 'Position:', scrollPosition, 'Slide width:', slideWidth);
