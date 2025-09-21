@@ -33,16 +33,9 @@ export function HeroSection({ badge, title, description, actions }: HeroProps) {
   return (
     <section
       id="hero"
-      className={cn("bg-white text-foreground relative", "py-12 sm:py-24 md:py-32 px-4", "overflow-hidden pb-0")}
+      className={cn("bg-white text-foreground", "py-12 sm:py-24 md:py-32 px-4", "overflow-hidden pb-0")}
     >
-      {/* Delikatny pomarańczowy glare */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-orange-500/20 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-orange-400/25 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-orange-300/18 rounded-full blur-2xl"></div>
-      </div>
-      
-      <div className="mx-auto flex max-w-7xl flex-col gap-12 pt-16 sm:gap-24 relative z-10">
+      <div className="mx-auto flex max-w-7xl flex-col gap-12 pt-16 sm:gap-24">
         <div className="flex flex-col items-center gap-4 text-center sm:gap-8">
           {/* Badge */}
           {badge && (
@@ -79,7 +72,12 @@ export function HeroSection({ badge, title, description, actions }: HeroProps) {
 
           {/* Asymetryczny grid ze zdjęciami */}
           <div className="relative pt-8 w-full max-w-6xl">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 animate-appear opacity-0 delay-700">
+            {/* Glare za gridem */}
+            <div className="absolute inset-0 pointer-events-none">
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-orange-500/20 rounded-full blur-3xl"></div>
+            </div>
+            
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 animate-appear opacity-0 delay-700 relative z-10">
               {/* Duże zdjęcie - zajmuje 2 kolumny */}
               <div className="col-span-2 row-span-2">
                 <div className="relative h-64 md:h-80 rounded-2xl overflow-hidden shadow-lg">
