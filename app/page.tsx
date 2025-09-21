@@ -158,6 +158,7 @@ export default function HomePage() {
                 duration={20}
                 delay={0}
                 radius={60}
+                path={true}
               >
                 <PlatformIcons.google />
               </OrbitingCircles>
@@ -166,6 +167,7 @@ export default function HomePage() {
                 duration={20}
                 delay={10}
                 radius={60}
+                path={false}
               >
                 <PlatformIcons.booksy />
               </OrbitingCircles>
@@ -176,6 +178,7 @@ export default function HomePage() {
                 radius={120}
                 duration={18}
                 reverse
+                path={true}
               >
                 <PlatformIcons.instagram />
               </OrbitingCircles>
@@ -185,6 +188,7 @@ export default function HomePage() {
                 duration={18}
                 delay={9}
                 reverse
+                path={false}
               >
                 <PlatformIcons.facebook />
               </OrbitingCircles>
@@ -194,6 +198,7 @@ export default function HomePage() {
                 duration={18}
                 delay={18}
                 reverse
+                path={false}
               >
                 <PlatformIcons.wordpress />
               </OrbitingCircles>
@@ -203,6 +208,7 @@ export default function HomePage() {
                 className="size-[50px] bg-white shadow-lg"
                 radius={180}
                 duration={16}
+                path={true}
               >
                 <PlatformIcons.google />
               </OrbitingCircles>
@@ -211,6 +217,7 @@ export default function HomePage() {
                 radius={180}
                 duration={16}
                 delay={8}
+                path={false}
               >
                 <PlatformIcons.booksy />
               </OrbitingCircles>
@@ -219,6 +226,7 @@ export default function HomePage() {
                 radius={180}
                 duration={16}
                 delay={16}
+                path={false}
               >
                 <PlatformIcons.instagram />
               </OrbitingCircles>
@@ -227,6 +235,7 @@ export default function HomePage() {
                 radius={180}
                 duration={16}
                 delay={24}
+                path={false}
               >
                 <PlatformIcons.facebook />
               </OrbitingCircles>
@@ -235,6 +244,7 @@ export default function HomePage() {
                 radius={180}
                 duration={16}
                 delay={32}
+                path={false}
               >
                 <PlatformIcons.wordpress />
               </OrbitingCircles>
