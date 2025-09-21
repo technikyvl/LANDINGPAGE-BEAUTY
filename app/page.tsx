@@ -29,10 +29,87 @@ export default function HomePage() {
         {/* Problem Question Section */}
         <section className="py-24 md:py-32 lg:py-40 bg-white">
           <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="text-center">
+            <div className="text-center mb-16">
               <h2 className="text-4xl font-semibold leading-tight bg-gradient-to-br from-gray-800 via-gray-700 to-gray-500 bg-clip-text text-transparent drop-shadow-2xl sm:text-6xl sm:leading-tight md:text-7xl md:leading-tight">
                 Czy Twojego salonu też dotyczą te problemy?
               </h2>
+            </div>
+
+            {/* Problems with connecting lines */}
+            <div className="relative">
+              {/* SVG for connecting lines */}
+              <svg className="absolute inset-0 w-full h-64 pointer-events-none" viewBox="0 0 1200 256">
+                {/* Problem 1 line - starts low, curves up and right */}
+                <path
+                  d="M 600 128 Q 300 80 150 120"
+                  stroke="#ff6900"
+                  strokeWidth="3"
+                  fill="none"
+                  strokeLinecap="round"
+                />
+                
+                {/* Problem 2 line - straight vertical */}
+                <path
+                  d="M 600 128 L 400 200"
+                  stroke="#ff6900"
+                  strokeWidth="3"
+                  fill="none"
+                  strokeLinecap="round"
+                />
+                
+                {/* Problem 3 line - starts high, curves down and right */}
+                <path
+                  d="M 600 128 Q 800 180 900 160"
+                  stroke="#ff6900"
+                  strokeWidth="3"
+                  fill="none"
+                  strokeLinecap="round"
+                />
+                
+                {/* Problem 4 line - starts high, curves down and left */}
+                <path
+                  d="M 600 128 Q 1000 200 1050 180"
+                  stroke="#ff6900"
+                  strokeWidth="3"
+                  fill="none"
+                  strokeLinecap="round"
+                />
+              </svg>
+
+              {/* Problems grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
+                {/* Problem 1 */}
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span className="text-white font-bold text-xl">1</span>
+                  </div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Problem 1</h3>
+                </div>
+
+                {/* Problem 2 */}
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span className="text-white font-bold text-xl">2</span>
+                  </div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Problem 2</h3>
+                </div>
+
+                {/* Problem 3 */}
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span className="text-white font-bold text-xl">3</span>
+                  </div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Problem 3</h3>
+                </div>
+
+                {/* Problem 4 */}
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span className="text-white font-bold text-xl">4</span>
+                  </div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Problem 4</h3>
+                </div>
+              </div>
             </div>
           </div>
         </section>
