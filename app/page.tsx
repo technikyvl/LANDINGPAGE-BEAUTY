@@ -37,38 +37,38 @@ export default function HomePage() {
 
             {/* Problems with connecting lines */}
             <div className="relative">
-              {/* SVG for connecting lines - positioned to connect header to problems */}
-              <svg className="absolute inset-0 w-full h-80 pointer-events-none" viewBox="0 0 1200 320">
-                {/* Problem 1 line - curves from center to left */}
+              {/* SVG for connecting lines - lines go down from header to problems */}
+              <svg className="absolute inset-0 w-full h-96 pointer-events-none" viewBox="0 0 1200 384">
+                {/* Problem 1 line - curves down and left */}
                 <path
-                  d="M 600 40 Q 200 100 150 200"
+                  d="M 600 60 Q 300 180 150 280"
                   stroke="#ff6900"
                   strokeWidth="3"
                   fill="none"
                   strokeLinecap="round"
                 />
                 
-                {/* Problem 2 line - curves from center to left-center */}
+                {/* Problem 2 line - curves down and left-center */}
                 <path
-                  d="M 600 40 Q 350 120 300 200"
+                  d="M 600 60 Q 400 200 300 280"
                   stroke="#ff6900"
                   strokeWidth="3"
                   fill="none"
                   strokeLinecap="round"
                 />
                 
-                {/* Problem 3 line - curves from center to right-center */}
+                {/* Problem 3 line - curves down and right-center */}
                 <path
-                  d="M 600 40 Q 850 120 900 200"
+                  d="M 600 60 Q 800 200 900 280"
                   stroke="#ff6900"
                   strokeWidth="3"
                   fill="none"
                   strokeLinecap="round"
                 />
                 
-                {/* Problem 4 line - curves from center to right */}
+                {/* Problem 4 line - curves down and right */}
                 <path
-                  d="M 600 40 Q 1000 100 1050 200"
+                  d="M 600 60 Q 900 180 1050 280"
                   stroke="#ff6900"
                   strokeWidth="3"
                   fill="none"
@@ -76,8 +76,8 @@ export default function HomePage() {
                 />
               </svg>
 
-              {/* Problems grid */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10 mt-16">
+              {/* Problems grid - positioned below the lines */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10 mt-32">
                 {/* Problem 1 */}
                 <div className="text-center">
                   <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
