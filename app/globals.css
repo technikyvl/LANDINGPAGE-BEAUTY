@@ -446,8 +446,7 @@
 .problems__heading { 
   position: relative; 
   text-align:center; 
-  background: #ffffff;
-  z-index: 1;
+  z-index: 10;
 }
 
 .problems__lines {         /* JEDEN SVG pod całą sekcją */
@@ -456,7 +455,7 @@
   width: 100%; height: 100%;
   pointer-events: none; 
   overflow: hidden;
-  z-index: 0;
+  z-index: -1;
   background: transparent;
 }
 
