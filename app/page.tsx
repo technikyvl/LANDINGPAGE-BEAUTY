@@ -354,6 +354,98 @@ export default function HomePage() {
             </div>
           </div>
         </section>
+
+        {/* Featured Projects / Gallery */}
+        <section id="gallery-6" className="gallery6">
+          <div className="gallery6__container">
+            <div className="gallery6__head">
+              <div className="gallery6__title">
+                <h2 className="gallery6__h2">Featured Projects</h2>
+                <a href="/kontakt" className="gallery6__demo">
+                  Book a demo
+                  <svg className="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                </a>
+              </div>
+              <div className="gallery6__nav">
+                <button className="gallery6__btn" id="g6-prev" aria-label="Previous" disabled>
+                  <svg className="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 19l-7-7 7-7"/></svg>
+                </button>
+                <button className="gallery6__btn" id="g6-next" aria-label="Next">
+                  <svg className="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* Karuzela */}
+          <div className="gallery6__viewport" role="region" aria-roledescription="carousel" aria-label="Featured Projects">
+            <div className="gallery6__track" id="g6-track">
+              {/* SLIDE 1 */}
+              <article className="gallery6__slide">
+                <a className="gallery6__card" href="#">
+                  <div className="gallery6__media">
+                    <img src="https://www.shadcnblocks.com/images/block/placeholder-dark-1.svg" alt="Build Modern UIs" loading="lazy" />
+                  </div>
+                  <h3 className="gallery6__titleCard">Build Modern UIs</h3>
+                  <p className="gallery6__summary">
+                    Create stunning user interfaces with our comprehensive design system.
+                  </p>
+                  <span className="gallery6__readmore">Read more
+                    <svg className="icon" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+                  </span>
+                </a>
+              </article>
+
+              {/* SLIDE 2 */}
+              <article className="gallery6__slide">
+                <a className="gallery6__card" href="#">
+                  <div className="gallery6__media">
+                    <img src="https://www.shadcnblocks.com/images/block/placeholder-dark-1.svg" alt="Design System Components" loading="lazy" />
+                  </div>
+                  <h3 className="gallery6__titleCard">Design System Components</h3>
+                  <p className="gallery6__summary">
+                    Explore our library of customizable components built with shadcn/ui and Tailwind CSS.
+                  </p>
+                  <span className="gallery6__readmore">Read more
+                    <svg className="icon" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+                  </span>
+                </a>
+              </article>
+
+              {/* SLIDE 3 */}
+              <article className="gallery6__slide">
+                <a className="gallery6__card" href="#">
+                  <div className="gallery6__media">
+                    <img src="https://www.shadcnblocks.com/images/block/placeholder-dark-1.svg" alt="Responsive Layouts" loading="lazy" />
+                  </div>
+                  <h3 className="gallery6__titleCard">Responsive Layouts</h3>
+                  <p className="gallery6__summary">
+                    Build websites that look great on any device with our responsive design patterns.
+                  </p>
+                  <span className="gallery6__readmore">Read more
+                    <svg className="icon" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+                  </span>
+                </a>
+              </article>
+
+              {/* SLIDE 4 */}
+              <article className="gallery6__slide">
+                <a className="gallery6__card" href="#">
+                  <div className="gallery6__media">
+                    <img src="https://www.shadcnblocks.com/images/block/placeholder-dark-1.svg" alt="Developer Experience" loading="lazy" />
+                  </div>
+                  <h3 className="gallery6__titleCard">Developer Experience</h3>
+                  <p className="gallery6__summary">
+                    Streamline your workflow with our developer-friendly tools and documentation.
+                  </p>
+                  <span className="gallery6__readmore">Read more
+                    <svg className="icon" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+                  </span>
+                </a>
+              </article>
+            </div>
+          </div>
+        </section>
     </main>
   )
 }
