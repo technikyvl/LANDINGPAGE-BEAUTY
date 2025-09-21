@@ -30,7 +30,7 @@ export default function HomePage() {
         <section id="problems-section" className="problems py-24 md:py-32 lg:py-40 bg-white">
           <div className="problems__inner container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <h2 id="problems-heading" className="problems__heading text-4xl font-semibold leading-tight bg-gradient-to-br from-gray-800 via-gray-700 to-gray-500 bg-clip-text text-transparent drop-shadow-2xl sm:text-6xl sm:leading-tight md:text-7xl md:leading-tight">
-              Czy Twojego salonu też dotyczą te problemy?
+              Czy to są problemy Twojego salonu?
             </h2>
 
             {/* SVG overlay for the lines */}
