@@ -37,49 +37,10 @@ export default function HomePage() {
 
             {/* Problems with connecting lines */}
             <div className="relative">
-              {/* SVG for connecting lines - lines go down from header to problems */}
-              <svg className="absolute inset-0 w-full h-96 pointer-events-none" viewBox="0 0 1200 384">
-                {/* Problem 1 line - curves down and left */}
-                <path
-                  d="M 600 60 Q 300 180 150 280"
-                  stroke="#ff6900"
-                  strokeWidth="3"
-                  fill="none"
-                  strokeLinecap="round"
-                />
-                
-                {/* Problem 2 line - curves down and left-center */}
-                <path
-                  d="M 600 60 Q 400 200 300 280"
-                  stroke="#ff6900"
-                  strokeWidth="3"
-                  fill="none"
-                  strokeLinecap="round"
-                />
-                
-                {/* Problem 3 line - curves down and right-center */}
-                <path
-                  d="M 600 60 Q 800 200 900 280"
-                  stroke="#ff6900"
-                  strokeWidth="3"
-                  fill="none"
-                  strokeLinecap="round"
-                />
-                
-                {/* Problem 4 line - curves down and right */}
-                <path
-                  d="M 600 60 Q 900 180 1050 280"
-                  stroke="#ff6900"
-                  strokeWidth="3"
-                  fill="none"
-                  strokeLinecap="round"
-                />
-              </svg>
-
-              {/* Problems grid - positioned below the lines */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10 mt-32">
+              {/* Problems grid - positioned first to calculate exact positions */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10 mt-16">
                 {/* Problem 1 */}
-                <div className="text-center">
+                <div className="text-center" id="problem-1">
                   <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
                     <span className="text-white font-bold text-xl">1</span>
                   </div>
@@ -87,7 +48,7 @@ export default function HomePage() {
                 </div>
 
                 {/* Problem 2 */}
-                <div className="text-center">
+                <div className="text-center" id="problem-2">
                   <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
                     <span className="text-white font-bold text-xl">2</span>
                   </div>
@@ -95,7 +56,7 @@ export default function HomePage() {
                 </div>
 
                 {/* Problem 3 */}
-                <div className="text-center">
+                <div className="text-center" id="problem-3">
                   <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
                     <span className="text-white font-bold text-xl">3</span>
                   </div>
@@ -103,13 +64,52 @@ export default function HomePage() {
                 </div>
 
                 {/* Problem 4 */}
-                <div className="text-center">
+                <div className="text-center" id="problem-4">
                   <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
                     <span className="text-white font-bold text-xl">4</span>
                   </div>
                   <h3 className="text-lg font-semibold text-gray-900 mb-2">Problem 4</h3>
                 </div>
               </div>
+
+              {/* SVG for connecting lines - positioned to connect header to exact problem positions */}
+              <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 1200 400">
+                {/* Problem 1 line - from header center to problem 1 circle */}
+                <path
+                  d="M 600 80 Q 200 200 150 320"
+                  stroke="#ff6900"
+                  strokeWidth="3"
+                  fill="none"
+                  strokeLinecap="round"
+                />
+                
+                {/* Problem 2 line - from header center to problem 2 circle */}
+                <path
+                  d="M 600 80 Q 400 220 300 320"
+                  stroke="#ff6900"
+                  strokeWidth="3"
+                  fill="none"
+                  strokeLinecap="round"
+                />
+                
+                {/* Problem 3 line - from header center to problem 3 circle */}
+                <path
+                  d="M 600 80 Q 800 220 900 320"
+                  stroke="#ff6900"
+                  strokeWidth="3"
+                  fill="none"
+                  strokeLinecap="round"
+                />
+                
+                {/* Problem 4 line - from header center to problem 4 circle */}
+                <path
+                  d="M 600 80 Q 1000 200 1050 320"
+                  stroke="#ff6900"
+                  strokeWidth="3"
+                  fill="none"
+                  strokeLinecap="round"
+                />
+              </svg>
             </div>
           </div>
         </section>
