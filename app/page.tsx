@@ -96,7 +96,9 @@ export default function HomePage() {
           <div className="container">
             <div className="head">
               <span className="badge-outline">dla salonów beauty</span>
-              <h2 className="heading-xl">Rozwiązujemy realne problemy</h2>
+              <h2 className="text-4xl font-semibold leading-tight bg-gradient-to-br from-gray-800 via-gray-700 to-gray-500 bg-clip-text text-transparent drop-shadow-2xl sm:text-6xl sm:leading-tight md:text-7xl md:leading-tight">
+                Rozwiązujemy realne problemy
+              </h2>
               <p className="sub">Zobacz, co naprawiamy krok po kroku.</p>
             </div>
                 
