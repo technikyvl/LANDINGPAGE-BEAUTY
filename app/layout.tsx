@@ -100,7 +100,7 @@ export default function RootLayout({
         <Script src="/services-cards.js" strategy="afterInteractive" />
         <Script src="/tabs.js" strategy="afterInteractive" />
         <Script src="/problems-lines.js" strategy="afterInteractive" />
-        <Script src="/gallery6.js" strategy="afterInteractive" />
+        <Script src="/carousel.js" strategy="afterInteractive" />
       </body>
     </html>
   )

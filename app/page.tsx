@@ -355,94 +355,111 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Featured Projects / Gallery */}
-        <section id="gallery-6" className="gallery6">
-          <div className="gallery6__container">
-            <div className="gallery6__head">
-              <div className="gallery6__title">
-                <h2 className="gallery6__h2">Featured Projects</h2>
-                <a href="/kontakt" className="gallery6__demo">
+        {/* Featured Projects Carousel */}
+        <section id="projects-carousel" className="projects-section">
+          <div className="projects-container">
+            <div className="projects-header">
+              <div className="projects-title-group">
+                <h2 className="projects-title">Featured Projects</h2>
+                <a href="/kontakt" className="projects-demo-link">
                   Book a demo
-                  <svg className="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                  <svg className="arrow-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M7 17L17 7M7 7h10v10"/>
+                  </svg>
                 </a>
               </div>
-              <div className="gallery6__nav">
-                <button className="gallery6__btn" id="g6-prev" aria-label="Previous" disabled>
-                  <svg className="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 19l-7-7 7-7"/></svg>
+              <div className="projects-nav">
+                <button className="nav-btn prev-btn" id="carousel-prev" aria-label="Previous slide" disabled>
+                  <svg className="nav-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M15 19l-7-7 7-7"/>
+                  </svg>
                 </button>
-                <button className="gallery6__btn" id="g6-next" aria-label="Next">
-                  <svg className="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+                <button className="nav-btn next-btn" id="carousel-next" aria-label="Next slide">
+                  <svg className="nav-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M9 5l7 7-7 7"/>
+                  </svg>
                 </button>
               </div>
             </div>
-          </div>
 
-          {/* Karuzela */}
-          <div className="gallery6__viewport" role="region" aria-roledescription="carousel" aria-label="Featured Projects">
-            <div className="gallery6__track" id="g6-track">
-              {/* SLIDE 1 */}
-              <article className="gallery6__slide">
-                <a className="gallery6__card" href="#">
-                  <div className="gallery6__media">
-                    <img src="https://www.shadcnblocks.com/images/block/placeholder-dark-1.svg" alt="Build Modern UIs" loading="lazy" />
-                  </div>
-                  <h3 className="gallery6__titleCard">Build Modern UIs</h3>
-                  <p className="gallery6__summary">
-                    Create stunning user interfaces with our comprehensive design system.
-                  </p>
-                  <span className="gallery6__readmore">Read more
-                    <svg className="icon" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
-                  </span>
-                </a>
-              </article>
+            <div className="carousel-wrapper" role="region" aria-roledescription="carousel" aria-label="Featured Projects">
+              <div className="carousel-track" id="carousel-track">
+                <div className="carousel-slide">
+                  <a className="project-card" href="#">
+                    <div className="project-image">
+                      <img src="https://www.shadcnblocks.com/images/block/placeholder-dark-1.svg" alt="Build Modern UIs" loading="lazy" />
+                    </div>
+                    <div className="project-content">
+                      <h3 className="project-title">Build Modern UIs</h3>
+                      <p className="project-description">
+                        Create stunning user interfaces with our comprehensive design system.
+                      </p>
+                      <span className="project-link">Read more
+                        <svg className="link-icon" viewBox="0 0 24 24">
+                          <path d="M9 5l7 7-7 7"/>
+                        </svg>
+                      </span>
+                    </div>
+                  </a>
+                </div>
 
-              {/* SLIDE 2 */}
-              <article className="gallery6__slide">
-                <a className="gallery6__card" href="#">
-                  <div className="gallery6__media">
-                    <img src="https://www.shadcnblocks.com/images/block/placeholder-dark-1.svg" alt="Design System Components" loading="lazy" />
-                  </div>
-                  <h3 className="gallery6__titleCard">Design System Components</h3>
-                  <p className="gallery6__summary">
-                    Explore our library of customizable components built with shadcn/ui and Tailwind CSS.
-                  </p>
-                  <span className="gallery6__readmore">Read more
-                    <svg className="icon" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
-                  </span>
-                </a>
-              </article>
+                <div className="carousel-slide">
+                  <a className="project-card" href="#">
+                    <div className="project-image">
+                      <img src="https://www.shadcnblocks.com/images/block/placeholder-dark-1.svg" alt="Design System Components" loading="lazy" />
+                    </div>
+                    <div className="project-content">
+                      <h3 className="project-title">Design System Components</h3>
+                      <p className="project-description">
+                        Explore our library of customizable components built with shadcn/ui and Tailwind CSS.
+                      </p>
+                      <span className="project-link">Read more
+                        <svg className="link-icon" viewBox="0 0 24 24">
+                          <path d="M9 5l7 7-7 7"/>
+                        </svg>
+                      </span>
+                    </div>
+                  </a>
+                </div>
 
-              {/* SLIDE 3 */}
-              <article className="gallery6__slide">
-                <a className="gallery6__card" href="#">
-                  <div className="gallery6__media">
-                    <img src="https://www.shadcnblocks.com/images/block/placeholder-dark-1.svg" alt="Responsive Layouts" loading="lazy" />
-                  </div>
-                  <h3 className="gallery6__titleCard">Responsive Layouts</h3>
-                  <p className="gallery6__summary">
-                    Build websites that look great on any device with our responsive design patterns.
-                  </p>
-                  <span className="gallery6__readmore">Read more
-                    <svg className="icon" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
-                  </span>
-                </a>
-              </article>
+                <div className="carousel-slide">
+                  <a className="project-card" href="#">
+                    <div className="project-image">
+                      <img src="https://www.shadcnblocks.com/images/block/placeholder-dark-1.svg" alt="Responsive Layouts" loading="lazy" />
+                    </div>
+                    <div className="project-content">
+                      <h3 className="project-title">Responsive Layouts</h3>
+                      <p className="project-description">
+                        Build websites that look great on any device with our responsive design patterns.
+                      </p>
+                      <span className="project-link">Read more
+                        <svg className="link-icon" viewBox="0 0 24 24">
+                          <path d="M9 5l7 7-7 7"/>
+                        </svg>
+                      </span>
+                    </div>
+                  </a>
+                </div>
 
-              {/* SLIDE 4 */}
-              <article className="gallery6__slide">
-                <a className="gallery6__card" href="#">
-                  <div className="gallery6__media">
-                    <img src="https://www.shadcnblocks.com/images/block/placeholder-dark-1.svg" alt="Developer Experience" loading="lazy" />
-                  </div>
-                  <h3 className="gallery6__titleCard">Developer Experience</h3>
-                  <p className="gallery6__summary">
-                    Streamline your workflow with our developer-friendly tools and documentation.
-                  </p>
-                  <span className="gallery6__readmore">Read more
-                    <svg className="icon" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
-                  </span>
-                </a>
-              </article>
+                <div className="carousel-slide">
+                  <a className="project-card" href="#">
+                    <div className="project-image">
+                      <img src="https://www.shadcnblocks.com/images/block/placeholder-dark-1.svg" alt="Developer Experience" loading="lazy" />
+                    </div>
+                    <div className="project-content">
+                      <h3 className="project-title">Developer Experience</h3>
+                      <p className="project-description">
+                        Streamline your workflow with our developer-friendly tools and documentation.
+                      </p>
+                      <span className="project-link">Read more
+                        <svg className="link-icon" viewBox="0 0 24 24">
+                          <path d="M9 5l7 7-7 7"/>
+                        </svg>
+                      </span>
+                    </div>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </section>
