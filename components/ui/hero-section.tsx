@@ -33,9 +33,16 @@ export function HeroSection({ badge, title, description, actions }: HeroProps) {
   return (
     <section
       id="hero"
-      className={cn("bg-white text-foreground", "py-12 sm:py-24 md:py-32 px-4", "overflow-hidden pb-0")}
+      className={cn("bg-white text-foreground relative", "py-12 sm:py-24 md:py-32 px-4", "overflow-hidden pb-0")}
     >
-      <div className="mx-auto flex max-w-7xl flex-col gap-12 pt-16 sm:gap-24">
+      {/* Delikatny pomarańczowy glare */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-orange-500/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-orange-400/8 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-orange-300/6 rounded-full blur-2xl"></div>
+      </div>
+      
+      <div className="mx-auto flex max-w-7xl flex-col gap-12 pt-16 sm:gap-24 relative z-10">
         <div className="flex flex-col items-center gap-4 text-center sm:gap-8">
           {/* Badge */}
           {badge && (
