@@ -148,9 +148,6 @@ export default function HomePage() {
             
             {/* Orbital Animation */}
             <div className="relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden">
-              <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-orange-500 to-orange-600 bg-clip-text text-center text-6xl font-semibold leading-none text-transparent">
-                AERO BEAUTY
-              </span>
 
               {/* Orbit 1 - Inner (60px radius) */}
               <OrbitingCircles
