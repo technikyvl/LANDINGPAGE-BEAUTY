@@ -1,0 +1,128 @@
+/* —— Tokens (możesz spiąć z istniejącymi zmiennymi projektu) —— */
+:root{
+  --bg: #ffffff;
+  --fg: #0b0b0b;
+  --muted: #6b7280;
+  --ring: rgba(0,0,0,.06);
+  --shadow: 0 10px 30px rgba(0,0,0,.08);
+  --border: rgba(0,0,0,.12);
+  --radius-xl: 16px;
+}
+
+/* —— Layout —— */
+.nav-root{
+  position: fixed;
+  inset: 0 auto auto 0;
+  width: 100%;
+  z-index: 50;
+  padding-inline: 8px;
+}
+
+.nav-shell{
+  max-width: 1120px;
+  margin: 8px auto 0;
+  padding: 0 24px;
+  transition: all .3s ease;
+}
+
+.nav-row{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 0;
+}
+
+.brand{
+  display:flex; align-items:center; gap:10px; text-decoration:none; color:var(--fg);
+}
+.logo{ height:20px; width:auto; display:block; }
+.brand-text{ font-size:18px; font-weight:600; }
+
+/* Centered nav (desktop) */
+.nav-center{
+  position:absolute;
+  inset: 0;
+  display:none;
+  pointer-events:none;
+}
+.nav-list{
+  --gap: 32px;
+  height:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap: var(--gap);
+  list-style:none;
+  pointer-events:auto;
+}
+.nav-list a{
+  font-size:14px; color:var(--muted); text-decoration:none; transition:color .15s;
+}
+.nav-list a:hover{ color: var(--fg); }
+
+/* Actions (right side) */
+.actions{ display:flex; align-items:center; gap:10px; }
+.btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  height:38px; padding:0 14px; border-radius:12px;
+  font-size:14px; text-decoration:none; transition:.2s ease;
+  border:1px solid transparent;
+}
+.btn-outline{
+  background:transparent; border-color:var(--border); color:var(--fg);
+}
+.btn-outline:hover{ background:#f6f6f6; }
+.btn-solid{
+  background:#111; color:#fff;
+}
+.btn-solid:hover{ filter:brightness(0.95); }
+
+/* Burger + icons swap */
+.menu-toggle{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:40px; height:40px; border-radius:10px; border:1px solid var(--border);
+  background:transparent; cursor:pointer; position:relative;
+}
+.icon{ position:absolute; transition:transform .2s, opacity .2s; }
+.icon-open{ opacity:1; transform:rotate(0) scale(1); }
+.icon-close{ opacity:0; transform:rotate(-180deg) scale(0.5); }
+
+/* Mobile panel (drawer) */
+.mobile-panel{
+  display:none;
+  flex-direction:column; gap:24px;
+  padding:24px; margin-top:12px;
+  border:1px solid var(--border);
+  border-radius:24px;
+  background: var(--bg);
+  box-shadow: var(--shadow);
+}
+.mobile-list{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:16px; }
+.mobile-list a{ color:var(--muted); text-decoration:none; font-size:16px; }
+.mobile-list a:hover{ color:var(--fg); }
+.mobile-actions{ display:flex; flex-direction:column; gap:10px; }
+
+/* Scroll state: glassmorphism + zaokrąglenie */
+.nav-shell.is-scrolled{
+  max-width: 960px;
+  padding: 0 8px;
+  border:1px solid var(--border);
+  border-radius: var(--radius-xl);
+  background: color-mix(in oklab, var(--bg) 60%, transparent);
+  backdrop-filter: blur(16px);
+  box-shadow: var(--shadow);
+}
+
+/* Pokazywanie odpowiednich przycisków zależnie od scrolla */
+.show-when-scrolled{ display:none; }
+.nav-shell.is-scrolled .show-when-top{ display:none; }
+.nav-shell.is-scrolled .show-when-scrolled{ display:inline-flex; }
+
+/* Responsive */
+@media (min-width: 1024px){
+  .nav-center{ display:block; }
+  .menu-toggle{ display:none; }
+  .mobile-panel{ display:none !important; }
+}

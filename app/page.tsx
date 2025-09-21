@@ -1,14 +1,11 @@
 "use client"
 
 import { HeroSection } from "@/components/ui/hero-section"
-import { Header } from "@/components/ui/header"
 import { TestimonialsMarqueeSection } from "@/components/sections/testimonials-marquee-section"
 import { Icons } from "@/components/ui/icons"
 
 export default function HomePage() {
   return (
-    <>
-      <Header />
     <main className="min-h-screen">
         {/* Hero Section */}
       <HeroSection
@@ -302,6 +299,5 @@ export default function HomePage() {
         {/* Testimonials Marquee JS */}
         <TestimonialsMarqueeSection />
     </main>
-    </>
   )
 }
