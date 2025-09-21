@@ -146,8 +146,11 @@ export default function HomePage() {
               </div>
               
               {/* Ścieżki orbitalne */}
-              <div className="orbit-path"></div>
+              <div className="orbit-path orbit-path-1"></div>
               <div className="orbit-path orbit-path-2"></div>
+              <div className="orbit-path orbit-path-3"></div>
+              <div className="orbit-path orbit-path-4"></div>
+              <div className="orbit-path orbit-path-5"></div>
               
               {/* Ikony platform */}
               <div className="orbit-item" title="Google">
