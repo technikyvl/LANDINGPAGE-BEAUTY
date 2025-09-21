@@ -41,8 +41,8 @@ export default function HomePage() {
               <div className="problem-box" id="problem-1">
                 <div className="problem-card">
                   <div className="problem-number">1</div>
-                  <h3 className="problem-title text-2xl font-semibold leading-tight bg-gradient-to-br from-gray-800 via-gray-700 to-gray-500 bg-clip-text text-transparent drop-shadow-2xl">Brak klientów</h3>
-                  <p className="problem-description text-lg font-medium bg-gradient-to-br from-gray-800 via-gray-700 to-gray-500 bg-clip-text text-transparent">
+                  <h3 className="problem-title">Brak klientów</h3>
+                  <p className="problem-description">
                     Twój grafik świeci pustkami, a mimo promocji nowe klientki nie przychodzą.
                   </p>
                 </div>
@@ -51,8 +51,8 @@ export default function HomePage() {
               <div className="problem-box" id="problem-2">
                 <div className="problem-card">
                   <div className="problem-number">2</div>
-                  <h3 className="problem-title text-2xl font-semibold leading-tight bg-gradient-to-br from-gray-800 via-gray-700 to-gray-500 bg-clip-text text-transparent drop-shadow-2xl">Słaba widoczność online</h3>
-                  <p className="problem-description text-lg font-medium bg-gradient-to-br from-gray-800 via-gray-700 to-gray-500 bg-clip-text text-transparent">
+                  <h3 className="problem-title">Słaba widoczność online</h3>
+                  <p className="problem-description">
                     Konkurencja dominuje w social media i Google, a Twój salon ginie w tłumie.
                   </p>
                 </div>
@@ -61,8 +61,8 @@ export default function HomePage() {
               <div className="problem-box" id="problem-3">
                 <div className="problem-card">
                   <div className="problem-number">3</div>
-                  <h3 className="problem-title text-2xl font-semibold leading-tight bg-gradient-to-br from-gray-800 via-gray-700 to-gray-500 bg-clip-text text-transparent drop-shadow-2xl">Brak powrotów klientek</h3>
-                  <p className="problem-description text-lg font-medium bg-gradient-to-br from-gray-800 via-gray-700 to-gray-500 bg-clip-text text-transparent">
+                  <h3 className="problem-title">Brak powrotów klientek</h3>
+                  <p className="problem-description">
                     Klientki przychodzą raz i znikają – brakuje systemu, który sprawi, że wrócą regularnie.
                   </p>
                 </div>
@@ -71,8 +71,8 @@ export default function HomePage() {
               <div className="problem-box" id="problem-4">
                 <div className="problem-card">
                   <div className="problem-number">4</div>
-                  <h3 className="problem-title text-2xl font-semibold leading-tight bg-gradient-to-br from-gray-800 via-gray-700 to-gray-500 bg-clip-text text-transparent drop-shadow-2xl">Brak stałego ruchu w salonie</h3>
-                  <p className="problem-description text-lg font-medium bg-gradient-to-br from-gray-800 via-gray-700 to-gray-500 bg-clip-text text-transparent">
+                  <h3 className="problem-title">Brak stałego ruchu w salonie</h3>
+                  <p className="problem-description">
                     Raz masz pełne obłożenie, a raz puste dni – przychody są nieprzewidywalne.
                   </p>
                 </div>
@@ -81,8 +81,8 @@ export default function HomePage() {
               <div className="problem-box" id="problem-5">
                 <div className="problem-card">
                   <div className="problem-number">5</div>
-                  <h3 className="problem-title text-2xl font-semibold leading-tight bg-gradient-to-br from-gray-800 via-gray-700 to-gray-500 bg-clip-text text-transparent drop-shadow-2xl">Brak systemu rezerwacji</h3>
-                  <p className="problem-description text-lg font-medium bg-gradient-to-br from-gray-800 via-gray-700 to-gray-500 bg-clip-text text-transparent">
+                  <h3 className="problem-title">Brak systemu rezerwacji</h3>
+                  <p className="problem-description">
                     Klientki nie mogą łatwo umówić wizyty online – a Ty tracisz rezerwacje każdego dnia.
                   </p>
                 </div>
