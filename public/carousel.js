@@ -3,19 +3,37 @@
   
   let currentSlide = 0;
   let isAnimating = false;
+  let initAttempts = 0;
+  const maxAttempts = 10;
   
   function initCarousel() {
+    initAttempts++;
+    console.log('Attempting to initialize carousel, attempt:', initAttempts);
+    
     const track = document.getElementById('carousel-track');
     const prevBtn = document.getElementById('carousel-prev');
     const nextBtn = document.getElementById('carousel-next');
     const slides = document.querySelectorAll('.carousel-slide');
     
+    console.log('Elements found:', {
+      track: !!track,
+      prevBtn: !!prevBtn,
+      nextBtn: !!nextBtn,
+      slides: slides.length
+    });
+    
     if (!track || !prevBtn || !nextBtn || slides.length === 0) {
-      console.log('Carousel elements not found');
-      return false;
+      if (initAttempts < maxAttempts) {
+        console.log('Carousel elements not found, retrying in 100ms...');
+        setTimeout(initCarousel, 100);
+        return false;
+      } else {
+        console.log('Carousel initialization failed after', maxAttempts, 'attempts');
+        return false;
+      }
     }
     
-    console.log('Carousel initialized with', slides.length, 'slides');
+    console.log('Carousel initialized successfully with', slides.length, 'slides');
     
     function updateButtons() {
       const isAtStart = currentSlide === 0;
@@ -28,7 +46,10 @@
     }
     
     function scrollToSlide(slideIndex) {
-      if (isAnimating) return;
+      if (isAnimating) {
+        console.log('Animation in progress, skipping scroll');
+        return;
+      }
       
       isAnimating = true;
       currentSlide = Math.max(0, Math.min(slideIndex, slides.length - 1));
@@ -37,41 +58,56 @@
       const gap = 16; // 1rem = 16px
       const scrollPosition = currentSlide * (slideWidth + gap);
       
-      console.log('Scrolling to slide:', currentSlide, 'Position:', scrollPosition);
+      console.log('Scrolling to slide:', currentSlide, 'Position:', scrollPosition, 'Slide width:', slideWidth);
       
-      track.scrollTo({
-        left: scrollPosition,
-        behavior: 'smooth'
-      });
+      // Try both methods
+      try {
+        track.scrollTo({
+          left: scrollPosition,
+          behavior: 'smooth'
+        });
+      } catch (e) {
+        console.log('scrollTo failed, using scrollLeft');
+        track.scrollLeft = scrollPosition;
+      }
       
       updateButtons();
       
       // Reset animation flag after scroll completes
       setTimeout(() => {
         isAnimating = false;
+        console.log('Animation completed');
       }, 500);
     }
     
     function nextSlide() {
+      console.log('nextSlide called, currentSlide:', currentSlide, 'slides.length:', slides.length);
       if (currentSlide < slides.length - 1) {
         scrollToSlide(currentSlide + 1);
+      } else {
+        console.log('Already at last slide');
       }
     }
     
     function prevSlide() {
+      console.log('prevSlide called, currentSlide:', currentSlide);
       if (currentSlide > 0) {
         scrollToSlide(currentSlide - 1);
+      } else {
+        console.log('Already at first slide');
       }
     }
     
     // Event listeners
     nextBtn.addEventListener('click', (e) => {
       e.preventDefault();
+      console.log('Next button clicked, current slide:', currentSlide);
       nextSlide();
     });
     
     prevBtn.addEventListener('click', (e) => {
       e.preventDefault();
+      console.log('Prev button clicked, current slide:', currentSlide);
       prevSlide();
     });
     
@@ -144,4 +180,12 @@
   } else {
     initCarousel();
   }
+  
+  // Also try on window load as fallback
+  window.addEventListener('load', () => {
+    if (initAttempts === 0) {
+      console.log('Trying carousel init on window load');
+      initCarousel();
+    }
+  });
 })();
