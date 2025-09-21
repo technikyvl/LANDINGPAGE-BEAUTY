@@ -245,6 +245,46 @@ export default function HomePage() {
               >
                 <PlatformIcons.wordpress />
               </OrbitingCircles>
+
+              {/* Orbit 4 - Extra Outer (240px radius) */}
+              <OrbitingCircles
+                className="size-[50px] bg-white shadow-lg"
+                radius={240}
+                duration={14}
+                reverse
+                path={true}
+              >
+                <PlatformIcons.google />
+              </OrbitingCircles>
+              <OrbitingCircles
+                className="size-[50px] bg-white shadow-lg"
+                radius={240}
+                duration={14}
+                delay={7}
+                reverse
+                path={false}
+              >
+                <PlatformIcons.booksy />
+              </OrbitingCircles>
+
+              {/* Orbit 5 - Largest (300px radius) */}
+              <OrbitingCircles
+                className="size-[50px] bg-white shadow-lg"
+                radius={300}
+                duration={12}
+                path={true}
+              >
+                <PlatformIcons.instagram />
+              </OrbitingCircles>
+              <OrbitingCircles
+                className="size-[50px] bg-white shadow-lg"
+                radius={300}
+                duration={12}
+                delay={6}
+                path={false}
+              >
+                <PlatformIcons.facebook />
+              </OrbitingCircles>
             </div>
           </div>
         </section>
