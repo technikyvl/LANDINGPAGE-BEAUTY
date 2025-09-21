@@ -27,39 +27,42 @@ export default function HomePage() {
         />
 
         {/* Problem Question Section */}
-        <section id="problemy" className="problemy py-24 md:py-32 lg:py-40 bg-white">
-          <div className="problemy__inner container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <h2 id="problemy-heading" className="problemy__heading text-4xl font-semibold leading-tight bg-gradient-to-br from-gray-800 via-gray-700 to-gray-500 bg-clip-text text-transparent drop-shadow-2xl sm:text-6xl sm:leading-tight md:text-7xl md:leading-tight">
-              Czy Twojego salonu też dotyczą te problemy?
-            </h2>
+        <section className="py-24 md:py-32 lg:py-40 bg-white">
+          <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-semibold leading-tight bg-gradient-to-br from-gray-800 via-gray-700 to-gray-500 bg-clip-text text-transparent drop-shadow-2xl sm:text-6xl sm:leading-tight md:text-7xl md:leading-tight">
+                Czy Twojego salonu też dotyczą te problemy?
+              </h2>
+            </div>
 
-            {/* SVG overlay for animated lines */}
-            <svg className="problemy__lines" aria-hidden="true"></svg>
-
-            {/* Problems list */}
-            <div id="problemy-list" className="problemy__list">
-              <div className="problem" id="problem-1">
+            {/* Problems grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {/* Problem 1 */}
+              <div className="text-center">
                 <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-white font-bold text-xl">1</span>
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">Problem 1</h3>
               </div>
 
-              <div className="problem" id="problem-2">
+              {/* Problem 2 */}
+              <div className="text-center">
                 <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-white font-bold text-xl">2</span>
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">Problem 2</h3>
               </div>
 
-              <div className="problem" id="problem-3">
+              {/* Problem 3 */}
+              <div className="text-center">
                 <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-white font-bold text-xl">3</span>
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">Problem 3</h3>
               </div>
 
-              <div className="problem" id="problem-4">
+              {/* Problem 4 */}
+              <div className="text-center">
                 <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-white font-bold text-xl">4</span>
                 </div>
