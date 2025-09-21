@@ -40,6 +40,13 @@
 .svc-title{font-size:18px;line-height:1.3}
 .svc-desc{font-size:14px;color:#6b7280;margin-top:4px}
 
+/* Upewnij się, że SVG naprawdę zajmuje cały wizual */
+.svc-visual svg { 
+  display:block; 
+  width:100%; 
+  height:100%; 
+}
+
 /* wspólne warstwy */
 .svc-gridlayer{position:absolute;inset:0;background:
   linear-gradient(to right,var(--svc-grid) 1px,transparent 1px),
@@ -48,6 +55,23 @@ background-size:20px 20px;mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,
 .svc-ellipse{position:absolute;inset:0;z-index:5}
 .svc-fog{position:absolute;inset:0;z-index:6;opacity:0;transition:opacity .5s; background:linear-gradient(to bottom,transparent 35%, color-mix(in oklab,var(--svc-main) 30%, transparent) 100%)}
 .svc-card:hover .svc-fog{opacity:1}
+
+/* Warstwa słupków ma być nad tłem i mgłą */
+.svc-bars,
+.svc-bars-variant {
+  position:absolute;
+  inset:0;
+  z-index:8;
+}
+
+/* MGŁA ma być pod słupkami, nie odwrotnie */
+.svc-fog { z-index:6; }
+
+/* Karty niech nie ściśniają SVG przy mniejszych szerokościach */
+.svc-visual { min-height:180px; }
+
+/* Notka, która wjeżdża z góry, niech nie przykrywa całej karty */
+.svc-note { pointer-events:none; }
 
 /* pigułki/legendy i notki */
 .svc-pill,.svc-float{position:absolute;z-index:8;display:flex;align-items:center;gap:6px;

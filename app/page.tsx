@@ -27,8 +27,9 @@ export default function HomePage() {
         />
 
         {/* Services Cards Section */}
-        <section id="services-cards" className="svc container py-24 md:py-32 lg:py-40 bg-white">
-          <header className="svc-head reveal">
+        <section id="services" className="py-24 md:py-32 lg:py-40 bg-white">
+          <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            {/* Header */}
             <div className="relative mb-20">
               <div className="text-8xl md:text-9xl font-bold text-gray-200 absolute -top-20 -left-4 select-none">
                 02
@@ -37,15 +38,17 @@ export default function HomePage() {
                 NASZE USŁUGI
               </h2>
             </div>
-            <p className="text-sm relative z-10 max-w-[500px] font-medium text-gray-600 opacity-0 delay-100 sm:text-lg mb-4 mx-auto">
-              Rozwiązania, które pracują za Ciebie
-            </p>
-            <p className="text-sm relative z-10 max-w-[500px] font-medium text-gray-600 opacity-0 delay-100 sm:text-lg mb-8 mx-auto">
-              Interaktywne komponenty, które wyjaśniają skomplikowane rzeczy w prosty sposób.
-            </p>
-          </header>
+            
+            <div className="text-center mb-16">
+              <p className="text-sm relative z-10 max-w-[500px] font-medium text-gray-600 opacity-0 delay-100 sm:text-lg mb-4 mx-auto">
+                Rozwiązania, które pracują za Ciebie
+              </p>
+              <p className="text-sm relative z-10 max-w-[500px] font-medium text-gray-600 opacity-0 delay-100 sm:text-lg mb-8 mx-auto">
+                Interaktywne komponenty, które wyjaśniają skomplikowane rzeczy w prosty sposób.
+              </p>
+            </div>
 
-          <div className="svc-grid">
+            <div className="svc-grid">
             {/* CARD 1: Animated Card (bars + overlay) */}
             <article className="svc-card reveal" aria-labelledby="card1-title" aria-describedby="card1-desc">
               <div className="svc-visual">
@@ -148,6 +151,7 @@ export default function HomePage() {
                 <p id="card3-desc" className="svc-desc">Nowoczesna strona WWW dostosowana do branży beauty z systemem rezerwacji</p>
               </div>
             </article>
+            </div>
           </div>
         </section>
 
