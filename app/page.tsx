@@ -147,53 +147,94 @@ export default function HomePage() {
             </div>
             
             {/* Orbital Animation */}
-            <div className="relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl">
+            <div className="relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden">
               <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-orange-500 to-orange-600 bg-clip-text text-center text-6xl font-semibold leading-none text-transparent">
                 AERO BEAUTY
               </span>
 
-              {/* Inner Circles */}
+              {/* Orbit 1 - Inner (60px radius) */}
               <OrbitingCircles
-                className="size-[50px] border-2 border-orange-500 bg-white shadow-lg"
+                className="size-[50px] bg-white shadow-lg"
                 duration={20}
-                delay={20}
-                radius={80}
+                delay={0}
+                radius={60}
               >
                 <PlatformIcons.google />
               </OrbitingCircles>
               <OrbitingCircles
-                className="size-[50px] border-2 border-orange-500 bg-white shadow-lg"
+                className="size-[50px] bg-white shadow-lg"
                 duration={20}
                 delay={10}
-                radius={80}
+                radius={60}
               >
                 <PlatformIcons.booksy />
               </OrbitingCircles>
 
-              {/* Outer Circles (reverse) */}
+              {/* Orbit 2 - Middle (120px radius) */}
               <OrbitingCircles
-                className="size-[60px] border-2 border-orange-500 bg-white shadow-lg"
-                radius={190}
-                duration={20}
+                className="size-[50px] bg-white shadow-lg"
+                radius={120}
+                duration={18}
                 reverse
               >
                 <PlatformIcons.instagram />
               </OrbitingCircles>
               <OrbitingCircles
-                className="size-[60px] border-2 border-orange-500 bg-white shadow-lg"
-                radius={190}
-                duration={20}
-                delay={20}
+                className="size-[50px] bg-white shadow-lg"
+                radius={120}
+                duration={18}
+                delay={9}
                 reverse
               >
                 <PlatformIcons.facebook />
               </OrbitingCircles>
               <OrbitingCircles
-                className="size-[60px] border-2 border-orange-500 bg-white shadow-lg"
-                radius={190}
-                duration={20}
-                delay={40}
+                className="size-[50px] bg-white shadow-lg"
+                radius={120}
+                duration={18}
+                delay={18}
                 reverse
+              >
+                <PlatformIcons.wordpress />
+              </OrbitingCircles>
+
+              {/* Orbit 3 - Outer (180px radius) */}
+              <OrbitingCircles
+                className="size-[50px] bg-white shadow-lg"
+                radius={180}
+                duration={16}
+              >
+                <PlatformIcons.google />
+              </OrbitingCircles>
+              <OrbitingCircles
+                className="size-[50px] bg-white shadow-lg"
+                radius={180}
+                duration={16}
+                delay={8}
+              >
+                <PlatformIcons.booksy />
+              </OrbitingCircles>
+              <OrbitingCircles
+                className="size-[50px] bg-white shadow-lg"
+                radius={180}
+                duration={16}
+                delay={16}
+              >
+                <PlatformIcons.instagram />
+              </OrbitingCircles>
+              <OrbitingCircles
+                className="size-[50px] bg-white shadow-lg"
+                radius={180}
+                duration={16}
+                delay={24}
+              >
+                <PlatformIcons.facebook />
+              </OrbitingCircles>
+              <OrbitingCircles
+                className="size-[50px] bg-white shadow-lg"
+                radius={180}
+                duration={16}
+                delay={32}
               >
                 <PlatformIcons.wordpress />
               </OrbitingCircles>
