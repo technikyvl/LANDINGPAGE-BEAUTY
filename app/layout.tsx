@@ -23,6 +23,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="stylesheet" href="/header.css" />
+        <link rel="stylesheet" href="/services-cards.css" />
       </head>
       <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`}>
         <header id="site-header">
@@ -96,6 +97,7 @@ export default function RootLayout({
         </ThemeProvider>
         <Analytics />
         <Script src="/header.js" strategy="afterInteractive" />
+        <Script src="/services-cards.js" strategy="afterInteractive" />
       </body>
     </html>
   )

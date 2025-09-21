@@ -26,6 +26,131 @@ export default function HomePage() {
         ]}
         />
 
+        {/* Services Cards Section */}
+        <section id="services-cards" className="svc container py-24 md:py-32 lg:py-40 bg-white">
+          <header className="svc-head reveal">
+            <div className="relative mb-20">
+              <div className="text-8xl md:text-9xl font-bold text-gray-200 absolute -top-20 -left-4 select-none">
+                02
+              </div>
+              <h2 className="relative z-10 text-4xl font-semibold leading-tight bg-gradient-to-br from-gray-800 via-gray-700 to-gray-500 bg-clip-text text-transparent drop-shadow-2xl sm:text-6xl sm:leading-tight md:text-7xl md:leading-tight">
+                NASZE USŁUGI
+              </h2>
+            </div>
+            <p className="text-sm relative z-10 max-w-[500px] font-medium text-gray-600 opacity-0 delay-100 sm:text-lg mb-4 mx-auto">
+              Rozwiązania, które pracują za Ciebie
+            </p>
+            <p className="text-sm relative z-10 max-w-[500px] font-medium text-gray-600 opacity-0 delay-100 sm:text-lg mb-8 mx-auto">
+              Interaktywne komponenty, które wyjaśniają skomplikowane rzeczy w prosty sposób.
+            </p>
+          </header>
+
+          <div className="svc-grid">
+            {/* CARD 1: Animated Card (bars + overlay) */}
+            <article className="svc-card reveal" aria-labelledby="card1-title" aria-describedby="card1-desc">
+              <div className="svc-visual">
+                {/* warstwa gridu */}
+                <div className="svc-gridlayer" aria-hidden="true"></div>
+                {/* warstwa elipsy (radial gradient) */}
+                <svg className="svc-ellipse" viewBox="0 0 356 180" aria-hidden="true">
+                  <defs>
+                    <radialGradient id="svc-paint-1" cx="0" cy="0" r="1"
+                      gradientUnits="userSpaceOnUse"
+                      gradientTransform="translate(178 98) rotate(90) scale(98 178)">
+                      <stop stopColor="#ff6900" stopOpacity=".25"/>
+                      <stop offset=".34" stopColor="#ff6900" stopOpacity=".15"/>
+                      <stop offset="1" stopOpacity="0"/>
+                    </radialGradient>
+                  </defs>
+                  <rect width="356" height="180" fill="url(#svc-paint-1)"/>
+                </svg>
+                {/* warstwa 3: gradient „mgła" wznoszący się na hover */}
+                <div className="svc-fog"></div>
+                {/* warstwa 4: słupki (animowane na hover) */}
+                <svg className="svc-bars" viewBox="0 0 356 180" aria-hidden="true"></svg>
+                {/* overlay info (wjeżdża z góry na hover) */}
+                <div className="svc-float top-left">
+                  <span className="dot dot-main"></span><span className="mini">Tommy</span>
+                </div>
+                <div className="svc-float top-left second">
+                  <span className="dot dot-sec"></span><span className="mini">Megan</span>
+                </div>
+                <div className="svc-note from-top">
+                  <p className="note-title">Random Data Visualization</p>
+                  <p className="note-desc">Displaying some interesting stats.</p>
+                </div>
+              </div>
+              <div className="svc-body">
+                <h3 id="card1-title" className="svc-title">Pozycjonowanie SEO</h3>
+                <p id="card1-desc" className="svc-desc">Wysokie pozycje w Google dla fraz związanych z usługami beauty w Twojej okolicy</p>
+              </div>
+            </article>
+
+            {/* CARD 2: Animated Card Diagram (donut + chips rozjeżdżające się promieniście) */}
+            <article className="svc-card svc-card--donut reveal" aria-labelledby="card2-title" aria-describedby="card2-desc">
+              <div className="svc-visual">
+                <div className="svc-gridlayer" aria-hidden="true"></div>
+                <svg className="svc-ellipse" viewBox="0 0 356 180" aria-hidden="true">
+                  <rect width="356" height="180" fill="url(#svc-paint-1)"/>
+                </svg>
+
+                {/* donut */}
+                <div className="svc-donut">
+                  <svg viewBox="0 0 100 100" className="donut-svg" aria-hidden="true">
+                    <circle className="donut-track" cx="50" cy="50" r="40"/>
+                    <circle className="donut-sec"   cx="50" cy="50" r="40"/>
+                    <circle className="donut-main"  cx="50" cy="50" r="40"/>
+                  </svg>
+                  <div className="donut-center"><span className="donut-value">12.5%</span></div>
+                </div>
+
+                {/* chips (wysuwają się na hover) */}
+                <div className="svc-chip" style={{"--tx":"100", "--ty":"50"}}><span className="dot dot-main"></span><span className="mini">ReactJS</span></div>
+                <div className="svc-chip" style={{"--tx":"100", "--ty":"-50"}}><span className="dot dot-sec"></span><span className="mini">MongoDB</span></div>
+                <div className="svc-chip" style={{"--tx":"125", "--ty":"0"}}><span className="dot dot-main"></span><span className="mini">Prisma</span></div>
+                <div className="svc-chip" style={{"--tx":"-125", "--ty":"0"}}><span className="dot dot-sec"></span><span className="mini">NextJs</span></div>
+                <div className="svc-chip" style={{"--tx":"-100", "--ty":"50"}}><span className="dot dot-main"></span><span className="mini">Auth.js</span></div>
+                <div className="svc-chip" style={{"--tx":"-100", "--ty":"-50"}}><span className="dot dot-sec"></span><span className="mini">Stripe</span></div>
+
+                {/* opis pod wykresem znika na hover */}
+                <div className="svc-note under-donut">
+                  <p className="note-title">Random Data Visualization</p>
+                  <p className="note-desc">Displaying some interesting stats.</p>
+                </div>
+              </div>
+              <div className="svc-body">
+                <h3 id="card2-title" className="svc-title">Kampanie Google Ads</h3>
+                <p id="card2-desc" className="svc-desc">Reklamy w wyszukiwarce Google, które przyciągają klientki szukające usług beauty</p>
+              </div>
+            </article>
+
+            {/* CARD 3: Animated Card Chart (wysokie słupki + „legendy" w lewym górnym) */}
+            <article className="svc-card reveal" aria-labelledby="card3-title" aria-describedby="card3-desc">
+              <div className="svc-visual">
+                <div className="svc-gridlayer" aria-hidden="true"></div>
+                <svg className="svc-ellipse" viewBox="0 0 356 180" aria-hidden="true">
+                  <rect width="356" height="180" fill="url(#svc-paint-1)"/>
+                </svg>
+                <svg className="svc-bars-variant" viewBox="0 0 356 180" aria-hidden="true"></svg>
+
+                <div className="svc-pill left"><span className="dot dot-main"></span><span className="mini">+15,2%</span></div>
+                <div className="svc-pill left second"><span className="dot dot-sec"></span><span className="mini">+18,7%</span></div>
+
+                <div className="svc-note from-bottom">
+                  <div className="note-row">
+                    <span className="dot dot-main"></span><span className="note-mini">Random Data Visualization</span>
+                  </div>
+                  <p className="note-desc">Displaying some interesting stats.</p>
+                </div>
+              </div>
+              <div className="svc-body">
+                <h3 id="card3-title" className="svc-title">Strona Internetowa</h3>
+                <p id="card3-desc" className="svc-desc">Nowoczesna strona WWW dostosowana do branży beauty z systemem rezerwacji</p>
+              </div>
+            </article>
+          </div>
+        </section>
+
         {/* Features Section */}
         <section id="features" className="py-24 md:py-32 lg:py-40 bg-white">
           <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
