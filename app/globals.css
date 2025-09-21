@@ -449,16 +449,71 @@
 .problems__list {
   position: relative;
   display: grid;
-  grid-template-columns: repeat(4, minmax(0,1fr));
-  gap: clamp(20px, 3vw, 40px);
+  grid-template-columns: repeat(5, minmax(0,1fr));
+  gap: clamp(16px, 2.5vw, 32px);
   margin-top: clamp(28px, 4vw, 60px);
   z-index: 1;
+}
+@media (max-width: 1200px){
+  .problems__list { grid-template-columns: repeat(3, minmax(0,1fr)); }
 }
 @media (max-width: 980px){
   .problems__list { grid-template-columns: repeat(2, minmax(0,1fr)); }
 }
 @media (max-width: 560px){
   .problems__list { grid-template-columns: 1fr; }
+}
+
+/* Problem Cards Styles */
+.problem-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 24px 20px;
+  text-align: center;
+  position: relative;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.problem-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  border-color: #ff6900;
+}
+
+.problem-number {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, #ff6900 0%, #f54900 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  color: white;
+  font-weight: 700;
+  font-size: 18px;
+  box-shadow: 0 4px 12px rgba(255, 105, 0, 0.3);
+}
+
+.problem-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.problem-description {
+  font-size: 14px;
+  color: #6b7280;
+  line-height: 1.5;
+  margin: 0;
+  flex-grow: 1;
 }
 
 /* samą linię stylujemy drop-shadow + animacja */
@@ -479,6 +534,7 @@
   .problems__path:nth-child(2){ animation-delay: .08s }
   .problems__path:nth-child(3){ animation-delay: .16s }
   .problems__path:nth-child(4){ animation-delay: .24s }
+  .problems__path:nth-child(5){ animation-delay: .32s }
 }
 @keyframes draw { to { stroke-dashoffset: 0 } }
 

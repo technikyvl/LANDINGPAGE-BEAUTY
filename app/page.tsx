@@ -39,19 +39,53 @@ export default function HomePage() {
             {/* Problems list */}
             <div id="problems-list" className="problems__list">
               <div className="problem-box" id="problem-1">
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Problem 1</h3>
+                <div className="problem-card">
+                  <div className="problem-number">1</div>
+                  <h3 className="problem-title">Brak klientów</h3>
+                  <p className="problem-description">
+                    Twój grafik świeci pustkami, a mimo promocji nowe klientki nie przychodzą.
+                  </p>
+                </div>
               </div>
 
               <div className="problem-box" id="problem-2">
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Problem 2</h3>
+                <div className="problem-card">
+                  <div className="problem-number">2</div>
+                  <h3 className="problem-title">Słaba widoczność online</h3>
+                  <p className="problem-description">
+                    Konkurencja dominuje w social media i Google, a Twój salon ginie w tłumie.
+                  </p>
+                </div>
               </div>
 
               <div className="problem-box" id="problem-3">
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Problem 3</h3>
+                <div className="problem-card">
+                  <div className="problem-number">3</div>
+                  <h3 className="problem-title">Brak powrotów klientek</h3>
+                  <p className="problem-description">
+                    Klientki przychodzą raz i znikają – brakuje systemu, który sprawi, że wrócą regularnie.
+                  </p>
+                </div>
               </div>
 
               <div className="problem-box" id="problem-4">
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Problem 4</h3>
+                <div className="problem-card">
+                  <div className="problem-number">4</div>
+                  <h3 className="problem-title">Brak stałego ruchu w salonie</h3>
+                  <p className="problem-description">
+                    Raz masz pełne obłożenie, a raz puste dni – przychody są nieprzewidywalne.
+                  </p>
+                </div>
+              </div>
+
+              <div className="problem-box" id="problem-5">
+                <div className="problem-card">
+                  <div className="problem-number">5</div>
+                  <h3 className="problem-title">Brak systemu rezerwacji</h3>
+                  <p className="problem-description">
+                    Klientki nie mogą łatwo umówić wizyty online – a Ty tracisz rezerwacje każdego dnia.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
