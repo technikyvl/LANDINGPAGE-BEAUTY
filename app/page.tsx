@@ -27,9 +27,6 @@ export default function HomePage() {
         ]}
         />
 
-        {/* Dlaczego akurat my? — Portfolio Grid */}
-        <WhyUsPortfolioSection />
-
         {/* Problem Question Section */}
         <section id="problems-section" className="problems py-24 md:py-32 lg:py-40 bg-white">
           <div className="problems__inner container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -253,6 +250,9 @@ export default function HomePage() {
         
         {/* Testimonials Marquee JS */}
         <TestimonialsMarqueeSection />
+
+        {/* Dlaczego akurat my? — Portfolio Grid */}
+        <WhyUsPortfolioSection />
 
         {/* Services Cards Section */}
         <section id="services" className="py-24 md:py-32 lg:py-40 bg-white">
