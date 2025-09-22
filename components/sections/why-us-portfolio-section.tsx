@@ -19,8 +19,8 @@ export function WhyUsPortfolioSection() {
           </p>
         </div>
 
-        {/* Glare za gridem */}
-        <div className="relative">
+        {/* Glare za gridem (pomniejszone o ~30%) */}
+        <div className="relative origin-top mx-auto w-full" style={{ transform: "scale(0.7)", transformOrigin: "top center" }}>
           <div className="absolute inset-0 pointer-events-none">
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[28rem] h-[28rem] bg-orange-500/10 rounded-full blur-3xl"></div>
           </div>
