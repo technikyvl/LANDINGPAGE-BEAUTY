@@ -3,6 +3,7 @@
 import { HeroSection } from "@/components/ui/hero-section"
 import { TestimonialsMarqueeSection } from "@/components/sections/testimonials-marquee-section"
 import { Icons } from "@/components/ui/icons"
+import { WhyUsPortfolioSection } from "@/components/sections/why-us-portfolio-section"
 
 export default function HomePage() {
   return (
@@ -25,6 +26,9 @@ export default function HomePage() {
           },
         ]}
         />
+
+        {/* Dlaczego akurat my? — Portfolio Grid */}
+        <WhyUsPortfolioSection />
 
         {/* Problem Question Section */}
         <section id="problems-section" className="problems py-24 md:py-32 lg:py-40 bg-white">
