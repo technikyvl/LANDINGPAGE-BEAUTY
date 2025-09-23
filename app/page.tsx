@@ -6,6 +6,7 @@ import { InvestmentSection } from "@/components/sections/investment-section"
 import { ContactSection } from "@/components/sections/contact-section"
 import { Icons } from "@/components/ui/icons"
 import { WhyUsPortfolioSection } from "@/components/sections/why-us-portfolio-section"
+import { Footer } from "@/components/sections/footer"
 
 export default function HomePage() {
   return (
@@ -366,6 +367,9 @@ export default function HomePage() {
 
         {/* Contact Section */}
         <ContactSection />
+
+        {/* Footer */}
+        <Footer />
 
     </main>
   )
