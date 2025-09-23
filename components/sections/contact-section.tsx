@@ -107,7 +107,7 @@ export function ContactSection() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
 
-  const currentQuestion = questions[currentQuestionIndex]
+  const currentQuestion = questions[currentQuestionIndex] || questions[0]
   const isLastQuestion = currentQuestionIndex === questions.length - 1
   const isFirstQuestion = currentQuestionIndex === 0
 
@@ -116,7 +116,7 @@ export function ContactSection() {
   }
 
   const handleNext = () => {
-    if (currentQuestion.required && !formData[currentQuestion.id as keyof FormData]) {
+    if (currentQuestion?.required && !formData[currentQuestion?.id as keyof FormData]) {
       return
     }
     
@@ -193,7 +193,9 @@ export function ContactSection() {
   }
 
   const renderQuestion = () => {
-    const currentValue = formData[currentQuestion.id as keyof FormData]
+    if (!currentQuestion) return null
+    
+    const currentValue = formData[currentQuestion.id as keyof FormData] || ""
 
     switch (currentQuestion.type) {
       case 'text':
@@ -280,8 +282,8 @@ export function ContactSection() {
           {/* Question */}
           <div className="mb-8">
             <h3 className="text-xl font-semibold text-gray-900 mb-6">
-              {currentQuestion.question}
-              {currentQuestion.required && <span className="text-orange-500 ml-1">*</span>}
+              {currentQuestion?.question || ""}
+              {currentQuestion?.required && <span className="text-orange-500 ml-1">*</span>}
             </h3>
             {renderQuestion()}
           </div>
@@ -305,10 +307,10 @@ export function ContactSection() {
             <button
               type="button"
               onClick={handleNext}
-              disabled={isSubmitting || (currentQuestion.required && !currentValue)}
+              disabled={isSubmitting || (currentQuestion?.required && !formData[currentQuestion?.id as keyof FormData])}
               className={cn(
                 "px-6 py-3 rounded-lg font-medium transition-all duration-200",
-                isSubmitting || (currentQuestion.required && !currentValue)
+                isSubmitting || (currentQuestion?.required && !formData[currentQuestion?.id as keyof FormData])
                   ? "bg-gray-400 text-white cursor-not-allowed"
                   : "bg-gradient-to-r from-orange-500 to-orange-600 text-white hover:from-orange-600 hover:to-orange-700 shadow-lg hover:shadow-xl"
               )}
