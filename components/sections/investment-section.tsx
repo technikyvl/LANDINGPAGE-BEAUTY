@@ -75,10 +75,10 @@ export function InvestmentSection() {
         </div>
 
         {/* Chart Container */}
-        <div className="flex justify-center items-center mt-16 px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-center items-center mt-12 px-4 sm:px-6 lg:px-8">
           <div
             className={cn(
-              "relative w-full max-w-5xl h-[400px] sm:h-[450px] lg:h-[500px]",
+              "relative w-full max-w-4xl h-[300px] sm:h-[350px] lg:h-[400px]",
               "transition-all duration-700 ease-out",
               isVisible
                 ? "opacity-100 translate-y-0"
@@ -86,7 +86,7 @@ export function InvestmentSection() {
             )}
           >
             {/* White glare effect at the top */}
-            <div className="absolute top-0 left-0 right-0 h-24 sm:h-28 lg:h-32 bg-gradient-to-b from-white via-white/80 to-transparent z-10 pointer-events-none"></div>
+            <div className="absolute top-0 left-0 right-0 h-20 sm:h-24 lg:h-28 bg-gradient-to-b from-white via-white/80 to-transparent z-10 pointer-events-none"></div>
             
             {/* Chart Container */}
             <div className="relative h-full w-full">
@@ -103,69 +103,69 @@ export function InvestmentSection() {
               </div>
 
               {/* Chart Area */}
-              <svg width="100%" height="100%" className="absolute inset-0" viewBox="0 0 1000 500" preserveAspectRatio="xMidYMid meet">
+              <svg width="100%" height="100%" className="absolute inset-0" viewBox="0 0 800 350" preserveAspectRatio="xMidYMid meet">
                 {/* Y-axis */}
-                <line x1="80" y1="50" x2="80" y2="450" stroke="#e5e7eb" strokeWidth="2"/>
+                <line x1="60" y1="40" x2="60" y2="320" stroke="#e5e7eb" strokeWidth="1.5"/>
                 
                 {/* X-axis */}
-                <line x1="80" y1="450" x2="920" y2="450" stroke="#e5e7eb" strokeWidth="2"/>
+                <line x1="60" y1="320" x2="740" y2="320" stroke="#e5e7eb" strokeWidth="1.5"/>
                 
                 {/* Y-axis labels */}
-                <text x="70" y="60" textAnchor="end" className="text-xs sm:text-sm fill-gray-500 font-medium">100k</text>
-                <text x="70" y="120" textAnchor="end" className="text-xs sm:text-sm fill-gray-500 font-medium">80k</text>
-                <text x="70" y="180" textAnchor="end" className="text-xs sm:text-sm fill-gray-500 font-medium">60k</text>
-                <text x="70" y="240" textAnchor="end" className="text-xs sm:text-sm fill-gray-500 font-medium">40k</text>
-                <text x="70" y="300" textAnchor="end" className="text-xs sm:text-sm fill-gray-500 font-medium">20k</text>
+                <text x="50" y="48" textAnchor="end" className="text-xs fill-gray-500 font-medium">100k</text>
+                <text x="50" y="88" textAnchor="end" className="text-xs fill-gray-500 font-medium">80k</text>
+                <text x="50" y="128" textAnchor="end" className="text-xs fill-gray-500 font-medium">60k</text>
+                <text x="50" y="168" textAnchor="end" className="text-xs fill-gray-500 font-medium">40k</text>
+                <text x="50" y="208" textAnchor="end" className="text-xs fill-gray-500 font-medium">20k</text>
                 
                 {/* X-axis labels */}
-                <text x="160" y="480" textAnchor="middle" className="text-xs sm:text-sm fill-gray-500 font-medium">Miesiąc 1</text>
-                <text x="320" y="480" textAnchor="middle" className="text-xs sm:text-sm fill-gray-500 font-medium">Miesiąc 2</text>
-                <text x="480" y="480" textAnchor="middle" className="text-xs sm:text-sm fill-gray-500 font-medium">Miesiąc 3</text>
-                <text x="640" y="480" textAnchor="middle" className="text-xs sm:text-sm fill-gray-500 font-medium">Miesiąc 4</text>
-                <text x="800" y="480" textAnchor="middle" className="text-xs sm:text-sm fill-gray-500 font-medium">Miesiąc 5</text>
-                <text x="960" y="480" textAnchor="middle" className="text-xs sm:text-sm fill-gray-500 font-medium">Miesiąc 6</text>
+                <text x="130" y="340" textAnchor="middle" className="text-xs fill-gray-500 font-medium">Miesiąc 1</text>
+                <text x="250" y="340" textAnchor="middle" className="text-xs fill-gray-500 font-medium">Miesiąc 2</text>
+                <text x="370" y="340" textAnchor="middle" className="text-xs fill-gray-500 font-medium">Miesiąc 3</text>
+                <text x="490" y="340" textAnchor="middle" className="text-xs fill-gray-500 font-medium">Miesiąc 4</text>
+                <text x="610" y="340" textAnchor="middle" className="text-xs fill-gray-500 font-medium">Miesiąc 5</text>
+                <text x="730" y="340" textAnchor="middle" className="text-xs fill-gray-500 font-medium">Miesiąc 6</text>
                 
-                {/* Data points with non-linear upward growth - scaled down 20% */}
-                <circle cx="160" cy="420" r="5" fill="#ff6900" className="drop-shadow-sm" style={{
+                {/* Data points with gentle upward growth - much less steep */}
+                <circle cx="130" cy="280" r="4" fill="#ff6900" className="drop-shadow-sm" style={{
                   opacity: isVisible ? 1 : 0,
                   animation: isVisible ? `fadeInScale 0.6s ease-out 0.2s both` : 'none'
                 }}/>
-                <circle cx="320" cy="380" r="5" fill="#ff6900" className="drop-shadow-sm" style={{
+                <circle cx="250" cy="260" r="4" fill="#ff6900" className="drop-shadow-sm" style={{
                   opacity: isVisible ? 1 : 0,
                   animation: isVisible ? `fadeInScale 0.6s ease-out 0.4s both` : 'none'
                 }}/>
-                <circle cx="480" cy="300" r="5" fill="#ff6900" className="drop-shadow-sm" style={{
+                <circle cx="370" cy="230" r="4" fill="#ff6900" className="drop-shadow-sm" style={{
                   opacity: isVisible ? 1 : 0,
                   animation: isVisible ? `fadeInScale 0.6s ease-out 0.6s both` : 'none'
                 }}/>
-                <circle cx="640" cy="180" r="5" fill="#ff6900" className="drop-shadow-sm" style={{
+                <circle cx="490" cy="190" r="4" fill="#ff6900" className="drop-shadow-sm" style={{
                   opacity: isVisible ? 1 : 0,
                   animation: isVisible ? `fadeInScale 0.6s ease-out 0.8s both` : 'none'
                 }}/>
-                <circle cx="800" cy="90" r="5" fill="#ff6900" className="drop-shadow-sm" style={{
+                <circle cx="610" cy="140" r="4" fill="#ff6900" className="drop-shadow-sm" style={{
                   opacity: isVisible ? 1 : 0,
                   animation: isVisible ? `fadeInScale 0.6s ease-out 1.0s both` : 'none'
                 }}/>
-                <circle cx="960" cy="60" r="5" fill="#ff6900" className="drop-shadow-sm" style={{
+                <circle cx="730" cy="100" r="4" fill="#ff6900" className="drop-shadow-sm" style={{
                   opacity: isVisible ? 1 : 0,
                   animation: isVisible ? `fadeInScale 0.6s ease-out 1.2s both` : 'none'
                 }}/>
                 
-                {/* Animated trend line with exponential curve - scaled down 20% */}
+                {/* Animated trend line with gentle curve - much less steep */}
                 <path 
-                  d="M 160,420 Q 240,400 320,380 Q 400,340 480,300 Q 560,240 640,180 Q 720,135 800,90 Q 880,75 960,60" 
+                  d="M 130,280 Q 190,270 250,260 Q 310,245 370,230 Q 430,210 490,190 Q 550,165 610,140 Q 670,120 730,100" 
                   stroke="#ff6900" 
-                  strokeWidth="3" 
+                  strokeWidth="2.5" 
                   fill="none"
                   className="drop-shadow-sm"
                   style={{
-                    strokeDasharray: isVisible ? '1200' : '0',
-                    strokeDashoffset: isVisible ? '0' : '1200',
+                    strokeDasharray: isVisible ? '1000' : '0',
+                    strokeDashoffset: isVisible ? '0' : '1000',
                     animation: isVisible ? `drawLine 2s ease-out 0.5s both` : 'none'
                   }}
                 />
                 
-                {/* Animated gradient fill under the line - scaled down 20% */}
+                {/* Animated gradient fill under the line - gentle curve */}
                 <defs>
                   <linearGradient id={`chartGradient-${animationKey}`} x1="0%" y1="0%" x2="0%" y2="100%">
                     <stop offset="0%" stopColor="#ff6900" stopOpacity="0.3"/>
@@ -173,7 +173,7 @@ export function InvestmentSection() {
                   </linearGradient>
                 </defs>
                 <path 
-                  d="M 160,420 Q 240,400 320,380 Q 400,340 480,300 Q 560,240 640,180 Q 720,135 800,90 Q 880,75 960,60 L 960,450 L 160,450 Z" 
+                  d="M 130,280 Q 190,270 250,260 Q 310,245 370,230 Q 430,210 490,190 Q 550,165 610,140 Q 670,120 730,100 L 730,320 L 130,320 Z" 
                   fill={`url(#chartGradient-${animationKey})`}
                   style={{
                     opacity: isVisible ? 1 : 0,
@@ -183,20 +183,20 @@ export function InvestmentSection() {
               </svg>
 
               {/* Value indicators */}
-              <div className="absolute top-4 right-4 sm:top-6 sm:right-6 lg:top-8 lg:right-8 bg-white/90 backdrop-blur-sm rounded-lg px-3 py-2 sm:px-4 sm:py-3 border border-gray-200 z-20">
-                <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 sm:w-4 sm:h-4 bg-orange-500 rounded-full"></div>
-                  <span className="text-sm sm:text-base font-medium text-gray-700">Przychody</span>
+              <div className="absolute top-3 right-3 sm:top-4 sm:right-4 lg:top-6 lg:right-6 bg-white/90 backdrop-blur-sm rounded-lg px-2 py-1.5 sm:px-3 sm:py-2 border border-gray-200 z-20">
+                <div className="flex items-center gap-1.5">
+                  <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-orange-500 rounded-full"></div>
+                  <span className="text-xs sm:text-sm font-medium text-gray-700">Przychody</span>
                 </div>
               </div>
 
               {/* Current value highlight */}
-              <div className="absolute top-16 right-4 sm:top-20 sm:right-6 lg:top-24 lg:right-8 bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-lg px-4 py-2 sm:px-6 sm:py-3 shadow-lg z-20" style={{
+              <div className="absolute top-12 right-3 sm:top-14 sm:right-4 lg:top-18 lg:right-6 bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-lg px-3 py-1.5 sm:px-4 sm:py-2 shadow-lg z-20" style={{
                 opacity: isVisible ? 1 : 0,
                 animation: isVisible ? `fadeInScale 0.6s ease-out 1.8s both` : 'none'
               }}>
-                <div className="text-sm sm:text-base font-medium">+300% wzrost</div>
-                <div className="text-xs sm:text-sm opacity-90">w ciągu 6 miesięcy</div>
+                <div className="text-xs sm:text-sm font-medium">+300% wzrost</div>
+                <div className="text-xs opacity-90">w ciągu 6 miesięcy</div>
               </div>
             </div>
           </div>
