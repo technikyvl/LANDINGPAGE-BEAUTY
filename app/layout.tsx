@@ -36,7 +36,7 @@ export default function RootLayout({
                     src="/AERO DIGITAL (7).png"
                     alt="Aero Digital Logo"
                     className="logo"
-                    style={{ height: '120px', width: 'auto', maxHeight: '100%', objectFit: 'contain' }}
+                    style={{ height: '120px', width: 'auto', maxHeight: '100%', objectFit: 'contain', margin: '-20px 0' }}
                   />
                 </a>
 
