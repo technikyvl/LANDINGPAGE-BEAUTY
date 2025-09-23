@@ -4,6 +4,7 @@ import { HeroSection } from "@/components/ui/hero-section"
 import { TestimonialsMarqueeSection } from "@/components/sections/testimonials-marquee-section"
 import { InvestmentSection } from "@/components/sections/investment-section"
 import { Icons } from "@/components/ui/icons"
+import { WhyUsPortfolioSection } from "@/components/sections/why-us-portfolio-section"
 
 export default function HomePage() {
   return (
@@ -250,6 +251,9 @@ export default function HomePage() {
         
         {/* Testimonials Marquee JS */}
         <TestimonialsMarqueeSection />
+
+        {/* Dlaczego akurat my? — Portfolio Grid */}
+        <WhyUsPortfolioSection />
 
         {/* Services Cards Section */}
         <section id="services" className="py-24 md:py-32 lg:py-40 bg-white">
