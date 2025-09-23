@@ -31,12 +31,12 @@ export default function RootLayout({
             <div className="nav-shell">
               <div className="nav-row">
                 {/* Left: Logo */}
-                <a href="/" aria-label="home" className="brand">
+                <a href="/" aria-label="home" className="brand" style={{ display: 'flex', alignItems: 'center', height: '100%' }}>
                   <img
                     src="/AERO DIGITAL (7).png"
                     alt="Aero Digital Logo"
                     className="logo"
-                    style={{ height: '180px', width: 'auto' }}
+                    style={{ height: '90px', width: 'auto', maxHeight: '100%', objectFit: 'contain' }}
                   />
                 </a>
 
