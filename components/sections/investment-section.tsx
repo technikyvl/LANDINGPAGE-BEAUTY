@@ -29,6 +29,37 @@ export function InvestmentSection() {
     return () => observer.disconnect()
   }, [])
 
+  // Highlight animation effect
+  useEffect(() => {
+    const highlightElement = document.getElementById('highlight-text')
+    if (!highlightElement) return
+
+    // Check for reduced motion preference
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    
+    if (prefersReducedMotion) {
+      // Immediately show full highlight without animation
+      highlightElement.classList.add('hl-animate')
+      return
+    }
+
+    // Use IntersectionObserver for smooth animation
+    const highlightObserver = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          highlightElement.classList.add('hl-animate')
+          // Disconnect after first trigger
+          highlightObserver.disconnect()
+        }
+      },
+      { threshold: 0.3 }
+    )
+
+    highlightObserver.observe(highlightElement)
+
+    return () => highlightObserver.disconnect()
+  }, [])
+
   return (
     <>
       <style jsx>{`
@@ -61,12 +92,34 @@ export function InvestmentSection() {
           }
         }
         
+        .hl-accent {
+          background: linear-gradient(120deg, #ff6900 0%, #ea580c 100%);
+          background-repeat: no-repeat;
+          background-position: left center;
+          background-size: 0% 100%;
+          display: inline;
+          padding-inline: 0.125rem;
+          border-radius: 0.375rem;
+          transition: background-size 0s;
+        }
+        
+        .hl-animate {
+          animation: highlightText 2s ease-out 0.5s both;
+        }
+        
         @keyframes highlightText {
           0% {
             background-size: 0% 100%;
           }
           100% {
             background-size: 100% 100%;
+          }
+        }
+        
+        @media (prefers-reduced-motion: reduce) {
+          .hl-accent {
+            background-size: 100% 100% !important;
+            animation: none !important;
           }
         }
       `}</style>
@@ -80,20 +133,7 @@ export function InvestmentSection() {
         <div className="text-center mb-16">
           <h2 className="text-4xl font-semibold leading-tight bg-gradient-to-br from-gray-800 via-gray-700 to-gray-500 bg-clip-text text-transparent drop-shadow-2xl sm:text-6xl sm:leading-tight md:text-7xl md:leading-tight">
             Nie kupujesz usługi –{" "}
-            <span 
-              className="relative inline-block"
-              style={{
-                background: isVisible 
-                  ? "linear-gradient(120deg, rgba(255, 105, 0, 0.3) 0%, rgba(255, 105, 0, 0.1) 100%)"
-                  : "transparent",
-                backgroundSize: "0% 100%",
-                backgroundRepeat: "no-repeat",
-                backgroundPosition: "left center",
-                animation: isVisible ? "highlightText 2s ease-out 0.5s both" : "none",
-                padding: "0 4px",
-                borderRadius: "4px"
-              }}
-            >
+            <span className="hl-accent" id="highlight-text">
               inwestujesz
             </span>
             {" "}w swój biznes.
