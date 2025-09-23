@@ -261,7 +261,7 @@ export default function HomePage() {
         <section id="services" className="py-24 md:py-32 lg:py-40 bg-white">
           <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             {/* Header */}
-            <div className="relative mb-0">
+            <div className="relative -mb-2">
               <div className="text-8xl md:text-9xl font-bold text-gray-200 absolute -top-20 -left-4 select-none">
                 02
               </div>
