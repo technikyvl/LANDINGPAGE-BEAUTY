@@ -29,36 +29,6 @@ export function InvestmentSection() {
     return () => observer.disconnect()
   }, [])
 
-  // Highlight animation effect
-  useEffect(() => {
-    const highlightElement = document.querySelector('.hero h1 .hl-fix')
-    if (!highlightElement) return
-
-    // Check for reduced motion preference
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    
-    if (prefersReducedMotion) {
-      // Immediately show full highlight without animation
-      highlightElement.classList.add('is-animated')
-      return
-    }
-
-    // Use IntersectionObserver for smooth animation
-    const highlightObserver = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          highlightElement.classList.add('is-animated')
-          // Disconnect after first trigger
-          highlightObserver.disconnect()
-        }
-      },
-      { threshold: 0.3 }
-    )
-
-    highlightObserver.observe(highlightElement)
-
-    return () => highlightObserver.disconnect()
-  }, [])
 
   return (
     <>
@@ -92,56 +62,6 @@ export function InvestmentSection() {
           }
         }
         
-        /* 1) brutaly wyłącz wszelkie pseudo-elementy i wcześniejsze eksperymenty */
-        .hero h1 .hl-fix::before,
-        .hero h1 .hl-fix::after {
-          content: none !important;
-          display: none !important;
-        }
-
-        /* 2) wyczyść efekty, które robią „przezroczyste" litery */
-        .hero h1 .hl-fix {
-          /* layout bez ruszania baseline */
-          display: inline;
-          position: relative;
-          line-height: 1em;
-          vertical-align: baseline;
-          padding-inline: 0.16em;
-          border-radius: 0.5rem;
-
-          /* TŁO — jak w 21st.dev: background na tym samym elemencie co tekst */
-          background-image: linear-gradient(120deg, #ff6900 0%, #ea580c 100%);
-          background-repeat: no-repeat;
-          background-position: left center;
-          background-size: 0% 100%; /* start */
-
-          /* GLIFY — twarde przywrócenie koloru tekstu */
-          color: inherit !important;
-          -webkit-text-fill-color: currentColor !important;
-          -webkit-background-clip: padding-box !important;
-          background-clip: padding-box !important;
-          mix-blend-mode: normal !important;
-          text-shadow: none !important;
-          opacity: 1 !important;
-
-          /* żadnych warstwowych sztuczek */
-          z-index: auto !important;
-          filter: none !important;
-        }
-
-        /* 3) animacja po aktywacji */
-        .hero h1 .hl-fix.is-animated {
-          transition: background-size 2s linear 0.5s;
-          background-size: 100% 100%;
-        }
-
-        /* 4) dostępność */
-        @media (prefers-reduced-motion: reduce) {
-          .hero h1 .hl-fix { 
-            transition: none !important; 
-            background-size: 100% 100% !important; 
-          }
-        }
       `}</style>
       <section
         id="investment"
@@ -152,11 +72,7 @@ export function InvestmentSection() {
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl font-semibold leading-tight bg-gradient-to-br from-gray-800 via-gray-700 to-gray-500 bg-clip-text text-transparent drop-shadow-2xl sm:text-6xl sm:leading-tight md:text-7xl md:leading-tight">
-            Nie kupujesz usługi –{" "}
-            <span className="hl-fix" data-hl id="highlight-text">
-              inwestujesz
-            </span>
-            {" "}w swój biznes.
+            Nie kupujesz usługi – inwestujesz w swój biznes.
           </h2>
         </div>
 
