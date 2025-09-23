@@ -97,12 +97,7 @@ export function InvestmentSection() {
           display: inline;
           padding-inline: 0.125rem;
           border-radius: 0.375rem;
-          background: linear-gradient(120deg, #ff6900 0%, #ea580c 100%);
-          background-repeat: no-repeat;
-          background-position: left center;
-          background-size: 0% 100%;
-          transition: background-size 0s;
-          z-index: 1;
+          z-index: 2;
         }
         
         .hl-accent::before {
@@ -112,7 +107,7 @@ export function InvestmentSection() {
           left: 0;
           right: 0;
           bottom: 0;
-          background: linear-gradient(120deg, #ff6900 0%, #ea580c 100%);
+          background: #ff6900;
           border-radius: 0.375rem;
           z-index: -1;
           width: 0%;
