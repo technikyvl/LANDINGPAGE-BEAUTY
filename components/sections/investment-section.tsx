@@ -29,6 +29,36 @@ export function InvestmentSection() {
     return () => observer.disconnect()
   }, [])
 
+  // Highlight animation effect
+  useEffect(() => {
+    const highlightElement = document.querySelector('.highlight-text')
+    if (!highlightElement) return
+
+    // Check for reduced motion preference
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    
+    if (prefersReducedMotion) {
+      // Immediately show full highlight without animation
+      highlightElement.classList.add('animate')
+      return
+    }
+
+    // Use IntersectionObserver for smooth animation
+    const highlightObserver = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          highlightElement.classList.add('animate')
+          // Disconnect after first trigger
+          highlightObserver.disconnect()
+        }
+      },
+      { threshold: 0.3 }
+    )
+
+    highlightObserver.observe(highlightElement)
+
+    return () => highlightObserver.disconnect()
+  }, [])
 
   return (
     <>
@@ -62,6 +92,36 @@ export function InvestmentSection() {
           }
         }
         
+        .highlight-text {
+          background: linear-gradient(120deg, #ff6900 0%, #ea580c 100%);
+          background-repeat: no-repeat;
+          background-position: left center;
+          background-size: 0% 100%;
+          padding: 0.125em 0.25em;
+          border-radius: 0.375rem;
+          transition: background-size 0s;
+        }
+        
+        .highlight-text.animate {
+          animation: highlightAnimation 2s ease-out 0.5s both;
+        }
+        
+        @keyframes highlightAnimation {
+          0% {
+            background-size: 0% 100%;
+          }
+          100% {
+            background-size: 100% 100%;
+          }
+        }
+        
+        @media (prefers-reduced-motion: reduce) {
+          .highlight-text {
+            background-size: 100% 100% !important;
+            animation: none !important;
+          }
+        }
+        
       `}</style>
       <section
         id="investment"
@@ -72,7 +132,7 @@ export function InvestmentSection() {
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl font-semibold leading-tight bg-gradient-to-br from-gray-800 via-gray-700 to-gray-500 bg-clip-text text-transparent drop-shadow-2xl sm:text-6xl sm:leading-tight md:text-7xl md:leading-tight">
-            Nie kupujesz usługi – inwestujesz w swój biznes.
+            Nie kupujesz usługi – <span className="highlight-text">inwestujesz</span> w swój biznes.
           </h2>
         </div>
 
