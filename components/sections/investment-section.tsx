@@ -66,7 +66,7 @@ export function InvestmentSection() {
         .highlight-text {
           position: relative;
           display: inline-block;
-          padding: 0.18em 0.4em;
+          padding: 0.16em 0.4em;
           border-radius: 0.5rem;
           color: inherit;
           transition: all 0.3s ease;
