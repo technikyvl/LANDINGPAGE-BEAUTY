@@ -2,6 +2,7 @@
 
 import { HeroSection } from "@/components/ui/hero-section"
 import { TestimonialsMarqueeSection } from "@/components/sections/testimonials-marquee-section"
+import { InvestmentSection } from "@/components/sections/investment-section"
 import { Icons } from "@/components/ui/icons"
 
 export default function HomePage() {
@@ -354,6 +355,9 @@ export default function HomePage() {
             </div>
           </div>
         </section>
+
+        {/* Investment Section */}
+        <InvestmentSection />
 
     </main>
   )
