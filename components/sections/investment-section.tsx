@@ -39,7 +39,7 @@ export function InvestmentSection() {
     
     if (prefersReducedMotion) {
       // Immediately show full highlight without animation
-      highlightElement.classList.add('hl-animate')
+      highlightElement.classList.add('is-animated')
       return
     }
 
@@ -47,7 +47,7 @@ export function InvestmentSection() {
     const highlightObserver = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          highlightElement.classList.add('hl-animate')
+          highlightElement.classList.add('is-animated')
           // Disconnect after first trigger
           highlightObserver.disconnect()
         }
@@ -92,47 +92,42 @@ export function InvestmentSection() {
           }
         }
         
-        .hl-accent {
+        .hl {
           position: relative;
-          display: inline;
-          padding-inline: 0.125rem;
-          border-radius: 0.375rem;
-          z-index: 0;
+          display: inline-block;
           isolation: isolate;
-          color: inherit;
+          z-index: 0;
+          line-height: 1em;
+          padding-inline: 0.12em;
+          border-radius: 0.5rem;
         }
         
-        .hl-accent::before {
+        .hl__text {
+          position: relative;
+          z-index: 1;
+        }
+        
+        .hl::before {
           content: '';
           position: absolute;
           inset: 0;
-          background: linear-gradient(120deg, #ff6900 0%, #ea580c 100%);
-          background-repeat: no-repeat;
-          background-position: left center;
-          background-size: 0% 100%;
-          border-radius: 0.375rem;
-          z-index: -1;
+          border-radius: inherit;
           pointer-events: none;
-          transition: background-size 0s;
+          z-index: 0;
+          background: linear-gradient(120deg, #ff6900 0%, #ea580c 100%);
+          transform: scaleX(0);
+          transform-origin: left center;
+          transition: transform 2s linear 0.5s;
         }
         
-        .hl-animate::before {
-          animation: highlightText 0.8s ease-out 0.2s both;
-        }
-        
-        @keyframes highlightText {
-          0% {
-            background-size: 0% 100%;
-          }
-          100% {
-            background-size: 100% 100%;
-          }
+        .hl.is-animated::before {
+          transform: scaleX(1);
         }
         
         @media (prefers-reduced-motion: reduce) {
-          .hl-accent::before {
-            background-size: 100% 100% !important;
-            animation: none !important;
+          .hl::before {
+            transform: scaleX(1) !important;
+            transition: none !important;
           }
         }
       `}</style>
@@ -146,8 +141,8 @@ export function InvestmentSection() {
         <div className="text-center mb-16">
           <h2 className="text-4xl font-semibold leading-tight bg-gradient-to-br from-gray-800 via-gray-700 to-gray-500 bg-clip-text text-transparent drop-shadow-2xl sm:text-6xl sm:leading-tight md:text-7xl md:leading-tight">
             Nie kupujesz usługi –{" "}
-            <span className="hl-accent" id="highlight-text">
-              inwestujesz
+            <span className="hl" id="highlight-text">
+              <span className="hl__text">inwestujesz</span>
             </span>
             {" "}w swój biznes.
           </h2>
