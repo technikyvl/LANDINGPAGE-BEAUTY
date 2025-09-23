@@ -125,35 +125,35 @@ export function InvestmentSection() {
                 <text x="580" y="340" textAnchor="middle" className="text-xs fill-gray-500 font-medium">Miesiąc 5</text>
                 <text x="700" y="340" textAnchor="middle" className="text-xs fill-gray-500 font-medium">Miesiąc 6</text>
                 
-                {/* Data points with gentle upward growth - starting from Y-axis */}
-                <circle cx="100" cy="280" r="4" fill="#ff6900" className="drop-shadow-sm" style={{
+                {/* Data points with more gradual upward growth - starting from Y-axis */}
+                <circle cx="100" cy="300" r="4" fill="#ff6900" className="drop-shadow-sm" style={{
                   opacity: isVisible ? 1 : 0,
                   animation: isVisible ? `fadeInScale 0.6s ease-out 0.2s both` : 'none'
                 }}/>
-                <circle cx="220" cy="260" r="4" fill="#ff6900" className="drop-shadow-sm" style={{
+                <circle cx="220" cy="280" r="4" fill="#ff6900" className="drop-shadow-sm" style={{
                   opacity: isVisible ? 1 : 0,
                   animation: isVisible ? `fadeInScale 0.6s ease-out 0.4s both` : 'none'
                 }}/>
-                <circle cx="340" cy="230" r="4" fill="#ff6900" className="drop-shadow-sm" style={{
+                <circle cx="340" cy="250" r="4" fill="#ff6900" className="drop-shadow-sm" style={{
                   opacity: isVisible ? 1 : 0,
                   animation: isVisible ? `fadeInScale 0.6s ease-out 0.6s both` : 'none'
                 }}/>
-                <circle cx="460" cy="190" r="4" fill="#ff6900" className="drop-shadow-sm" style={{
+                <circle cx="460" cy="210" r="4" fill="#ff6900" className="drop-shadow-sm" style={{
                   opacity: isVisible ? 1 : 0,
                   animation: isVisible ? `fadeInScale 0.6s ease-out 0.8s both` : 'none'
                 }}/>
-                <circle cx="580" cy="140" r="4" fill="#ff6900" className="drop-shadow-sm" style={{
+                <circle cx="580" cy="160" r="4" fill="#ff6900" className="drop-shadow-sm" style={{
                   opacity: isVisible ? 1 : 0,
                   animation: isVisible ? `fadeInScale 0.6s ease-out 1.0s both` : 'none'
                 }}/>
-                <circle cx="700" cy="100" r="4" fill="#ff6900" className="drop-shadow-sm" style={{
+                <circle cx="700" cy="120" r="4" fill="#ff6900" className="drop-shadow-sm" style={{
                   opacity: isVisible ? 1 : 0,
                   animation: isVisible ? `fadeInScale 0.6s ease-out 1.2s both` : 'none'
                 }}/>
                 
-                {/* Animated trend line with gentle curve - starting from origin (0,0) */}
+                {/* Animated trend line with more gradual curve - starting from origin (0,0) */}
                 <path 
-                  d="M 40,320 Q 70,300 100,280 Q 160,270 220,260 Q 280,245 340,230 Q 400,210 460,190 Q 520,165 580,140 Q 640,120 700,100" 
+                  d="M 40,320 Q 70,310 100,300 Q 160,290 220,280 Q 280,265 340,250 Q 400,230 460,210 Q 520,185 580,160 Q 640,140 700,120" 
                   stroke="#ff6900" 
                   strokeWidth="2.5" 
                   fill="none"
@@ -173,7 +173,7 @@ export function InvestmentSection() {
                   </linearGradient>
                 </defs>
                 <path 
-                  d="M 40,320 Q 70,300 100,280 Q 160,270 220,260 Q 280,245 340,230 Q 400,210 460,190 Q 520,165 580,140 Q 640,120 700,100 L 700,320 L 40,320 Z" 
+                  d="M 40,320 Q 70,310 100,300 Q 160,290 220,280 Q 280,265 340,250 Q 400,230 460,210 Q 520,185 580,160 Q 640,140 700,120 L 700,320 L 40,320 Z" 
                   fill={`url(#chartGradient-${animationKey})`}
                   style={{
                     opacity: isVisible ? 1 : 0,
