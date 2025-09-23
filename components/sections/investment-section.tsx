@@ -7,6 +7,7 @@ export function InvestmentSection() {
   const [isVisible, setIsVisible] = useState(false)
   const [animationKey, setAnimationKey] = useState(0)
   const ref = useRef<HTMLElement>(null)
+  const highlightRef = useRef<HTMLSpanElement>(null)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -31,8 +32,9 @@ export function InvestmentSection() {
 
   // Highlight animation effect
   useEffect(() => {
-    const highlightElement = document.querySelector('.highlight-text')
-    if (!highlightElement) return
+    if (!highlightRef.current) return
+
+    const highlightElement = highlightRef.current
 
     // Check for reduced motion preference
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
@@ -47,18 +49,33 @@ export function InvestmentSection() {
     const highlightObserver = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
+          console.log('Highlight animation triggered!') // Debug log
           highlightElement.classList.add('animate')
           // Disconnect after first trigger
           highlightObserver.disconnect()
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.1 } // Lower threshold for earlier trigger
     )
 
     highlightObserver.observe(highlightElement)
 
     return () => highlightObserver.disconnect()
   }, [])
+
+  // Also trigger animation when section becomes visible
+  useEffect(() => {
+    if (isVisible && highlightRef.current) {
+      const timer = setTimeout(() => {
+        if (highlightRef.current && !highlightRef.current.classList.contains('animate')) {
+          console.log('Highlight animation triggered by section visibility!') // Debug log
+          highlightRef.current.classList.add('animate')
+        }
+      }, 500) // Small delay to ensure smooth transition
+      
+      return () => clearTimeout(timer)
+    }
+  }, [isVisible])
 
   return (
     <>
@@ -154,7 +171,7 @@ export function InvestmentSection() {
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl font-semibold leading-tight bg-gradient-to-br from-gray-800 via-gray-700 to-gray-500 bg-clip-text text-transparent drop-shadow-2xl sm:text-6xl sm:leading-tight md:text-7xl md:leading-tight">
-            Nie kupujesz usługi – <span className="highlight-text">inwestujesz</span> w swój biznes.
+            Nie kupujesz usługi – <span ref={highlightRef} className="highlight-text">inwestujesz</span> w swój biznes.
           </h2>
         </div>
 
