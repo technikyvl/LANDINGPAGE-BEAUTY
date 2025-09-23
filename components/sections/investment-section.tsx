@@ -93,30 +93,28 @@ export function InvestmentSection() {
         }
         
         .hl {
-          display: inline-grid;
-          grid-template-areas: "stack";
-          place-items: center start;
+          display: inline-block;
           position: relative;
+          vertical-align: baseline;
+          line-height: 1em;
           isolation: isolate;
           z-index: 0;
           padding-inline: 0.12em;
           border-radius: 0.5rem;
-          line-height: 1em;
         }
         
         .hl__text {
-          grid-area: stack;
           position: relative;
-          z-index: 2;
+          z-index: 1;
         }
         
         .hl::before {
           content: '';
-          grid-area: stack;
-          position: relative;
-          z-index: 1;
+          position: absolute;
+          inset: 0;
           border-radius: inherit;
           pointer-events: none;
+          z-index: 0;
           background: linear-gradient(120deg, #ff6900 0%, #ea580c 100%);
           transform: scaleX(0);
           transform-origin: left center;
