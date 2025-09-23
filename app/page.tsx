@@ -7,13 +7,10 @@ import { ContactSection } from "@/components/sections/contact-section"
 import { Icons } from "@/components/ui/icons"
 import { WhyUsPortfolioSection } from "@/components/sections/why-us-portfolio-section"
 import { Footer } from "@/components/sections/footer"
-import { Header } from "@/components/ui/header"
 
 export default function HomePage() {
   return (
-    <>
-      <Header />
-      <main className="min-h-screen">
+    <main className="min-h-screen">
         {/* Hero Section */}
       <HeroSection
           title="Nowi klienci dla Twojego salonu beauty."
@@ -374,7 +371,6 @@ export default function HomePage() {
         {/* Footer */}
         <Footer />
 
-      </main>
-    </>
+    </main>
   )
 }
