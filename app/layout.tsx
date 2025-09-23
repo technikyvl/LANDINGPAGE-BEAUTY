@@ -29,7 +29,7 @@ export default function RootLayout({
         <header id="site-header">
           <nav className="nav-root" data-state="inactive">
             <div className="nav-shell">
-              <div className="nav-row">
+              <div className="nav-row" style={{ padding: '8px 0' }}>
                 {/* Left: Logo */}
                 <a href="/" aria-label="home" className="brand" style={{ display: 'flex', alignItems: 'center', height: '100%' }}>
                   <img
