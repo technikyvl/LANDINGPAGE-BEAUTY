@@ -151,9 +151,9 @@ export function InvestmentSection() {
                   animation: isVisible ? `fadeInScale 0.6s ease-out 1.2s both` : 'none'
                 }}/>
                 
-                {/* Animated trend line with gentle curve - starting from Y-axis */}
+                {/* Animated trend line with gentle curve - starting from origin (0,0) */}
                 <path 
-                  d="M 40,280 Q 70,275 100,280 Q 160,270 220,260 Q 280,245 340,230 Q 400,210 460,190 Q 520,165 580,140 Q 640,120 700,100" 
+                  d="M 40,320 Q 70,300 100,280 Q 160,270 220,260 Q 280,245 340,230 Q 400,210 460,190 Q 520,165 580,140 Q 640,120 700,100" 
                   stroke="#ff6900" 
                   strokeWidth="2.5" 
                   fill="none"
@@ -165,7 +165,7 @@ export function InvestmentSection() {
                   }}
                 />
                 
-                {/* Animated gradient fill under the line - starting from Y-axis */}
+                {/* Animated gradient fill under the line - starting from origin (0,0) */}
                 <defs>
                   <linearGradient id={`chartGradient-${animationKey}`} x1="0%" y1="0%" x2="0%" y2="100%">
                     <stop offset="0%" stopColor="#ff6900" stopOpacity="0.3"/>
@@ -173,7 +173,7 @@ export function InvestmentSection() {
                   </linearGradient>
                 </defs>
                 <path 
-                  d="M 40,280 Q 70,275 100,280 Q 160,270 220,260 Q 280,245 340,230 Q 400,210 460,190 Q 520,165 580,140 Q 640,120 700,100 L 700,320 L 40,320 Z" 
+                  d="M 40,320 Q 70,300 100,280 Q 160,270 220,260 Q 280,245 340,230 Q 400,210 460,190 Q 520,165 580,140 Q 640,120 700,100 L 700,320 L 40,320 Z" 
                   fill={`url(#chartGradient-${animationKey})`}
                   style={{
                     opacity: isVisible ? 1 : 0,
