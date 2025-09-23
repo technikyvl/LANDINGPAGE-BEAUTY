@@ -7,14 +7,17 @@ export function WhyUsPortfolioSection() {
   return (
     <section id="why-us" className={cn("py-24 md:py-32 lg:py-40 bg-white")}> 
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="relative mb-16 text-center">
-          <div className="badge inline-block px-3 py-1 text-sm border border-gray-300 rounded-full mb-4">
-            Nasze portfolio
+        <div className="relative mb-20">
+          <div className="text-8xl md:text-9xl font-bold text-gray-200 absolute -top-20 -left-4 select-none">
+            03
           </div>
-          <h2 className="text-4xl font-semibold leading-tight bg-gradient-to-br from-gray-800 via-gray-700 to-gray-500 bg-clip-text text-transparent drop-shadow-2xl sm:text-6xl sm:leading-tight md:text-7xl md:leading-tight">
-            Dlaczego akurat my?
+          <h2 className="relative z-10 text-4xl font-semibold leading-tight bg-gradient-to-br from-gray-800 via-gray-700 to-gray-500 bg-clip-text text-transparent drop-shadow-2xl sm:text-6xl sm:leading-tight md:text-7xl md:leading-tight">
+            DLACZEGO AKURAT MY?
           </h2>
-          <p className="text-sm font-medium text-gray-600 max-w-2xl mx-auto sm:text-lg opacity-75 mt-4">
+        </div>
+        
+        <div className="text-center mb-16">
+          <p className="text-sm relative z-10 max-w-[500px] font-medium text-gray-600 opacity-0 delay-100 sm:text-lg mb-4 mx-auto">
             Przykłady realizacji: strony WWW, kampanie i projekty graficzne, które dowożą efekt.
           </p>
         </div>
@@ -30,11 +33,11 @@ export function WhyUsPortfolioSection() {
             {/* Duży kafel 2x2 */}
             <div className="col-span-2 row-span-2">
               <div className="card h-full p-0">
-                <div className="relative h-64 md:h-[22rem] w-full overflow-hidden rounded-[1.5rem]">
+                <div className="relative h-48 md:h-56 w-full overflow-hidden rounded-[1.5rem]">
                   <Image src="/modern-dashboard-interface-dark-theme.jpg" alt="Projekt 1 — dashboard" fill className="object-cover" />
                 </div>
                 <hr className="line" />
-                <div className="card_title__container p-6">
+                <div className="card_title__container p-4">
                   <span className="card_title">System rezerwacji + dashboard</span>
                   <p className="card_paragraph">Szybka strona z modułem zapisów i analityką pod beauty.</p>
                 </div>
@@ -59,15 +62,15 @@ export function WhyUsPortfolioSection() {
               title: "Identyfikacja wizualna",
               desc: "Spójne kreacje i sesje foto pod beauty."
             }].map((item, idx) => (
-              <div className="col-span-1" key={idx}>
-                <div className="card p-0">
-                  <div className="relative h-40 w-full overflow-hidden rounded-[1.5rem]">
+              <div className="col-span-1 flex" key={idx}>
+                <div className="card p-0 flex flex-col h-full">
+                  <div className="relative h-32 w-full overflow-hidden rounded-[1.5rem]">
                     <Image src={item.src} alt={item.title} fill className="object-cover" />
                   </div>
                   <hr className="line" />
-                  <div className="card_title__container p-4">
+                  <div className="card_title__container p-3 flex-1 flex flex-col">
                     <span className="card_title">{item.title}</span>
-                    <p className="card_paragraph">{item.desc}</p>
+                    <p className="card_paragraph flex-1">{item.desc}</p>
                   </div>
                 </div>
               </div>
