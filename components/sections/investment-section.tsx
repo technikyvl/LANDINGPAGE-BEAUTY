@@ -97,30 +97,41 @@ export function InvestmentSection() {
           background-repeat: no-repeat;
           background-position: left center;
           background-size: 0% 100%;
-          padding: 0.125em 0.25em;
-          border-radius: 0.375rem;
+          padding: 0.2em 0.4em;
+          border-radius: 0.5rem;
           transition: background-size 0s;
-          color: inherit !important;
-          -webkit-text-fill-color: currentColor !important;
+          color: white !important;
+          -webkit-text-fill-color: white !important;
           -webkit-background-clip: padding-box !important;
           background-clip: padding-box !important;
           mix-blend-mode: normal !important;
-          text-shadow: none !important;
+          text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) !important;
           opacity: 1 !important;
           z-index: auto !important;
           filter: none !important;
+          box-shadow: 0 0 0 0 rgba(255, 105, 0, 0.4);
+          position: relative;
         }
         
         .highlight-text.animate {
-          animation: highlightAnimation 2s ease-out 0.5s both;
+          animation: highlightAnimation 2.5s ease-out 0.5s both;
         }
         
         @keyframes highlightAnimation {
           0% {
             background-size: 0% 100%;
+            box-shadow: 0 0 0 0 rgba(255, 105, 0, 0.4);
+            transform: scale(1);
+          }
+          50% {
+            background-size: 100% 100%;
+            box-shadow: 0 0 20px 8px rgba(255, 105, 0, 0.3);
+            transform: scale(1.02);
           }
           100% {
             background-size: 100% 100%;
+            box-shadow: 0 0 0 0 rgba(255, 105, 0, 0);
+            transform: scale(1);
           }
         }
         
@@ -128,6 +139,8 @@ export function InvestmentSection() {
           .highlight-text {
             background-size: 100% 100% !important;
             animation: none !important;
+            box-shadow: none !important;
+            transform: none !important;
           }
         }
         
