@@ -93,42 +93,32 @@ export function InvestmentSection() {
         }
         
         .hl {
-          display: inline-block;
-          position: relative;
-          vertical-align: baseline;
-          line-height: 1em;
-          isolation: isolate;
-          z-index: 0;
-          padding-inline: 0.12em;
-          border-radius: 0.5rem;
-        }
-        
-        .hl__text {
-          position: relative;
-          z-index: 1;
-        }
-        
-        .hl::before {
-          content: '';
-          position: absolute;
-          inset: 0;
-          border-radius: inherit;
-          pointer-events: none;
-          z-index: 0;
           background: linear-gradient(120deg, #ff6900 0%, #ea580c 100%);
-          transform: scaleX(0);
-          transform-origin: left center;
-          transition: transform 2s linear 0.5s;
+          background-repeat: no-repeat;
+          background-position: left center;
+          background-size: 0% 100%;
+          padding: 0.125em 0.25em;
+          border-radius: 0.375rem;
+          transition: background-size 0s;
         }
         
-        .hl.is-animated::before {
-          transform: scaleX(1);
+        .hl.is-animated {
+          animation: highlightText 2s ease-out 0.5s both;
+        }
+        
+        @keyframes highlightText {
+          0% {
+            background-size: 0% 100%;
+          }
+          100% {
+            background-size: 100% 100%;
+          }
         }
         
         @media (prefers-reduced-motion: reduce) {
-          .hl::before {
-            transform: scaleX(1) !important;
-            transition: none !important;
+          .hl {
+            background-size: 100% 100% !important;
+            animation: none !important;
           }
         }
       `}</style>
@@ -143,7 +133,7 @@ export function InvestmentSection() {
           <h2 className="text-4xl font-semibold leading-tight bg-gradient-to-br from-gray-800 via-gray-700 to-gray-500 bg-clip-text text-transparent drop-shadow-2xl sm:text-6xl sm:leading-tight md:text-7xl md:leading-tight">
             Nie kupujesz usługi –{" "}
             <span className="hl" id="highlight-text">
-              <span className="hl__text">inwestujesz</span>
+              inwestujesz
             </span>
             {" "}w swój biznes.
           </h2>
