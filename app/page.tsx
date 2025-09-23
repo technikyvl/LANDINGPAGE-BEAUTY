@@ -261,7 +261,7 @@ export default function HomePage() {
         <section id="services" className="py-24 md:py-32 lg:py-40 bg-white">
           <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             {/* Header */}
-            <div className="relative mb-6">
+            <div className="relative mb-2">
               <div className="text-8xl md:text-9xl font-bold text-gray-200 absolute -top-20 -left-4 select-none">
                 02
               </div>
@@ -270,7 +270,7 @@ export default function HomePage() {
               </h2>
             </div>
             
-            <div className="text-center mb-4">
+            <div className="text-center mb-2">
               <p className="text-sm relative z-10 max-w-[500px] font-medium text-gray-600 opacity-0 delay-100 sm:text-lg mb-4 mx-auto">
                 Rozwiązania, które pracują za Ciebie
               </p>
