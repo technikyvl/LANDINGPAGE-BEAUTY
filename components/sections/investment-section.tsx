@@ -93,32 +93,39 @@ export function InvestmentSection() {
         }
         
         .hl-accent {
-          background: linear-gradient(120deg, #ff6900 0%, #ea580c 100%);
-          background-repeat: no-repeat;
-          background-position: left center;
-          background-size: 0% 100%;
+          position: relative;
           display: inline;
           padding-inline: 0.125rem;
-          border-radius: 0.375rem;
-          transition: background-size 0s;
         }
         
-        .hl-animate {
-          animation: highlightText 2s ease-out 0.5s both;
+        .hl-accent::after {
+          content: '';
+          position: absolute;
+          bottom: 0.125rem;
+          left: 0;
+          height: 0.375rem;
+          background: linear-gradient(120deg, #ff6900 0%, #ea580c 100%);
+          border-radius: 0.1875rem;
+          width: 0%;
+          transition: width 0s;
+        }
+        
+        .hl-animate::after {
+          animation: highlightText 0.8s ease-out 0.2s both;
         }
         
         @keyframes highlightText {
           0% {
-            background-size: 0% 100%;
+            width: 0%;
           }
           100% {
-            background-size: 100% 100%;
+            width: 100%;
           }
         }
         
         @media (prefers-reduced-motion: reduce) {
-          .hl-accent {
-            background-size: 100% 100% !important;
+          .hl-accent::after {
+            width: 100% !important;
             animation: none !important;
           }
         }
