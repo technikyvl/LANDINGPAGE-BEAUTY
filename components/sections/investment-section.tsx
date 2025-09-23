@@ -66,7 +66,7 @@ export function InvestmentSection() {
         .highlight-text {
           position: relative;
           display: inline-block;
-          padding: 0.16em 0.4em;
+          padding: 0.12em 0.4em;
           border-radius: 0.5rem;
           color: inherit;
           transition: all 0.3s ease;
@@ -79,7 +79,7 @@ export function InvestmentSection() {
           left: 0;
           right: 0;
           bottom: 0;
-          background: linear-gradient(135deg, #ff6900 0%, #ea580c 100%);
+          background: linear-gradient(135deg, #ff8c42 0%, #ff6b35 100%);
           border-radius: 0.5rem;
           z-index: -1;
           transform: scaleX(0);
