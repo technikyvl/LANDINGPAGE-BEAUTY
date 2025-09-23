@@ -31,7 +31,7 @@ export function InvestmentSection() {
 
   // Highlight animation effect
   useEffect(() => {
-    const highlightElement = document.getElementById('highlight-text')
+    const highlightElement = document.querySelector('.hero h1 .hl-fix')
     if (!highlightElement) return
 
     // Check for reduced motion preference
@@ -92,36 +92,54 @@ export function InvestmentSection() {
           }
         }
         
-        .hl-brand {
+        /* 1) brutaly wyłącz wszelkie pseudo-elementy i wcześniejsze eksperymenty */
+        .hero h1 .hl-fix::before,
+        .hero h1 .hl-fix::after {
+          content: none !important;
+          display: none !important;
+        }
+
+        /* 2) wyczyść efekty, które robią „przezroczyste" litery */
+        .hero h1 .hl-fix {
+          /* layout bez ruszania baseline */
           display: inline;
           position: relative;
           line-height: 1em;
           vertical-align: baseline;
           padding-inline: 0.16em;
           border-radius: 0.5rem;
+
+          /* TŁO — jak w 21st.dev: background na tym samym elemencie co tekst */
           background-image: linear-gradient(120deg, #ff6900 0%, #ea580c 100%);
           background-repeat: no-repeat;
           background-position: left center;
-          background-size: 0% 100%;
+          background-size: 0% 100%; /* start */
+
+          /* GLIFY — twarde przywrócenie koloru tekstu */
           color: inherit !important;
           -webkit-text-fill-color: currentColor !important;
           -webkit-background-clip: padding-box !important;
           background-clip: padding-box !important;
           mix-blend-mode: normal !important;
-          text-shadow: none;
-          -webkit-text-stroke: 0;
-          transition: background-size 0s;
+          text-shadow: none !important;
+          opacity: 1 !important;
+
+          /* żadnych warstwowych sztuczek */
+          z-index: auto !important;
+          filter: none !important;
         }
-        
-        .hl-brand.is-animated {
-          background-size: 100% 100%;
+
+        /* 3) animacja po aktywacji */
+        .hero h1 .hl-fix.is-animated {
           transition: background-size 2s linear 0.5s;
+          background-size: 100% 100%;
         }
-        
+
+        /* 4) dostępność */
         @media (prefers-reduced-motion: reduce) {
-          .hl-brand {
-            background-size: 100% 100% !important;
-            transition: none !important;
+          .hero h1 .hl-fix { 
+            transition: none !important; 
+            background-size: 100% 100% !important; 
           }
         }
       `}</style>
@@ -135,7 +153,7 @@ export function InvestmentSection() {
         <div className="text-center mb-16">
           <h2 className="text-4xl font-semibold leading-tight bg-gradient-to-br from-gray-800 via-gray-700 to-gray-500 bg-clip-text text-transparent drop-shadow-2xl sm:text-6xl sm:leading-tight md:text-7xl md:leading-tight">
             Nie kupujesz usługi –{" "}
-            <span className="hl-brand" id="highlight-text">
+            <span className="hl-fix" data-hl id="highlight-text">
               inwestujesz
             </span>
             {" "}w swój biznes.
