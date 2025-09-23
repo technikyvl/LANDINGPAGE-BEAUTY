@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils"
 
 export function InvestmentSection() {
   const [isVisible, setIsVisible] = useState(false)
+  const [animationKey, setAnimationKey] = useState(0)
   const ref = useRef<HTMLElement>(null)
 
   useEffect(() => {
@@ -12,6 +13,10 @@ export function InvestmentSection() {
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true)
+          // Reset animation key to restart the chart animation
+          setAnimationKey(prev => prev + 1)
+        } else {
+          setIsVisible(false)
         }
       },
       { threshold: 0.1 }
@@ -25,11 +30,42 @@ export function InvestmentSection() {
   }, [])
 
   return (
-    <section
-      id="investment"
-      ref={ref}
-      className="py-24 md:py-32 lg:py-40 bg-white"
-    >
+    <>
+      <style jsx>{`
+        @keyframes fadeInScale {
+          0% {
+            opacity: 0;
+            transform: scale(0.5);
+          }
+          100% {
+            opacity: 1;
+            transform: scale(1);
+          }
+        }
+        
+        @keyframes drawLine {
+          0% {
+            stroke-dashoffset: 1000;
+          }
+          100% {
+            stroke-dashoffset: 0;
+          }
+        }
+        
+        @keyframes fadeInFill {
+          0% {
+            opacity: 0;
+          }
+          100% {
+            opacity: 1;
+          }
+        }
+      `}</style>
+      <section
+        id="investment"
+        ref={ref}
+        className="py-24 md:py-32 lg:py-40 bg-white"
+      >
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
@@ -109,33 +145,60 @@ export function InvestmentSection() {
                 <text x="600" y="255" textAnchor="middle" className="text-xs fill-gray-500 font-medium">Miesiąc 5</text>
                 <text x="720" y="255" textAnchor="middle" className="text-xs fill-gray-500 font-medium">Miesiąc 6</text>
                 
-                {/* Data points */}
-                <circle cx="120" cy="200" r="4" fill="#ff6900" className="drop-shadow-sm"/>
-                <circle cx="240" cy="170" r="4" fill="#ff6900" className="drop-shadow-sm"/>
-                <circle cx="360" cy="140" r="4" fill="#ff6900" className="drop-shadow-sm"/>
-                <circle cx="480" cy="110" r="4" fill="#ff6900" className="drop-shadow-sm"/>
-                <circle cx="600" cy="80" r="4" fill="#ff6900" className="drop-shadow-sm"/>
-                <circle cx="720" cy="50" r="4" fill="#ff6900" className="drop-shadow-sm"/>
+                {/* Data points with animation */}
+                <circle cx="120" cy="200" r="4" fill="#ff6900" className="drop-shadow-sm" style={{
+                  opacity: isVisible ? 1 : 0,
+                  animation: isVisible ? `fadeInScale 0.6s ease-out 0.2s both` : 'none'
+                }}/>
+                <circle cx="240" cy="170" r="4" fill="#ff6900" className="drop-shadow-sm" style={{
+                  opacity: isVisible ? 1 : 0,
+                  animation: isVisible ? `fadeInScale 0.6s ease-out 0.4s both` : 'none'
+                }}/>
+                <circle cx="360" cy="140" r="4" fill="#ff6900" className="drop-shadow-sm" style={{
+                  opacity: isVisible ? 1 : 0,
+                  animation: isVisible ? `fadeInScale 0.6s ease-out 0.6s both` : 'none'
+                }}/>
+                <circle cx="480" cy="110" r="4" fill="#ff6900" className="drop-shadow-sm" style={{
+                  opacity: isVisible ? 1 : 0,
+                  animation: isVisible ? `fadeInScale 0.6s ease-out 0.8s both` : 'none'
+                }}/>
+                <circle cx="600" cy="80" r="4" fill="#ff6900" className="drop-shadow-sm" style={{
+                  opacity: isVisible ? 1 : 0,
+                  animation: isVisible ? `fadeInScale 0.6s ease-out 1.0s both` : 'none'
+                }}/>
+                <circle cx="720" cy="50" r="4" fill="#ff6900" className="drop-shadow-sm" style={{
+                  opacity: isVisible ? 1 : 0,
+                  animation: isVisible ? `fadeInScale 0.6s ease-out 1.2s both` : 'none'
+                }}/>
                 
-                {/* Trend line */}
+                {/* Animated trend line */}
                 <path 
                   d="M 120,200 Q 180,185 240,170 Q 300,155 360,140 Q 420,125 480,110 Q 540,95 600,80 Q 660,65 720,50" 
                   stroke="#ff6900" 
                   strokeWidth="3" 
                   fill="none"
                   className="drop-shadow-sm"
+                  style={{
+                    strokeDasharray: isVisible ? '1000' : '0',
+                    strokeDashoffset: isVisible ? '0' : '1000',
+                    animation: isVisible ? `drawLine 2s ease-out 0.5s both` : 'none'
+                  }}
                 />
                 
-                {/* Gradient fill under the line */}
+                {/* Animated gradient fill under the line */}
                 <defs>
-                  <linearGradient id="chartGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <linearGradient id={`chartGradient-${animationKey}`} x1="0%" y1="0%" x2="0%" y2="100%">
                     <stop offset="0%" stopColor="#ff6900" stopOpacity="0.3"/>
                     <stop offset="100%" stopColor="#ff6900" stopOpacity="0.05"/>
                   </linearGradient>
                 </defs>
                 <path 
                   d="M 120,200 Q 180,185 240,170 Q 300,155 360,140 Q 420,125 480,110 Q 540,95 600,80 Q 660,65 720,50 L 720,240 L 120,240 Z" 
-                  fill="url(#chartGradient)"
+                  fill={`url(#chartGradient-${animationKey})`}
+                  style={{
+                    opacity: isVisible ? 1 : 0,
+                    animation: isVisible ? `fadeInFill 1s ease-out 1.5s both` : 'none'
+                  }}
                 />
               </svg>
 
@@ -148,46 +211,19 @@ export function InvestmentSection() {
               </div>
 
               {/* Current value highlight */}
-              <div className="absolute top-16 right-4 bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-lg px-4 py-2 shadow-lg">
+              <div className="absolute top-16 right-4 bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-lg px-4 py-2 shadow-lg" style={{
+                opacity: isVisible ? 1 : 0,
+                animation: isVisible ? `fadeInScale 0.6s ease-out 1.8s both` : 'none'
+              }}>
                 <div className="text-sm font-medium">+150% wzrost</div>
                 <div className="text-xs opacity-90">w ciągu 6 miesięcy</div>
-              </div>
-            </div>
-
-            {/* Chart Legend */}
-            <div className="mt-6 flex flex-wrap gap-6 justify-center">
-              <div className="flex items-center gap-2">
-                <div className="w-4 h-4 bg-orange-500 rounded"></div>
-                <span className="text-sm text-gray-600">Przed wdrożeniem</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="w-4 h-4 bg-gradient-to-r from-orange-400 to-orange-600 rounded"></div>
-                <span className="text-sm text-gray-600">Po wdrożeniu systemu</span>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Bottom CTA */}
-        <div
-          className={cn(
-            "text-center mt-12 transition-all duration-700 ease-out delay-300",
-            isVisible
-              ? "opacity-100 translate-y-0"
-              : "opacity-0 translate-y-8"
-          )}
-        >
-          <p className="text-lg text-gray-600 mb-6 max-w-2xl mx-auto">
-            Każda złotówka zainwestowana w nasz system to realny wzrost przychodów Twojego salonu.
-          </p>
-          <a
-            href="#contact"
-            className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 text-white text-lg font-semibold rounded-full hover:from-orange-600 hover:to-orange-700 transition-all duration-200 shadow-lg hover:shadow-xl"
-          >
-            Chcę zobaczyć mój wzrost
-          </a>
-        </div>
       </div>
     </section>
+    </>
   )
 }
