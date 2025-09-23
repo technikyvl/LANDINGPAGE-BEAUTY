@@ -60,6 +60,15 @@ export function InvestmentSection() {
             opacity: 1;
           }
         }
+        
+        @keyframes highlightText {
+          0% {
+            background-size: 0% 100%;
+          }
+          100% {
+            background-size: 100% 100%;
+          }
+        }
       `}</style>
       <section
         id="investment"
@@ -70,7 +79,24 @@ export function InvestmentSection() {
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl font-semibold leading-tight bg-gradient-to-br from-gray-800 via-gray-700 to-gray-500 bg-clip-text text-transparent drop-shadow-2xl sm:text-6xl sm:leading-tight md:text-7xl md:leading-tight">
-            Nie kupujesz usługi – inwestujesz w swój biznes.
+            Nie kupujesz usługi –{" "}
+            <span 
+              className="relative inline-block"
+              style={{
+                background: isVisible 
+                  ? "linear-gradient(120deg, rgba(255, 105, 0, 0.3) 0%, rgba(255, 105, 0, 0.1) 100%)"
+                  : "transparent",
+                backgroundSize: "0% 100%",
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "left center",
+                animation: isVisible ? "highlightText 2s ease-out 0.5s both" : "none",
+                padding: "0 4px",
+                borderRadius: "4px"
+              }}
+            >
+              inwestujesz
+            </span>
+            {" "}w swój biznes.
           </h2>
         </div>
 

@@ -56,11 +56,10 @@ const questions = [
     type: 'select',
     required: false,
     options: [
-      'Do 50 zł',
-      '50-100 zł',
-      '100-200 zł',
-      '200-300 zł',
-      'Powyżej 300 zł'
+      '100-500 zł',
+      '500-1000 zł',
+      '1000-2000 zł',
+      '2000 zł lub więcej'
     ]
   },
   {
