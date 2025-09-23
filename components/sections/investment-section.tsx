@@ -97,7 +97,7 @@ export function InvestmentSection() {
           display: inline;
           padding-inline: 0.125rem;
           border-radius: 0.375rem;
-          z-index: 10;
+          z-index: 20;
           color: inherit;
         }
         
@@ -143,7 +143,7 @@ export function InvestmentSection() {
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-semibold leading-tight bg-gradient-to-br from-gray-800 via-gray-700 to-gray-500 bg-clip-text text-transparent drop-shadow-2xl sm:text-6xl sm:leading-tight md:text-7xl md:leading-tight">
+          <h2 className="text-4xl font-semibold leading-tight bg-gradient-to-br from-gray-800 via-gray-700 to-gray-500 bg-clip-text text-transparent drop-shadow-2xl sm:text-6xl sm:leading-tight md:text-7xl md:leading-tight" style={{ zIndex: 20 }}>
             Nie kupujesz usługi –{" "}
             <span className="hl-accent" id="highlight-text">
               inwestujesz
