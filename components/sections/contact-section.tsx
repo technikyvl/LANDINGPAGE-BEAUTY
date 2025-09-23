@@ -205,7 +205,7 @@ export function ContactSection() {
             type={currentQuestion.type}
             value={currentValue}
             onChange={(e) => handleInputChange(currentQuestion.id as keyof FormData, e.target.value)}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors"
+            className="w-full px-6 py-4 text-gray-900 text-lg border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors"
             placeholder={currentQuestion.placeholder}
             required={currentQuestion.required}
           />
@@ -213,18 +213,18 @@ export function ContactSection() {
       
       case 'radio':
         return (
-          <div className="space-y-3">
+          <div className="space-y-4">
             {currentQuestion.options?.map((option) => (
-              <label key={option} className="flex items-center p-3 border border-gray-300 rounded-lg hover:bg-gray-50 cursor-pointer">
+              <label key={option} className="flex items-center p-4 border border-gray-300 rounded-lg hover:bg-gray-50 cursor-pointer">
                 <input
                   type="radio"
                   name={currentQuestion.id}
                   value={option}
                   checked={currentValue === option}
                   onChange={(e) => handleInputChange(currentQuestion.id as keyof FormData, e.target.value)}
-                  className="mr-3 text-orange-500 focus:ring-orange-500"
+                  className="mr-4 text-orange-500 focus:ring-orange-500"
                 />
-                {option}
+                <span className="text-gray-900 text-lg">{option}</span>
               </label>
             ))}
           </div>
@@ -235,7 +235,7 @@ export function ContactSection() {
           <select
             value={currentValue}
             onChange={(e) => handleInputChange(currentQuestion.id as keyof FormData, e.target.value)}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors"
+            className="w-full px-6 py-4 text-gray-900 text-lg border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors"
           >
             <option value="">Wybierz opcję</option>
             {currentQuestion.options?.map((option) => (
@@ -266,7 +266,7 @@ export function ContactSection() {
 
         {/* Form Card - Single Question */}
         <div
-          className="relative w-full p-8 rounded-2xl border border-gray-200 shadow-lg"
+          className="relative w-full sm:w-3/4 md:w-2/3 lg:w-1/2 mx-auto p-8 sm:p-12 rounded-2xl border border-gray-200 shadow-lg"
           style={{
             backgroundImage: `
               radial-gradient(60% 55% at 70% 100%, rgba(255,105,0,.14) 0%, rgba(255,105,0,0) 70%),
@@ -276,12 +276,13 @@ export function ContactSection() {
             boxShadow: `
               0 12px 28px rgba(17,24,39,.08),
               inset 0 -14px 22px -10px rgba(255,105,0,.12)
-            `
+            `,
+            minHeight: '500px'
           }}
         >
           {/* Question */}
-          <div className="mb-8">
-            <h3 className="text-xl font-semibold text-gray-900 mb-6">
+          <div className="mb-12">
+            <h3 className="text-2xl font-semibold text-gray-900 mb-8">
               {currentQuestion?.question || ""}
               {currentQuestion?.required && <span className="text-orange-500 ml-1">*</span>}
             </h3>
@@ -289,16 +290,16 @@ export function ContactSection() {
           </div>
 
           {/* Navigation Buttons */}
-          <div className="flex justify-between items-center">
+          <div className="flex justify-between items-center mt-12">
             <button
               type="button"
               onClick={handleBack}
               disabled={isFirstQuestion}
               className={cn(
-                "px-6 py-3 rounded-lg font-medium transition-all duration-200",
+                "px-8 py-4 rounded-lg font-medium text-lg transition-all duration-200",
                 isFirstQuestion
                   ? "bg-gray-100 text-gray-400 cursor-not-allowed"
-                  : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+                  : "bg-gray-200 text-gray-900 hover:bg-gray-300"
               )}
             >
               WSTECZ
@@ -309,9 +310,9 @@ export function ContactSection() {
               onClick={handleNext}
               disabled={isSubmitting || (currentQuestion?.required && !formData[currentQuestion?.id as keyof FormData])}
               className={cn(
-                "px-6 py-3 rounded-lg font-medium transition-all duration-200",
+                "px-8 py-4 rounded-lg font-medium text-lg transition-all duration-200",
                 isSubmitting || (currentQuestion?.required && !formData[currentQuestion?.id as keyof FormData])
-                  ? "bg-gray-400 text-white cursor-not-allowed"
+                  ? "bg-gray-400 text-gray-600 cursor-not-allowed"
                   : "bg-gradient-to-r from-orange-500 to-orange-600 text-white hover:from-orange-600 hover:to-orange-700 shadow-lg hover:shadow-xl"
               )}
             >
@@ -320,8 +321,8 @@ export function ContactSection() {
           </div>
 
           {/* Progress Indicator */}
-          <div className="text-center mt-6">
-            <p className="text-sm text-gray-500">
+          <div className="text-center mt-8">
+            <p className="text-lg text-gray-700">
               Pytanie {currentQuestionIndex + 1} z {questions.length}
             </p>
           </div>
