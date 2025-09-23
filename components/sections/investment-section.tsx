@@ -14,11 +14,12 @@ export function InvestmentSection() {
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true)
-          setHighlightAnimated(true)
           // Reset animation key to restart the chart animation
           setAnimationKey(prev => prev + 1)
         } else {
           setIsVisible(false)
+          // Reset highlight animation when leaving section
+          setHighlightAnimated(false)
         }
       },
       { threshold: 0.1 }
@@ -30,6 +31,18 @@ export function InvestmentSection() {
 
     return () => observer.disconnect()
   }, [])
+
+  // Trigger highlight animation when section becomes visible
+  useEffect(() => {
+    if (isVisible) {
+      // Small delay to ensure smooth transition
+      const timer = setTimeout(() => {
+        setHighlightAnimated(true)
+      }, 300)
+      
+      return () => clearTimeout(timer)
+    }
+  }, [isVisible])
 
   return (
     <>
