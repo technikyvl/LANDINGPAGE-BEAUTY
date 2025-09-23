@@ -97,22 +97,23 @@ export function InvestmentSection() {
           display: inline;
           padding-inline: 0.125rem;
           border-radius: 0.375rem;
-          z-index: 20;
+          z-index: 0;
+          isolation: isolate;
           color: inherit;
         }
         
         .hl-accent::before {
           content: '';
           position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          background: #ff6900;
+          inset: 0;
+          background: linear-gradient(120deg, #ff6900 0%, #ea580c 100%);
+          background-repeat: no-repeat;
+          background-position: left center;
+          background-size: 0% 100%;
           border-radius: 0.375rem;
           z-index: -1;
-          width: 0%;
-          transition: width 0s;
+          pointer-events: none;
+          transition: background-size 0s;
         }
         
         .hl-animate::before {
@@ -121,16 +122,16 @@ export function InvestmentSection() {
         
         @keyframes highlightText {
           0% {
-            width: 0%;
+            background-size: 0% 100%;
           }
           100% {
-            width: 100%;
+            background-size: 100% 100%;
           }
         }
         
         @media (prefers-reduced-motion: reduce) {
           .hl-accent::before {
-            width: 100% !important;
+            background-size: 100% 100% !important;
             animation: none !important;
           }
         }
@@ -143,7 +144,7 @@ export function InvestmentSection() {
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-semibold leading-tight bg-gradient-to-br from-gray-800 via-gray-700 to-gray-500 bg-clip-text text-transparent drop-shadow-2xl sm:text-6xl sm:leading-tight md:text-7xl md:leading-tight" style={{ zIndex: 20 }}>
+          <h2 className="text-4xl font-semibold leading-tight bg-gradient-to-br from-gray-800 via-gray-700 to-gray-500 bg-clip-text text-transparent drop-shadow-2xl sm:text-6xl sm:leading-tight md:text-7xl md:leading-tight">
             Nie kupujesz usługi –{" "}
             <span className="hl-accent" id="highlight-text">
               inwestujesz
