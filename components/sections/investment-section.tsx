@@ -125,7 +125,7 @@ export function InvestmentSection() {
                 <text x="580" y="340" textAnchor="middle" className="text-xs fill-gray-500 font-medium">Miesiąc 5</text>
                 <text x="700" y="340" textAnchor="middle" className="text-xs fill-gray-500 font-medium">Miesiąc 6</text>
                 
-                {/* Data points with gentle upward growth - starting from dashboard beginning */}
+                {/* Data points with gentle upward growth - starting from Y-axis */}
                 <circle cx="100" cy="280" r="4" fill="#ff6900" className="drop-shadow-sm" style={{
                   opacity: isVisible ? 1 : 0,
                   animation: isVisible ? `fadeInScale 0.6s ease-out 0.2s both` : 'none'
@@ -151,9 +151,9 @@ export function InvestmentSection() {
                   animation: isVisible ? `fadeInScale 0.6s ease-out 1.2s both` : 'none'
                 }}/>
                 
-                {/* Animated trend line with gentle curve - starting from dashboard beginning */}
+                {/* Animated trend line with gentle curve - starting from Y-axis */}
                 <path 
-                  d="M 100,280 Q 160,270 220,260 Q 280,245 340,230 Q 400,210 460,190 Q 520,165 580,140 Q 640,120 700,100" 
+                  d="M 40,280 Q 70,275 100,280 Q 160,270 220,260 Q 280,245 340,230 Q 400,210 460,190 Q 520,165 580,140 Q 640,120 700,100" 
                   stroke="#ff6900" 
                   strokeWidth="2.5" 
                   fill="none"
@@ -165,7 +165,7 @@ export function InvestmentSection() {
                   }}
                 />
                 
-                {/* Animated gradient fill under the line - starting from dashboard beginning */}
+                {/* Animated gradient fill under the line - starting from Y-axis */}
                 <defs>
                   <linearGradient id={`chartGradient-${animationKey}`} x1="0%" y1="0%" x2="0%" y2="100%">
                     <stop offset="0%" stopColor="#ff6900" stopOpacity="0.3"/>
@@ -173,7 +173,7 @@ export function InvestmentSection() {
                   </linearGradient>
                 </defs>
                 <path 
-                  d="M 100,280 Q 160,270 220,260 Q 280,245 340,230 Q 400,210 460,190 Q 520,165 580,140 Q 640,120 700,100 L 700,320 L 100,320 Z" 
+                  d="M 40,280 Q 70,275 100,280 Q 160,270 220,260 Q 280,245 340,230 Q 400,210 460,190 Q 520,165 580,140 Q 640,120 700,100 L 700,320 L 40,320 Z" 
                   fill={`url(#chartGradient-${animationKey})`}
                   style={{
                     opacity: isVisible ? 1 : 0,
