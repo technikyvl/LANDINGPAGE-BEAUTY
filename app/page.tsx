@@ -230,7 +230,7 @@ export default function HomePage() {
               <div className="badge inline-block px-3 py-1 text-sm border border-gray-300 rounded-full mb-4">
                 Opinie klientów
               </div>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight bg-gradient-to-br from-gray-800 via-gray-700 to-gray-500 bg-clip-text text-transparent drop-shadow-2xl mb-4">
+              <h2 className="text-4xl font-semibold leading-tight bg-gradient-to-br from-gray-800 via-gray-700 to-gray-500 bg-clip-text text-transparent drop-shadow-2xl sm:text-6xl sm:leading-tight md:text-7xl md:leading-tight mb-4">
                 Co mówią właścicielki salonów beauty
               </h2>
               <p className="text-sm font-medium text-gray-600 max-w-3xl mx-auto sm:text-lg opacity-75">
