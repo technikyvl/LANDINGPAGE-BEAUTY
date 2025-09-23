@@ -7,13 +7,14 @@ export function InvestmentSection() {
   const [isVisible, setIsVisible] = useState(false)
   const [animationKey, setAnimationKey] = useState(0)
   const ref = useRef<HTMLElement>(null)
-  const highlightRef = useRef<HTMLSpanElement>(null)
+  const [highlightAnimated, setHighlightAnimated] = useState(false)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true)
+          setHighlightAnimated(true)
           // Reset animation key to restart the chart animation
           setAnimationKey(prev => prev + 1)
         } else {
@@ -29,53 +30,6 @@ export function InvestmentSection() {
 
     return () => observer.disconnect()
   }, [])
-
-  // Highlight animation effect
-  useEffect(() => {
-    if (!highlightRef.current) return
-
-    const highlightElement = highlightRef.current
-
-    // Check for reduced motion preference
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    
-    if (prefersReducedMotion) {
-      // Immediately show full highlight without animation
-      highlightElement.classList.add('animate')
-      return
-    }
-
-    // Use IntersectionObserver for smooth animation
-    const highlightObserver = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          console.log('Highlight animation triggered!') // Debug log
-          highlightElement.classList.add('animate')
-          // Disconnect after first trigger
-          highlightObserver.disconnect()
-        }
-      },
-      { threshold: 0.1 } // Lower threshold for earlier trigger
-    )
-
-    highlightObserver.observe(highlightElement)
-
-    return () => highlightObserver.disconnect()
-  }, [])
-
-  // Also trigger animation when section becomes visible
-  useEffect(() => {
-    if (isVisible && highlightRef.current) {
-      const timer = setTimeout(() => {
-        if (highlightRef.current && !highlightRef.current.classList.contains('animate')) {
-          console.log('Highlight animation triggered by section visibility!') // Debug log
-          highlightRef.current.classList.add('animate')
-        }
-      }, 500) // Small delay to ensure smooth transition
-      
-      return () => clearTimeout(timer)
-    }
-  }, [isVisible])
 
   return (
     <>
@@ -110,54 +64,62 @@ export function InvestmentSection() {
         }
         
         .highlight-text {
-          background: linear-gradient(120deg, #ff6900 0%, #ea580c 100%);
-          background-repeat: no-repeat;
-          background-position: left center;
-          background-size: 0% 100%;
+          position: relative;
+          display: inline-block;
           padding: 0.2em 0.4em;
           border-radius: 0.5rem;
-          transition: background-size 0s;
-          color: white !important;
-          -webkit-text-fill-color: white !important;
-          -webkit-background-clip: padding-box !important;
-          background-clip: padding-box !important;
-          mix-blend-mode: normal !important;
-          text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) !important;
-          opacity: 1 !important;
-          z-index: auto !important;
-          filter: none !important;
-          box-shadow: 0 0 0 0 rgba(255, 105, 0, 0.4);
-          position: relative;
+          color: inherit;
+          transition: all 0.3s ease;
         }
         
-        .highlight-text.animate {
-          animation: highlightAnimation 2.5s ease-out 0.5s both;
+        .highlight-text::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: linear-gradient(135deg, #ff6900 0%, #ea580c 100%);
+          border-radius: 0.5rem;
+          z-index: -1;
+          transform: scaleX(0);
+          transform-origin: left center;
+          transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
         
-        @keyframes highlightAnimation {
+        .highlight-text.animated::before {
+          transform: scaleX(1);
+        }
+        
+        .highlight-text.animated {
+          color: white;
+          text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+          animation: textGlow 0.6s ease-out 0.8s both;
+        }
+        
+        @keyframes textGlow {
           0% {
-            background-size: 0% 100%;
-            box-shadow: 0 0 0 0 rgba(255, 105, 0, 0.4);
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
             transform: scale(1);
           }
           50% {
-            background-size: 100% 100%;
-            box-shadow: 0 0 20px 8px rgba(255, 105, 0, 0.3);
-            transform: scale(1.02);
+            text-shadow: 0 0 20px rgba(255, 105, 0, 0.6), 0 1px 3px rgba(0, 0, 0, 0.3);
+            transform: scale(1.05);
           }
           100% {
-            background-size: 100% 100%;
-            box-shadow: 0 0 0 0 rgba(255, 105, 0, 0);
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
             transform: scale(1);
           }
         }
         
         @media (prefers-reduced-motion: reduce) {
-          .highlight-text {
-            background-size: 100% 100% !important;
+          .highlight-text::before {
+            transform: scaleX(1) !important;
+            transition: none !important;
+          }
+          .highlight-text.animated {
             animation: none !important;
-            box-shadow: none !important;
-            transform: none !important;
+            color: white !important;
           }
         }
         
@@ -171,7 +133,7 @@ export function InvestmentSection() {
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl font-semibold leading-tight bg-gradient-to-br from-gray-800 via-gray-700 to-gray-500 bg-clip-text text-transparent drop-shadow-2xl sm:text-6xl sm:leading-tight md:text-7xl md:leading-tight">
-            Nie kupujesz usługi – <span ref={highlightRef} className="highlight-text">inwestujesz</span> w swój biznes.
+            Nie kupujesz usługi – <span className={`highlight-text ${highlightAnimated ? 'animated' : ''}`}>inwestujesz</span> w swój biznes.
           </h2>
         </div>
 
