@@ -100,6 +100,15 @@ export function InvestmentSection() {
           padding: 0.125em 0.25em;
           border-radius: 0.375rem;
           transition: background-size 0s;
+          color: inherit !important;
+          -webkit-text-fill-color: currentColor !important;
+          -webkit-background-clip: padding-box !important;
+          background-clip: padding-box !important;
+          mix-blend-mode: normal !important;
+          text-shadow: none !important;
+          opacity: 1 !important;
+          z-index: auto !important;
+          filter: none !important;
         }
         
         .highlight-text.animate {
