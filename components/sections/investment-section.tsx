@@ -97,7 +97,8 @@ export function InvestmentSection() {
           display: inline;
           padding-inline: 0.125rem;
           border-radius: 0.375rem;
-          z-index: 2;
+          z-index: 10;
+          color: inherit;
         }
         
         .hl-accent::before {
