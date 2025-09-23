@@ -3,6 +3,7 @@
 import { HeroSection } from "@/components/ui/hero-section"
 import { TestimonialsMarqueeSection } from "@/components/sections/testimonials-marquee-section"
 import { InvestmentSection } from "@/components/sections/investment-section"
+import { ContactSection } from "@/components/sections/contact-section"
 import { Icons } from "@/components/ui/icons"
 import { WhyUsPortfolioSection } from "@/components/sections/why-us-portfolio-section"
 
@@ -362,6 +363,9 @@ export default function HomePage() {
 
         {/* Investment Section */}
         <InvestmentSection />
+
+        {/* Contact Section */}
+        <ContactSection />
 
     </main>
   )
