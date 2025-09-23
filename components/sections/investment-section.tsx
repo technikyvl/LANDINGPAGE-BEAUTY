@@ -105,55 +105,55 @@ export function InvestmentSection() {
               {/* Chart Area */}
               <svg width="100%" height="100%" className="absolute inset-0" viewBox="0 0 800 350" preserveAspectRatio="xMidYMid meet">
                 {/* Y-axis */}
-                <line x1="60" y1="40" x2="60" y2="320" stroke="#e5e7eb" strokeWidth="1.5"/>
+                <line x1="40" y1="40" x2="40" y2="320" stroke="#e5e7eb" strokeWidth="1.5"/>
                 
                 {/* X-axis */}
-                <line x1="60" y1="320" x2="740" y2="320" stroke="#e5e7eb" strokeWidth="1.5"/>
+                <line x1="40" y1="320" x2="760" y2="320" stroke="#e5e7eb" strokeWidth="1.5"/>
                 
                 {/* Y-axis labels */}
-                <text x="50" y="48" textAnchor="end" className="text-xs fill-gray-500 font-medium">100k</text>
-                <text x="50" y="88" textAnchor="end" className="text-xs fill-gray-500 font-medium">80k</text>
-                <text x="50" y="128" textAnchor="end" className="text-xs fill-gray-500 font-medium">60k</text>
-                <text x="50" y="168" textAnchor="end" className="text-xs fill-gray-500 font-medium">40k</text>
-                <text x="50" y="208" textAnchor="end" className="text-xs fill-gray-500 font-medium">20k</text>
+                <text x="30" y="48" textAnchor="end" className="text-xs fill-gray-500 font-medium">100k</text>
+                <text x="30" y="88" textAnchor="end" className="text-xs fill-gray-500 font-medium">80k</text>
+                <text x="30" y="128" textAnchor="end" className="text-xs fill-gray-500 font-medium">60k</text>
+                <text x="30" y="168" textAnchor="end" className="text-xs fill-gray-500 font-medium">40k</text>
+                <text x="30" y="208" textAnchor="end" className="text-xs fill-gray-500 font-medium">20k</text>
                 
                 {/* X-axis labels */}
-                <text x="130" y="340" textAnchor="middle" className="text-xs fill-gray-500 font-medium">Miesiąc 1</text>
-                <text x="250" y="340" textAnchor="middle" className="text-xs fill-gray-500 font-medium">Miesiąc 2</text>
-                <text x="370" y="340" textAnchor="middle" className="text-xs fill-gray-500 font-medium">Miesiąc 3</text>
-                <text x="490" y="340" textAnchor="middle" className="text-xs fill-gray-500 font-medium">Miesiąc 4</text>
-                <text x="610" y="340" textAnchor="middle" className="text-xs fill-gray-500 font-medium">Miesiąc 5</text>
-                <text x="730" y="340" textAnchor="middle" className="text-xs fill-gray-500 font-medium">Miesiąc 6</text>
+                <text x="100" y="340" textAnchor="middle" className="text-xs fill-gray-500 font-medium">Miesiąc 1</text>
+                <text x="220" y="340" textAnchor="middle" className="text-xs fill-gray-500 font-medium">Miesiąc 2</text>
+                <text x="340" y="340" textAnchor="middle" className="text-xs fill-gray-500 font-medium">Miesiąc 3</text>
+                <text x="460" y="340" textAnchor="middle" className="text-xs fill-gray-500 font-medium">Miesiąc 4</text>
+                <text x="580" y="340" textAnchor="middle" className="text-xs fill-gray-500 font-medium">Miesiąc 5</text>
+                <text x="700" y="340" textAnchor="middle" className="text-xs fill-gray-500 font-medium">Miesiąc 6</text>
                 
-                {/* Data points with gentle upward growth - much less steep */}
-                <circle cx="130" cy="280" r="4" fill="#ff6900" className="drop-shadow-sm" style={{
+                {/* Data points with gentle upward growth - starting from dashboard beginning */}
+                <circle cx="100" cy="280" r="4" fill="#ff6900" className="drop-shadow-sm" style={{
                   opacity: isVisible ? 1 : 0,
                   animation: isVisible ? `fadeInScale 0.6s ease-out 0.2s both` : 'none'
                 }}/>
-                <circle cx="250" cy="260" r="4" fill="#ff6900" className="drop-shadow-sm" style={{
+                <circle cx="220" cy="260" r="4" fill="#ff6900" className="drop-shadow-sm" style={{
                   opacity: isVisible ? 1 : 0,
                   animation: isVisible ? `fadeInScale 0.6s ease-out 0.4s both` : 'none'
                 }}/>
-                <circle cx="370" cy="230" r="4" fill="#ff6900" className="drop-shadow-sm" style={{
+                <circle cx="340" cy="230" r="4" fill="#ff6900" className="drop-shadow-sm" style={{
                   opacity: isVisible ? 1 : 0,
                   animation: isVisible ? `fadeInScale 0.6s ease-out 0.6s both` : 'none'
                 }}/>
-                <circle cx="490" cy="190" r="4" fill="#ff6900" className="drop-shadow-sm" style={{
+                <circle cx="460" cy="190" r="4" fill="#ff6900" className="drop-shadow-sm" style={{
                   opacity: isVisible ? 1 : 0,
                   animation: isVisible ? `fadeInScale 0.6s ease-out 0.8s both` : 'none'
                 }}/>
-                <circle cx="610" cy="140" r="4" fill="#ff6900" className="drop-shadow-sm" style={{
+                <circle cx="580" cy="140" r="4" fill="#ff6900" className="drop-shadow-sm" style={{
                   opacity: isVisible ? 1 : 0,
                   animation: isVisible ? `fadeInScale 0.6s ease-out 1.0s both` : 'none'
                 }}/>
-                <circle cx="730" cy="100" r="4" fill="#ff6900" className="drop-shadow-sm" style={{
+                <circle cx="700" cy="100" r="4" fill="#ff6900" className="drop-shadow-sm" style={{
                   opacity: isVisible ? 1 : 0,
                   animation: isVisible ? `fadeInScale 0.6s ease-out 1.2s both` : 'none'
                 }}/>
                 
-                {/* Animated trend line with gentle curve - much less steep */}
+                {/* Animated trend line with gentle curve - starting from dashboard beginning */}
                 <path 
-                  d="M 130,280 Q 190,270 250,260 Q 310,245 370,230 Q 430,210 490,190 Q 550,165 610,140 Q 670,120 730,100" 
+                  d="M 100,280 Q 160,270 220,260 Q 280,245 340,230 Q 400,210 460,190 Q 520,165 580,140 Q 640,120 700,100" 
                   stroke="#ff6900" 
                   strokeWidth="2.5" 
                   fill="none"
@@ -165,7 +165,7 @@ export function InvestmentSection() {
                   }}
                 />
                 
-                {/* Animated gradient fill under the line - gentle curve */}
+                {/* Animated gradient fill under the line - starting from dashboard beginning */}
                 <defs>
                   <linearGradient id={`chartGradient-${animationKey}`} x1="0%" y1="0%" x2="0%" y2="100%">
                     <stop offset="0%" stopColor="#ff6900" stopOpacity="0.3"/>
@@ -173,7 +173,7 @@ export function InvestmentSection() {
                   </linearGradient>
                 </defs>
                 <path 
-                  d="M 130,280 Q 190,270 250,260 Q 310,245 370,230 Q 430,210 490,190 Q 550,165 610,140 Q 670,120 730,100 L 730,320 L 130,320 Z" 
+                  d="M 100,280 Q 160,270 220,260 Q 280,245 340,230 Q 400,210 460,190 Q 520,165 580,140 Q 640,120 700,100 L 700,320 L 100,320 Z" 
                   fill={`url(#chartGradient-${animationKey})`}
                   style={{
                     opacity: isVisible ? 1 : 0,
