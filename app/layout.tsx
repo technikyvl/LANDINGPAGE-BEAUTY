@@ -36,8 +36,8 @@ export default function RootLayout({
                     src="/AERO DIGITAL (7).png"
                     alt="Aero Digital Logo"
                     className="logo"
+                    style={{ height: '40px', width: 'auto' }}
                   />
-                  <span className="brand-text">Aero Digital</span>
                 </a>
 
                 {/* Center: desktop nav */}
