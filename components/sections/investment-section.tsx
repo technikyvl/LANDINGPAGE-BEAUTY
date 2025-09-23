@@ -74,40 +74,17 @@ export function InvestmentSection() {
           </h2>
         </div>
 
-        {/* Dashboard Chart Card */}
+        {/* Chart Container */}
         <div className="flex justify-center">
           <div
             className={cn(
-              "investment-dashboard-card",
-              "relative w-full max-w-4xl h-96 p-8",
-              "bg-white rounded-2xl border border-gray-200",
-              "shadow-lg transition-all duration-700 ease-out",
+              "relative w-full max-w-4xl h-96",
+              "transition-all duration-700 ease-out",
               isVisible
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-8"
             )}
-            style={{
-              backgroundImage: `
-                radial-gradient(60% 55% at 70% 100%, rgba(255,105,0,.14) 0%, rgba(255,105,0,0) 70%),
-                radial-gradient(45% 40% at 10% 95%, rgba(245,73,0,.12) 0%, rgba(245,73,0,0) 70%),
-                radial-gradient(35% 40% at 50% 0%, rgba(255,255,255,.75) 0%, rgba(255,255,255,0) 60%)
-              `,
-              boxShadow: `
-                0 12px 28px rgba(17,24,39,.08),
-                inset 0 -14px 22px -10px rgba(255,105,0,.12)
-              `
-            }}
           >
-            {/* Chart Title */}
-            <div className="mb-6">
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                Wzrost przychodów salonu
-              </h3>
-              <p className="text-gray-600">
-                Przewidywane rezultaty po wdrożeniu naszego systemu
-              </p>
-            </div>
-
             {/* Chart Container */}
             <div className="relative h-64 w-full">
               {/* Grid Background */}
@@ -145,35 +122,35 @@ export function InvestmentSection() {
                 <text x="600" y="255" textAnchor="middle" className="text-xs fill-gray-500 font-medium">Miesiąc 5</text>
                 <text x="720" y="255" textAnchor="middle" className="text-xs fill-gray-500 font-medium">Miesiąc 6</text>
                 
-                {/* Data points with animation */}
-                <circle cx="120" cy="200" r="4" fill="#ff6900" className="drop-shadow-sm" style={{
+                {/* Data points with non-linear upward growth */}
+                <circle cx="120" cy="220" r="4" fill="#ff6900" className="drop-shadow-sm" style={{
                   opacity: isVisible ? 1 : 0,
                   animation: isVisible ? `fadeInScale 0.6s ease-out 0.2s both` : 'none'
                 }}/>
-                <circle cx="240" cy="170" r="4" fill="#ff6900" className="drop-shadow-sm" style={{
+                <circle cx="240" cy="200" r="4" fill="#ff6900" className="drop-shadow-sm" style={{
                   opacity: isVisible ? 1 : 0,
                   animation: isVisible ? `fadeInScale 0.6s ease-out 0.4s both` : 'none'
                 }}/>
-                <circle cx="360" cy="140" r="4" fill="#ff6900" className="drop-shadow-sm" style={{
+                <circle cx="360" cy="160" r="4" fill="#ff6900" className="drop-shadow-sm" style={{
                   opacity: isVisible ? 1 : 0,
                   animation: isVisible ? `fadeInScale 0.6s ease-out 0.6s both` : 'none'
                 }}/>
-                <circle cx="480" cy="110" r="4" fill="#ff6900" className="drop-shadow-sm" style={{
+                <circle cx="480" cy="100" r="4" fill="#ff6900" className="drop-shadow-sm" style={{
                   opacity: isVisible ? 1 : 0,
                   animation: isVisible ? `fadeInScale 0.6s ease-out 0.8s both` : 'none'
                 }}/>
-                <circle cx="600" cy="80" r="4" fill="#ff6900" className="drop-shadow-sm" style={{
+                <circle cx="600" cy="50" r="4" fill="#ff6900" className="drop-shadow-sm" style={{
                   opacity: isVisible ? 1 : 0,
                   animation: isVisible ? `fadeInScale 0.6s ease-out 1.0s both` : 'none'
                 }}/>
-                <circle cx="720" cy="50" r="4" fill="#ff6900" className="drop-shadow-sm" style={{
+                <circle cx="720" cy="25" r="4" fill="#ff6900" className="drop-shadow-sm" style={{
                   opacity: isVisible ? 1 : 0,
                   animation: isVisible ? `fadeInScale 0.6s ease-out 1.2s both` : 'none'
                 }}/>
                 
-                {/* Animated trend line */}
+                {/* Animated trend line with exponential curve */}
                 <path 
-                  d="M 120,200 Q 180,185 240,170 Q 300,155 360,140 Q 420,125 480,110 Q 540,95 600,80 Q 660,65 720,50" 
+                  d="M 120,220 Q 200,210 240,200 Q 320,180 360,160 Q 420,120 480,100 Q 540,70 600,50 Q 660,35 720,25" 
                   stroke="#ff6900" 
                   strokeWidth="3" 
                   fill="none"
@@ -193,7 +170,7 @@ export function InvestmentSection() {
                   </linearGradient>
                 </defs>
                 <path 
-                  d="M 120,200 Q 180,185 240,170 Q 300,155 360,140 Q 420,125 480,110 Q 540,95 600,80 Q 660,65 720,50 L 720,240 L 120,240 Z" 
+                  d="M 120,220 Q 200,210 240,200 Q 320,180 360,160 Q 420,120 480,100 Q 540,70 600,50 Q 660,35 720,25 L 720,240 L 120,240 Z" 
                   fill={`url(#chartGradient-${animationKey})`}
                   style={{
                     opacity: isVisible ? 1 : 0,
@@ -215,7 +192,7 @@ export function InvestmentSection() {
                 opacity: isVisible ? 1 : 0,
                 animation: isVisible ? `fadeInScale 0.6s ease-out 1.8s both` : 'none'
               }}>
-                <div className="text-sm font-medium">+150% wzrost</div>
+                <div className="text-sm font-medium">+300% wzrost</div>
                 <div className="text-xs opacity-90">w ciągu 6 miesięcy</div>
               </div>
             </div>
