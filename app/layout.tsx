@@ -52,7 +52,7 @@ export default function RootLayout({
 
                 {/* Right: actions / burger */}
                 <div className="actions">
-                  <a className="btn btn-solid" href="#contact">Skontaktuj Się</a>
+                  <a className="btn btn-solid" href="#contact">Chcę nowych klientów</a>
 
                   <button className="menu-toggle" aria-label="Open Menu" aria-expanded="false">
                     {/* hamburger */}
@@ -76,7 +76,7 @@ export default function RootLayout({
                   <li><a href="#contact">Kontakt</a></li>
                 </ul>
                 <div className="mobile-actions">
-                  <a className="btn btn-solid" href="#contact">Skontaktuj Się</a>
+                  <a className="btn btn-solid" href="#contact">Chcę nowych klientów</a>
                 </div>
               </div>
             </div>
