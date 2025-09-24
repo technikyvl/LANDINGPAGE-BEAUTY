@@ -43,9 +43,9 @@ export default function RootLayout({
                 {/* Center: desktop nav */}
                 <div className="nav-center">
                   <ul className="nav-list">
-                    <li><a href="#problem">Problem</a></li>
-                    <li><a href="#solution">Rozwiązanie</a></li>
-                    <li><a href="#pricing">Cennik</a></li>
+                    <li><a href="#problems-section">Problem</a></li>
+                    <li><a href="#services">Usługi</a></li>
+                    <li><a href="#why-us">Portfolio</a></li>
                     <li><a href="#contact">Kontakt</a></li>
                   </ul>
                 </div>
@@ -54,7 +54,7 @@ export default function RootLayout({
                 <div className="actions">
                   <a className="btn btn-outline show-when-top" href="#">Login</a>
                   <a className="btn btn-solid show-when-top" href="#">Sign Up</a>
-                  <a className="btn btn-solid show-when-scrolled" href="#">Get Started</a>
+                  <a className="btn btn-solid show-when-scrolled" href="#contact">Skontaktuj Się</a>
 
                   <button className="menu-toggle" aria-label="Open Menu" aria-expanded="false">
                     {/* hamburger */}
@@ -72,15 +72,15 @@ export default function RootLayout({
               {/* Mobile drawer */}
               <div className="mobile-panel">
                 <ul className="mobile-list">
-                  <li><a href="#problem">Problem</a></li>
-                  <li><a href="#solution">Rozwiązanie</a></li>
-                  <li><a href="#pricing">Cennik</a></li>
+                  <li><a href="#problems-section">Problem</a></li>
+                  <li><a href="#services">Usługi</a></li>
+                  <li><a href="#why-us">Portfolio</a></li>
                   <li><a href="#contact">Kontakt</a></li>
                 </ul>
                 <div className="mobile-actions">
                   <a className="btn btn-outline" href="#">Login</a>
                   <a className="btn btn-solid" href="#">Sign Up</a>
-                  <a className="btn btn-solid show-when-scrolled" href="#">Get Started</a>
+                  <a className="btn btn-solid show-when-scrolled" href="#contact">Skontaktuj Się</a>
                 </div>
               </div>
             </div>
