@@ -409,7 +409,7 @@
 .heading-xl{font-size: clamp(28px, 3vw, 48px); font-weight:700; letter-spacing:.02em; color:#1f2937;}
 .sub{color:#6b7280;}
 .tabs-list{display:flex; gap:14px; justify-content:center; align-items:center; flex-wrap:wrap; margin:28px auto 24px;}
-.tab{appearance:none; border:1px solid rgba(15,23,42,.12); background:#fff; color:#374151; font-weight:600; font-size:14px; padding:10px 14px; border-radius:12px; transition: all .25s ease; cursor:pointer; width: auto; min-width: auto;}
+.tab{appearance:none; border:1px solid rgba(15,23,42,.12); background:#fff; color:#374151; font-weight:600; font-size:14px; padding:10px 14px; border-radius:12px; transition: all .25s ease; cursor:pointer; width: fit-content; min-width: fit-content; flex-shrink: 0;}
 .tab:hover{border-color:#ff6900; box-shadow:0 0 0 4px rgba(255,105,0,.08);}
 .tab.is-active{background:#fff7f0; color:#ff6900; border-color:#ff6900;}
 .panels{margin-top:16px;}
