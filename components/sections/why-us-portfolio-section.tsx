@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils"
 
 export function WhyUsPortfolioSection() {
   return (
-    <section id="why-us" className={cn("py-24 md:py-32 lg:py-40 bg-white")}> 
+    <section id="why-us" className={cn("pt-24 pb-12 md:pt-32 md:pb-16 lg:pt-40 lg:pb-20 bg-white")}> 
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="relative mb-6">
           <div className="text-8xl md:text-9xl font-bold text-gray-200 absolute -top-20 -left-4 select-none">
