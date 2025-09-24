@@ -32,7 +32,7 @@
   justify-content: space-between;
   gap: 12px;
   padding: 12px 0;
-  height: 60px;
+  min-height: 80px;
 }
 
 .brand{
@@ -134,7 +134,7 @@
 }
 
 .nav-shell.is-scrolled .nav-row{
-  height: 50px;
+  min-height: 60px;
   padding: 8px 0;
 }
 
