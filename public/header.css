@@ -99,8 +99,8 @@
 .btn-solid:hover{ filter:brightness(0.95); }
 
 /* Specyficzne ustawienia dla przycisku w headerze */
-.actions .btn{
-  margin-top: -2px;
+#site-header .actions .btn{
+  margin-top: -2px !important;
 }
 
 /* Burger + icons swap */
