@@ -88,7 +88,6 @@
   text-decoration:none; 
   transition:.2s ease;
   border:1px solid transparent;
-  margin-top: -2px;
 }
 .btn-outline{
   background:transparent; border-color:var(--border); color:var(--fg);
@@ -98,6 +97,11 @@
   background:#111; color:#fff;
 }
 .btn-solid:hover{ filter:brightness(0.95); }
+
+/* Specyficzne ustawienia dla przycisku w headerze */
+.actions .btn{
+  margin-top: -2px;
+}
 
 /* Burger + icons swap */
 .menu-toggle{
