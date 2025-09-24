@@ -274,7 +274,7 @@ export default function HomePage() {
               <p className="text-sm relative z-10 max-w-[500px] font-medium text-gray-600 opacity-0 delay-100 sm:text-lg mb-4 mx-auto">
                 Rozwiązania, które pracują za Ciebie
               </p>
-              <p className="text-sm relative z-10 max-w-[500px] font-medium text-gray-600 opacity-0 delay-100 sm:text-lg mb-8 mx-auto">
+              <p className="text-sm relative z-10 max-w-[500px] font-medium text-gray-600 opacity-0 delay-100 sm:text-lg mb-4 mx-auto">
                 Interaktywne komponenty, które wyjaśniają skomplikowane rzeczy w prosty sposób.
               </p>
             </div>
