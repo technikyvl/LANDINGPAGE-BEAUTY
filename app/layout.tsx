@@ -36,7 +36,7 @@ export default function RootLayout({
                     src="/AERO DIGITAL (7).png"
                     alt="Aero Digital Logo"
                     className="logo"
-                    style={{ height: '120px', width: 'auto', maxHeight: '100%', objectFit: 'contain', margin: '-20px 0' }}
+                    style={{ height: '60px', width: 'auto', maxHeight: '100%', objectFit: 'contain' }}
                   />
                 </a>
 
@@ -52,9 +52,7 @@ export default function RootLayout({
 
                 {/* Right: actions / burger */}
                 <div className="actions">
-                  <a className="btn btn-outline show-when-top" href="#">Login</a>
-                  <a className="btn btn-solid show-when-top" href="#">Sign Up</a>
-                  <a className="btn btn-solid show-when-scrolled" href="#contact">Skontaktuj Się</a>
+                  <a className="btn btn-solid" href="#contact">Skontaktuj Się</a>
 
                   <button className="menu-toggle" aria-label="Open Menu" aria-expanded="false">
                     {/* hamburger */}
@@ -78,9 +76,7 @@ export default function RootLayout({
                   <li><a href="#contact">Kontakt</a></li>
                 </ul>
                 <div className="mobile-actions">
-                  <a className="btn btn-outline" href="#">Login</a>
-                  <a className="btn btn-solid" href="#">Sign Up</a>
-                  <a className="btn btn-solid show-when-scrolled" href="#contact">Skontaktuj Się</a>
+                  <a className="btn btn-solid" href="#contact">Skontaktuj Się</a>
                 </div>
               </div>
             </div>
