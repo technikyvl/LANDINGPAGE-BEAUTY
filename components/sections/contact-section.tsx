@@ -1,201 +1,329 @@
 "use client"
 
-import { useState, useEffect, useRef } from "react"
+import { useState } from "react"
 import { cn } from "@/lib/utils"
 
-interface ContactSectionProps {
-  data: {
-    title: string
-    form: {
-      fields: {
-        [key: string]: {
-          label: string
-          placeholder: string
-          required: boolean
-        }
-      }
-      submit: string
-      success: string
-    }
-    consultation: {
-      title: string
-      benefits: string[]
-      button: string
-    }
-  }
+interface FormData {
+  name: string
+  phone: string
+  city: string
+  usesBooksy: string
+  hasClientBase: string
+  averagePrice: string
+  interestedService: string
+  budget: string
 }
 
-export function ContactSection({ data }: ContactSectionProps) {
-  const [isVisible, setIsVisible] = useState(false)
-  const [formData, setFormData] = useState({
+const questions = [
+  {
+    id: 'name',
+    question: 'Jak masz na imię?',
+    type: 'text',
+    required: true,
+    placeholder: 'Wpisz swoje imię'
+  },
+  {
+    id: 'phone',
+    question: 'Podaj swój numer telefonu',
+    type: 'tel',
+    required: true,
+    placeholder: 'np. 123 456 789'
+  },
+  {
+    id: 'city',
+    question: 'W jakim mieście znajduje się Twój salon?',
+    type: 'text',
+    required: true,
+    placeholder: 'np. Warszawa'
+  },
+  {
+    id: 'usesBooksy',
+    question: 'Czy używasz Booksy?',
+    type: 'radio',
+    required: false,
+    options: ['Tak', 'Nie']
+  },
+  {
+    id: 'hasClientBase',
+    question: 'Czy masz swoją bazę klientów/klientek? (np. Booksy)',
+    type: 'radio',
+    required: false,
+    options: ['Tak', 'Nie']
+  },
+  {
+    id: 'averagePrice',
+    question: 'Jaka jest średnia cena usługi w Twoim salonie?',
+    type: 'select',
+    required: false,
+    options: [
+      '100-500 zł',
+      '500-1000 zł',
+      '1000-2000 zł',
+      '2000 zł lub więcej'
+    ]
+  },
+  {
+    id: 'interestedService',
+    question: 'Jaka usługa interesuje Cię najbardziej?',
+    type: 'radio',
+    required: true,
+    options: [
+      'Strona www',
+      'Kampanie reklamowe',
+      'SEO lokalne',
+      'Email marketing',
+      'SMS marketing'
+    ]
+  },
+  {
+    id: 'budget',
+    question: 'Ile chcesz przeznaczyć na przeskalowanie Twojego salonu?',
+    type: 'select',
+    required: false,
+    options: [
+      'Do 1000 zł',
+      '1000-3000 zł',
+      '3000-5000 zł',
+      '5000-10000 zł',
+      'Powyżej 10000 zł'
+    ]
+  }
+]
+
+export function ContactSection() {
+  const [formData, setFormData] = useState<FormData>({
     name: "",
-    email: "",
     phone: "",
-    salon: "",
-    message: ""
+    city: "",
+    usesBooksy: "",
+    hasClientBase: "",
+    averagePrice: "",
+    interestedService: "",
+    budget: ""
   })
+
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
-  const ref = useRef<HTMLElement>(null)
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true)
-        }
-      },
-      { threshold: 0.1 }
-    )
+  const currentQuestion = questions[currentQuestionIndex] || questions[0]
+  const isLastQuestion = currentQuestionIndex === questions.length - 1
+  const isFirstQuestion = currentQuestionIndex === 0
 
-    if (ref.current) {
-      observer.observe(ref.current)
-    }
-
-    return () => observer.disconnect()
-  }, [])
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
-    setFormData(prev => ({ ...prev, [name]: value }))
+  const handleInputChange = (field: keyof FormData, value: string) => {
+    setFormData(prev => ({ ...prev, [field]: value }))
   }
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
+  const handleNext = () => {
+    if (currentQuestion?.required && !formData[currentQuestion?.id as keyof FormData]) {
+      return
+    }
+    
+    if (isLastQuestion) {
+      handleSubmit()
+    } else {
+      setCurrentQuestionIndex(prev => prev + 1)
+    }
+  }
+
+  const handleBack = () => {
+    if (!isFirstQuestion) {
+      setCurrentQuestionIndex(prev => prev - 1)
+    }
+  }
+
+  const handleSubmit = async () => {
     setIsSubmitting(true)
-    
-    // Symulacja wysyłania formularza
-    await new Promise(resolve => setTimeout(resolve, 1000))
-    
-    setIsSubmitting(false)
-    setIsSubmitted(true)
+
+    try {
+      // Symulacja wysyłania formularza
+      await new Promise(resolve => setTimeout(resolve, 2000))
+      
+      // Tutaj można dodać prawdziwą logikę wysyłania
+      console.log("Form data:", formData)
+      
+      setIsSubmitted(true)
+    } catch (error) {
+      console.error("Error submitting form:", error)
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   if (isSubmitted) {
     return (
-      <section
-        id="contact"
-        ref={ref}
-        className="py-16 md:py-24 bg-white"
-      >
+      <section id="contact" className="py-24 md:py-32 lg:py-40 bg-white">
         <div className="container mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <div className="w-16 h-16 bg-green-500 rounded-full mx-auto mb-6 flex items-center justify-center">
-              <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-6">
+              <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
               </svg>
             </div>
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              {data.form.success}
+              Dziękujemy za wypełnienie formularza!
             </h2>
+            <p className="text-lg text-gray-600 mb-8">
+              Skontaktujemy się z Tobą w ciągu 24 godzin, aby omówić szczegóły współpracy.
+            </p>
+            <button
+              onClick={() => {
+                setIsSubmitted(false)
+                setCurrentQuestionIndex(0)
+                setFormData({
+                  name: "",
+                  phone: "",
+                  city: "",
+                  usesBooksy: "",
+                  hasClientBase: "",
+                  averagePrice: "",
+                  interestedService: "",
+                  budget: ""
+                })
+              }}
+              className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold rounded-full hover:from-orange-600 hover:to-orange-700 transition-all duration-200 shadow-lg hover:shadow-xl"
+            >
+              Wypełnij ponownie
+            </button>
           </div>
         </div>
       </section>
     )
   }
 
+  const renderQuestion = () => {
+    if (!currentQuestion) return null
+    
+    const currentValue = formData[currentQuestion.id as keyof FormData] || ""
+
+    switch (currentQuestion.type) {
+      case 'text':
+      case 'tel':
+        return (
+          <input
+            type={currentQuestion.type}
+            value={currentValue}
+            onChange={(e) => handleInputChange(currentQuestion.id as keyof FormData, e.target.value)}
+            className="w-full px-6 py-4 text-gray-900 text-lg border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors"
+            placeholder={currentQuestion.placeholder}
+            required={currentQuestion.required}
+          />
+        )
+      
+      case 'radio':
+        return (
+          <div className="space-y-4">
+            {currentQuestion.options?.map((option) => (
+              <label key={option} className="flex items-center p-4 border border-gray-300 rounded-lg hover:bg-gray-50 cursor-pointer">
+                <input
+                  type="radio"
+                  name={currentQuestion.id}
+                  value={option}
+                  checked={currentValue === option}
+                  onChange={(e) => handleInputChange(currentQuestion.id as keyof FormData, e.target.value)}
+                  className="mr-4 text-orange-500 focus:ring-orange-500"
+                />
+                <span className="text-gray-900 text-lg">{option}</span>
+              </label>
+            ))}
+          </div>
+        )
+      
+      case 'select':
+        return (
+          <select
+            value={currentValue}
+            onChange={(e) => handleInputChange(currentQuestion.id as keyof FormData, e.target.value)}
+            className="w-full px-6 py-4 text-gray-900 text-lg border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors"
+          >
+            <option value="">Wybierz opcję</option>
+            {currentQuestion.options?.map((option) => (
+              <option key={option} value={option}>
+                {option}
+              </option>
+            ))}
+          </select>
+        )
+      
+      default:
+        return null
+    }
+  }
+
   return (
-    <section
-      id="contact"
-      ref={ref}
-      className="py-16 md:py-24 bg-white"
-    >
-      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="py-24 md:py-32 lg:py-40 bg-white">
+      <div className="container mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+        {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight bg-gradient-to-br from-gray-800 via-gray-700 to-gray-500 bg-clip-text text-transparent drop-shadow-2xl mb-6 animate-appear">
-            {data.title}
+          <h2 className="text-4xl font-semibold leading-tight bg-gradient-to-br from-gray-800 via-gray-700 to-gray-500 bg-clip-text text-transparent drop-shadow-2xl sm:text-6xl sm:leading-tight md:text-7xl md:leading-tight">
+            KONTAKT
           </h2>
+          <p className="text-lg text-gray-600 mt-6 max-w-2xl mx-auto">
+            Wypełnij formularz, a skontaktujemy się z Tobą w ciągu 24 godzin, aby omówić szczegóły współpracy.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Formularz */}
-          <div
-            className={cn(
-              "transition-all duration-700 ease-out",
-              isVisible
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-8"
-            )}
-          >
-            <form onSubmit={handleSubmit} className="space-y-6">
-              {Object.entries(data.form.fields).map(([key, field]) => (
-                <div key={key}>
-                  <label
-                    htmlFor={key}
-                    className="block text-sm font-medium text-gray-700 mb-2"
-                  >
-                    {field.label}
-                    {field.required && <span className="text-red-500 ml-1">*</span>}
-                  </label>
-                  {key === "message" ? (
-                    <textarea
-                      id={key}
-                      name={key}
-                      value={formData[key as keyof typeof formData]}
-                      onChange={handleInputChange}
-                      placeholder={field.placeholder}
-                      required={field.required}
-                      rows={4}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
-                      aria-label={field.label}
-                    />
-                  ) : (
-                    <input
-                      type={key === "email" ? "email" : key === "phone" ? "tel" : "text"}
-                      id={key}
-                      name={key}
-                      value={formData[key as keyof typeof formData]}
-                      onChange={handleInputChange}
-                      placeholder={field.placeholder}
-                      required={field.required}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
-                      aria-label={field.label}
-                    />
-                  )}
-                </div>
-              ))}
-              
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:from-blue-600 hover:to-blue-700 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                {isSubmitting ? "Wysyłanie..." : data.form.submit}
-              </button>
-            </form>
+        {/* Form Card - Single Question */}
+        <div
+          className="relative w-full sm:w-3/4 md:w-2/3 lg:w-1/2 mx-auto p-8 sm:p-12 rounded-2xl border border-gray-200 shadow-lg"
+          style={{
+            backgroundImage: `
+              radial-gradient(60% 55% at 70% 100%, rgba(255,105,0,.14) 0%, rgba(255,105,0,0) 70%),
+              radial-gradient(45% 40% at 10% 95%, rgba(245,73,0,.12) 0%, rgba(245,73,0,0) 70%),
+              radial-gradient(35% 40% at 50% 0%, rgba(255,255,255,.75) 0%, rgba(255,255,255,0) 60%)
+            `,
+            boxShadow: `
+              0 12px 28px rgba(17,24,39,.08),
+              inset 0 -14px 22px -10px rgba(255,105,0,.12)
+            `,
+            minHeight: '500px'
+          }}
+        >
+          {/* Question */}
+          <div className="mb-12">
+            <h3 className="text-2xl font-semibold text-gray-900 mb-8">
+              {currentQuestion?.question || ""}
+              {currentQuestion?.required && <span className="text-orange-500 ml-1">*</span>}
+            </h3>
+            {renderQuestion()}
           </div>
 
-          {/* Karta konsultacji */}
-          <div
-            className={cn(
-              "transition-all duration-700 ease-out delay-200",
-              isVisible
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-8"
-            )}
-          >
-            <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-2xl border border-blue-100">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                {data.consultation.title}
-              </h3>
-              
-              <ul className="space-y-4 mb-8">
-                {data.consultation.benefits.map((benefit, index) => (
-                  <li key={index} className="flex items-start space-x-3">
-                    <div className="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                      </svg>
-                    </div>
-                    <span className="text-gray-700">{benefit}</span>
-                  </li>
-                ))}
-              </ul>
-              
-              <button className="w-full bg-white text-gray-900 py-3 px-6 rounded-lg font-semibold border-2 border-gray-300 hover:border-gray-400 transition-colors duration-200">
-                {data.consultation.button}
-              </button>
-            </div>
+          {/* Navigation Buttons */}
+          <div className="flex justify-between items-center mt-12">
+            <button
+              type="button"
+              onClick={handleBack}
+              disabled={isFirstQuestion}
+              className={cn(
+                "px-8 py-4 rounded-lg font-medium text-lg transition-all duration-200",
+                isFirstQuestion
+                  ? "bg-gray-100 text-gray-400 cursor-not-allowed"
+                  : "bg-gray-200 text-gray-900 hover:bg-gray-300"
+              )}
+            >
+              WSTECZ
+            </button>
+
+            <button
+              type="button"
+              onClick={handleNext}
+              disabled={isSubmitting || (currentQuestion?.required && !formData[currentQuestion?.id as keyof FormData])}
+              className={cn(
+                "px-8 py-4 rounded-lg font-medium text-lg transition-all duration-200",
+                isSubmitting || (currentQuestion?.required && !formData[currentQuestion?.id as keyof FormData])
+                  ? "bg-gray-400 text-gray-600 cursor-not-allowed"
+                  : "bg-gradient-to-r from-orange-500 to-orange-600 text-white hover:from-orange-600 hover:to-orange-700 shadow-lg hover:shadow-xl"
+              )}
+            >
+              {isSubmitting ? "Wysyłanie..." : isLastQuestion ? "WYŚLIJ" : "DALEJ"}
+            </button>
+          </div>
+
+          {/* Progress Indicator */}
+          <div className="text-center mt-8">
+            <p className="text-lg text-gray-700">
+              Pytanie {currentQuestionIndex + 1} z {questions.length}
+            </p>
           </div>
         </div>
       </div>

@@ -2,8 +2,11 @@
 
 import { HeroSection } from "@/components/ui/hero-section"
 import { TestimonialsMarqueeSection } from "@/components/sections/testimonials-marquee-section"
+import { InvestmentSection } from "@/components/sections/investment-section"
+import { ContactSection } from "@/components/sections/contact-section"
 import { Icons } from "@/components/ui/icons"
 import { WhyUsPortfolioSection } from "@/components/sections/why-us-portfolio-section"
+import { Footer } from "@/components/sections/footer"
 
 export default function HomePage() {
   return (
@@ -227,7 +230,7 @@ export default function HomePage() {
               <div className="badge inline-block px-3 py-1 text-sm border border-gray-300 rounded-full mb-4">
                 Opinie klientów
               </div>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight bg-gradient-to-br from-gray-800 via-gray-700 to-gray-500 bg-clip-text text-transparent drop-shadow-2xl mb-4">
+              <h2 className="text-4xl font-semibold leading-tight bg-gradient-to-br from-gray-800 via-gray-700 to-gray-500 bg-clip-text text-transparent drop-shadow-2xl sm:text-6xl sm:leading-tight md:text-7xl md:leading-tight mb-4">
                 Co mówią właścicielki salonów beauty
               </h2>
               <p className="text-sm font-medium text-gray-600 max-w-3xl mx-auto sm:text-lg opacity-75">
@@ -258,7 +261,7 @@ export default function HomePage() {
         <section id="services" className="py-24 md:py-32 lg:py-40 bg-white">
           <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             {/* Header */}
-            <div className="relative mb-20">
+            <div className="relative -mb-4">
               <div className="text-8xl md:text-9xl font-bold text-gray-200 absolute -top-20 -left-4 select-none">
                 02
               </div>
@@ -267,11 +270,11 @@ export default function HomePage() {
               </h2>
             </div>
             
-            <div className="text-center mb-16">
+            <div className="text-center mb-2">
               <p className="text-sm relative z-10 max-w-[500px] font-medium text-gray-600 opacity-0 delay-100 sm:text-lg mb-4 mx-auto">
                 Rozwiązania, które pracują za Ciebie
               </p>
-              <p className="text-sm relative z-10 max-w-[500px] font-medium text-gray-600 opacity-0 delay-100 sm:text-lg mb-8 mx-auto">
+              <p className="text-sm relative z-10 max-w-[500px] font-medium text-gray-600 opacity-0 delay-100 sm:text-lg mb-4 mx-auto">
                 Interaktywne komponenty, które wyjaśniają skomplikowane rzeczy w prosty sposób.
               </p>
             </div>
@@ -358,6 +361,15 @@ export default function HomePage() {
             </div>
           </div>
         </section>
+
+        {/* Investment Section */}
+        <InvestmentSection />
+
+        {/* Contact Section */}
+        <ContactSection />
+
+        {/* Footer */}
+        <Footer />
 
     </main>
   )

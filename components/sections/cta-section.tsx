@@ -49,7 +49,7 @@ export function CTASection({ data }: CTASectionProps) {
               : "opacity-0 translate-y-8"
           )}
         >
-          <h2 className="text-3xl md:text-4xl font-semibold leading-tight bg-gradient-to-br from-gray-800 via-gray-700 to-gray-500 bg-clip-text text-transparent drop-shadow-2xl mb-8 animate-appear">
+          <h2 className="text-4xl font-semibold leading-tight bg-gradient-to-br from-gray-800 via-gray-700 to-gray-500 bg-clip-text text-transparent drop-shadow-2xl sm:text-6xl sm:leading-tight md:text-7xl md:leading-tight mb-8 animate-appear">
             {data.title}
           </h2>
           

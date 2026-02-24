@@ -32,10 +32,16 @@
   justify-content: space-between;
   gap: 12px;
   padding: 12px 0;
+  min-height: 80px;
 }
 
 .brand{
-  display:flex; align-items:center; gap:10px; text-decoration:none; color:var(--fg);
+  display:flex; 
+  align-items:center; 
+  gap:10px; 
+  text-decoration:none; 
+  color:var(--fg);
+  height:100%;
 }
 .logo{ height:20px; width:auto; display:block; }
 .brand-text{ font-size:18px; font-weight:600; }
@@ -63,11 +69,24 @@
 .nav-list a:hover{ color: var(--fg); }
 
 /* Actions (right side) */
-.actions{ display:flex; align-items:center; gap:10px; }
+.actions{ 
+  display:flex; 
+  align-items:center; 
+  justify-content:center;
+  height:100%;
+  gap:10px;
+  padding-top: 0px;
+}
 .btn{
-  display:inline-flex; align-items:center; justify-content:center;
-  height:38px; padding:0 14px; border-radius:12px;
-  font-size:14px; text-decoration:none; transition:.2s ease;
+  display:flex; 
+  align-items:center; 
+  justify-content:center;
+  height:38px; 
+  padding:0 14px; 
+  border-radius:12px;
+  font-size:14px; 
+  text-decoration:none; 
+  transition:.2s ease;
   border:1px solid transparent;
 }
 .btn-outline{
@@ -78,6 +97,11 @@
   background:#111; color:#fff;
 }
 .btn-solid:hover{ filter:brightness(0.95); }
+
+/* Specyficzne ustawienia dla przycisku w headerze */
+#site-header .actions .btn{
+  margin-top: -2px !important;
+}
 
 /* Burger + icons swap */
 .menu-toggle{
@@ -115,10 +139,12 @@
   box-shadow: var(--shadow);
 }
 
-/* Pokazywanie odpowiednich przycisków zależnie od scrolla */
-.show-when-scrolled{ display:none; }
-.nav-shell.is-scrolled .show-when-top{ display:none; }
-.nav-shell.is-scrolled .show-when-scrolled{ display:inline-flex; }
+.nav-shell.is-scrolled .nav-row{
+  min-height: 60px;
+  padding: 8px 0;
+}
+
+/* Przycisk zawsze widoczny */
 
 /* Responsive */
 @media (min-width: 1024px){
